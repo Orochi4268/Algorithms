@@ -1,4 +1,4 @@
-package com.tts.lib;
+package std.lib;
 
 import org.junit.Test;
 
