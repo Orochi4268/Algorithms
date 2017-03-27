@@ -1,4 +1,4 @@
-package com.tts.chapter01;
+package com.tts.chapter01.chapter1_3;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
