@@ -88,7 +88,6 @@ public class Queue<Item> implements Iterable<Item> {
             queue.enqueue(item);
             if (i++==2) break;
         }
-
         for (String s : queue) {
             StdOut.println(s);
         }
