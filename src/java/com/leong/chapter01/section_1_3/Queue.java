@@ -7,57 +7,78 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
+ * 0    ->1->2->  3
+ * head         tail
+ * Enqueue:
+ * 0    ->1->2->   3->  4
+ * head        oldTail  tail
+ *
+ * Dequeue:
+ * 0(deleted)  1 ->2-> 3
+ * oldHead    head    tail
+ *
  * @author: mike
- * @since: 2017/3/26
+ * @since: 2017/9/26
  */
 public class Queue<Item> implements Iterable<Item> {
-    private Node<Item> first; // 指向最早添加的结点的链接
-    private Node<Item> last; // 指向最近添加的结点的链接
-    private int n;
+    private Node<Item> head; // 指向最早添加的结点的链接
+    private Node<Item> tail; // 指向最近添加的结点的链接
+    private int size;
 
     private class Node<Item> {
         Node<Item> next;
         Item item;
     }
 
-    public Queue() {
-        first = last = null;
-        n = 0;
-    }
-
     public boolean isEmpty() {
-        return first == null;
+        return head == null;
     }
 
     public int size() {
-        return n;
+        return size;
     }
 
     public void enqueue(Item item){
-        Node<Item> oldLast = last;
-        last = new Node<>();
-        last.item = item;
-        last.next = null;
-        if (isEmpty()) first = last; // 如果链表为空时需要将first和last指向同一个节点
-        else oldLast.next = last;
-        n++;
+        Node<Item> oldTail = tail; // 存起 old tial
+        tail = new Node<>(); // 创建 tail 节点
+        tail.item = item;
+        tail.next = null; // tail 没有 next 节点
+        if (isEmpty()){ // head 为 null
+            head = tail; // 只存在1个节点
+        } else{
+            // 不止1个节点情况
+            oldTail.next = tail; // old tail 指向 tail;
+        }
+        size ++;
     }
 
     public Item dequeue(){
-        if (isEmpty()) throw new NoSuchElementException("Queue underflow");
-        Item item = first.item;
-        first = first.next;
-        n--;
-        if (isEmpty()) last=null;
+        if (isEmpty()){
+            tail = null;
+            throw new NoSuchElementException("Queue underflow");
+        }
+        Item item = head.item;
+        head = head.next;
+        size --;
         return item;
     }
 
+    /*public Item dequeue() {
+        if (isEmpty())
+            throw new NoSuchElementException("Queue underflow");
+        Item item = head.item;
+        head = head.next;
+        n--;
+        if (isEmpty()) tail = null;
+        return item;
+    }*/
+
     @Override
     public Iterator<Item> iterator() {
-        return new ListIterator<>(first);
+        return new ListIterator<>(head);
     }
 
-    private class ListIterator<Item> implements Iterator<Item>{
+    private class ListIterator<Item> implements Iterator<Item> {
         private Node<Item> current;
 
         public ListIterator(Node<Item> first) {
@@ -69,7 +90,9 @@ public class Queue<Item> implements Iterable<Item> {
             return current != null;
         }
 
-        public void remove()      { throw new UnsupportedOperationException();  }
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
 
         @Override
         public Item next() {
@@ -82,15 +105,22 @@ public class Queue<Item> implements Iterable<Item> {
 
     public static void main(String[] args) {
         Queue<String> queue = new Queue<>();
+        System.out.println("size:" + queue.size);
         int i = 1;
-        while (!StdIn.isEmpty()){
+        while (!StdIn.isEmpty()) {
             String item = StdIn.readString();
             queue.enqueue(item);
-            if (i++==2) break;
+            if (i++ == 2) break;
         }
+
         for (String s : queue) {
             StdOut.println(s);
         }
-        StdOut.println("size of bag: " + queue.size());
+
+        while (!queue.isEmpty()){
+            StdOut.println(queue.dequeue());
+        }
+
+        StdOut.println("size of queue: " + queue.size());
     }
 }

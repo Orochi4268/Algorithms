@@ -1,4 +1,4 @@
-package com.leong.chapter01.section_1_1.exercise;
+package com.leong.chapter01.section_1_1.ex;
 
 import com.leong.chapter01.section_1_1.BinarySearch;
 import com.leong.chapter01.section_1_1.BruteForceSearch;
