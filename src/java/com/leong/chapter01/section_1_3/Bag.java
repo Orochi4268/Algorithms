@@ -15,9 +15,9 @@ public class Bag<Item> implements Iterable<Item> {
     private Node<Item> first;
     private int n;
 
-    private static class Node<Item>{
+    private static class Node<Item> {
         private Item item;
-        private  Node<Item> next;
+        private Node<Item> next;
     }
 
     public Bag() {
@@ -25,19 +25,20 @@ public class Bag<Item> implements Iterable<Item> {
         n = 0;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return first == null;
     }
 
-    public int size(){
+    public int size() {
         return n;
     }
 
     /**
      * Adds the item to this bag
+     *
      * @param item
      */
-    public void add(Item item){
+    public void add(Item item) {
         Node<Item> oldFirst = first;
         first = new Node<>();
         first.item = item;
@@ -50,18 +51,24 @@ public class Bag<Item> implements Iterable<Item> {
         return new ListIterator<>(first);
     }
 
-    private class  ListIterator<Item> implements Iterator<Item>{
+    private class ListIterator<Item> implements Iterator<Item> {
         private Node<Item> current;
 
         public ListIterator(Node<Item> first) {
             current = first;
         }
 
-        public boolean hasNext(){ return current!=null;}
-        public void remove(){ throw new UnsupportedOperationException();}
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
 
         public Item next() {
-            if (!hasNext()) throw new NoSuchElementException();
+            if (!hasNext())
+                throw new NoSuchElementException();
             Item item = current.item;
             current = current.next;
             return item;
@@ -71,10 +78,10 @@ public class Bag<Item> implements Iterable<Item> {
     public static void main(String[] args) {
         Bag<String> bag = new Bag<>();
         int i = 1;
-        while (!StdIn.isEmpty()){
+        while (!StdIn.isEmpty()) {
             String item = StdIn.readString();
             bag.add(item);
-            if (i++==2) break;
+            if (i++ == 2) break;
         }
 
         Iterator iterator = bag.iterator();

@@ -7,52 +7,64 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * 下压堆栈（LIOF）
+ * 下压堆栈（LIOF）：链式存储结构的实现
  * 4   ->3->2->1
- * head        tail
+ * top        bottom
  * push:
  * 5 ->  4   ->3->2->1
- * head oldHead
+ * top oldTop
  *
  * @author: mike
  * @since: 2017/3/26
  */
 public class Stack<Item> implements Iterable<Item> {
-    private Node<Item> head; // top of stack
+    private Node<Item> top; // top of stack
     private int n; // size of the stack
 
-    private static class Node<Item> {
-        private Item item;
-        private Node<Item> next;
+    public static void main(String[] args) {
+        Stack<String> stack = new Stack();
+        int i = 1;
+        while (!StdIn.isEmpty()) {
+            String item = StdIn.readString();
+            stack.push(item);
+            if (i++ == 2) break;
+        }
+        for (String s : stack)
+            StdOut.println(s);
+        StdOut.println("size of bag: " + stack.size());
     }
 
     public boolean isEmpty() {
-        return head == null;
+        return top == null;
     }
 
-    public int size(){return n;}
+    public int size() {
+        return n;
+    }
 
-    public void push(Item item){
-        Node<Item> oldHead = head;
-        head = new Node<>();
-        head.item = item;
-        head.next = oldHead;
+    public void push(Item item) {
+        Node<Item> oldTop = top;
+        top = new Node<>();
+        top.item = item;
+        top.next = oldTop;
         n++;
     }
 
-    public Item pop(){
-        if (isEmpty()){
+    public Item pop() {
+        if (isEmpty()) {
             throw new NoSuchElementException("Stack underflow");
         }
-        Item item = head.item; // 先取出 head 的值
-        head = head.next; // 将 head 删，前1位变成 head
-        n --;
+        Item item = top.item; // 先取出 top 的值
+        top = top.next; // 将 top 删，前1位变成 top
+        n--;
         return item;
     }
 
-    public Item peek(){
-        if (isEmpty()) throw new NoSuchElementException("Stack underflow");
-        return head.item;
+    public Item peek() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Stack underflow");
+        }
+        return top.item;
     }
 
     public String toString() {
@@ -66,14 +78,19 @@ public class Stack<Item> implements Iterable<Item> {
 
     @Override
     public Iterator<Item> iterator() {
-        return new ListIterator<>(head);
+        return new ListIterator<>(top);
     }
 
-    private class ListIterator<Item> implements Iterator<Item>{
+    private static class Node<Item> {
+        private Item item;
+        private Node<Item> next;
+    }
+
+    private class ListIterator<Item> implements Iterator<Item> {
 
         private Node<Item> current;
 
-        public ListIterator(Node<Item> first){
+        public ListIterator(Node<Item> first) {
             current = first;
         }
 
@@ -89,18 +106,5 @@ public class Stack<Item> implements Iterable<Item> {
             current = current.next;
             return item;
         }
-    }
-
-    public static void main(String[] args) {
-        Stack<String> stack = new Stack();
-        int i = 1;
-        while (!StdIn.isEmpty()){
-            String item = StdIn.readString();
-            stack.push(item);
-            if (i++==2) break;
-        }
-        for (String s : stack)
-            StdOut.println(s);
-        StdOut.println("size of bag: " + stack.size());
     }
 }

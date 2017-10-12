@@ -1,4 +1,4 @@
-package com.leong.chapter01.chapter1_3;
+package com.leong.chapter01.section_1_3;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
