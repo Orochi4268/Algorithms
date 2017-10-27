@@ -1,12 +1,12 @@
-package com.leong.chapter02.chapter2_1.exercise;
+package java.com.leong.chapter02.section_2_1_elementary.exercise;
+
 
 import com.leong.chapter02.BaseSort;
 
 import java.util.stream.IntStream;
 
 /**
- * @author: mike
- * @since: 2017/4/9
+ * @author leongfeng created on 2017-10-27
  */
 public class Q2_1_12_Shell extends BaseSort {
 

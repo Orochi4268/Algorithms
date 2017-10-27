@@ -1,12 +1,14 @@
 package com.leong.chapter02;
 
-import std.lib.In;
-import std.lib.StdOut;
+
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 
 import java.io.File;
 import java.util.Comparator;
 
-import static std.lib.StdOut.println;
+import static edu.princeton.cs.algs4.StdOut.println;
+
 
 /**
  * @author: mike
