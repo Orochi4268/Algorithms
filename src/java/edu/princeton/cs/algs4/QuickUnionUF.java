@@ -1,6 +1,6 @@
 /******************************************************************************
- *  Compilation:  javac QuickUnionUF.java
- *  Execution:  java QuickUnionUF < input.txt
+ *  Compilation:  javac MyQuickUnionUF.java
+ *  Execution:  java MyQuickUnionUF < input.txt
  *  Dependencies: StdIn.java StdOut.java
  *  Data files:   http://algs4.cs.princeton.edu/15uf/tinyUF.txt
  *                http://algs4.cs.princeton.edu/15uf/mediumUF.txt
@@ -13,7 +13,7 @@
 package edu.princeton.cs.algs4;
 
 /**
- *  The {@code QuickUnionUF} class represents a <em>union–find data type</em>
+ *  The {@code MyQuickUnionUF} class represents a <em>union–find data type</em>
  *  (also known as the <em>disjoint-sets data type</em>).
  *  It supports the <em>union</em> and <em>find</em> operations,
  *  along with a <em>connected</em> operation for determining whether
