@@ -1,7 +1,8 @@
 package com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks;
 
-import std.lib.StdIn;
-import std.lib.StdOut;
+
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 /**
  * Dijkstra 的双栈算术表达式求值算法

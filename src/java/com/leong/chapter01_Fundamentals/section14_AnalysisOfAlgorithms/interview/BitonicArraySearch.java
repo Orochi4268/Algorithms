@@ -1,7 +1,7 @@
-package com.leong.chapter01_Fundamentals.section14_AnalysisOfAlgorithms.interview_questions;
+package com.leong.chapter01_Fundamentals.section14_AnalysisOfAlgorithms.interview;
 
-import std.lib.StdIn;
-import std.lib.StdOut;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 /**
  * 问题：Search in a bitonic array. An array is bitonic if it is comprised of an increasing sequence of integers followed

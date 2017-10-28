@@ -2,10 +2,11 @@ package com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks.exercise;
 
 import com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks.Stack;
 
-import static std.lib.StdIn.isEmpty;
-import static std.lib.StdIn.readString;
-import static std.lib.StdOut.print;
-import static std.lib.StdOut.println;
+import static edu.princeton.cs.algs4.StdIn.isEmpty;
+import static edu.princeton.cs.algs4.StdIn.readString;
+import static edu.princeton.cs.algs4.StdOut.print;
+import static edu.princeton.cs.algs4.StdOut.println;
+
 
 /**
  * 将算术表达式由中序表达式转为后序表达式。

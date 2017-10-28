@@ -6,8 +6,13 @@ import edu.princeton.cs.algs4.In;
 import java.io.File;
 
 /**
- * 归并排序（O(NlogN)）
- * 创建一个适当大小的数组然后将两个输入数组中的元素一个个从小到大的放入这个数组中。
+ * 自顶向下归并排序（O(NlogN)）：需要 1/2NlgN 至 NlgN 次比较
+ *
+ *
+ * 归并思路：
+ * 1. 创建一个辅助数组 aux[]；
+ * 2. 创建3个指针， k 指向原数组 a[]； i(i=lo) 用于指向 aux 左边子数组；j(j=mid+1) 指向 aux 右边数组；
+ * 3. 首先取 aux[i] 和 aux[j] 的值，将较小的值放入原数组 a[]，然后移动指针(i j)；继续比较，直到所有元素遍历完毕；
  * @author leongfeng created on 2017/4/10
  */
 public class MergeSort extends BaseSort{

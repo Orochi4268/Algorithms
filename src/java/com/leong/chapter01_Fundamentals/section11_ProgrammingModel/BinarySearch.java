@@ -1,8 +1,9 @@
 package com.leong.chapter01_Fundamentals.section11_ProgrammingModel;
 
-import std.lib.In;
-import std.lib.StdIn;
-import std.lib.StdOut;
+
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Arrays;
 

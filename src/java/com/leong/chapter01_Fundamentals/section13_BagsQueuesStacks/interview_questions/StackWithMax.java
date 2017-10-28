@@ -1,8 +1,7 @@
 package com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks.interview_questions;
 
 import com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks.Stack;
-import std.lib.StdIn;
-import std.lib.StdOut;
+import edu.princeton.cs.algs4.StdOut;
 
 /**
  *

@@ -1,9 +1,9 @@
 package com.leong.chapter01_Fundamentals.section14_AnalysisOfAlgorithms;
 
-import std.lib.StdDraw;
-import std.lib.StdOut;
-import std.lib.StdRandom;
-import std.lib.Stopwatch;
+import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.Stopwatch;
 
 /*************************************************************************
  * Compilation:  javac DoublingTest.java

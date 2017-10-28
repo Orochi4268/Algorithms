@@ -5,8 +5,8 @@ import org.junit.Test;
 import java.util.Random;
 import java.util.Scanner;
 
-import static std.lib.StdOut.printf;
-import static std.lib.StdOut.println;
+import static edu.princeton.cs.algs4.StdOut.printf;
+import static edu.princeton.cs.algs4.StdOut.println;
 
 /**
  * @author phoenix

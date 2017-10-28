@@ -1,7 +1,8 @@
 package com.leong.chapter01_Fundamentals.section15_UnionFind;
 
-import std.lib.StdIn;
-import std.lib.StdOut;
+
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 /**
  * @author: mike

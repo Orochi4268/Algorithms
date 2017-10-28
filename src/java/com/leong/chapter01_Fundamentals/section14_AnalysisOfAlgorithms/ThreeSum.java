@@ -1,8 +1,9 @@
 package com.leong.chapter01_Fundamentals.section14_AnalysisOfAlgorithms;
 
-import std.lib.In;
-import std.lib.StdOut;
-import std.lib.Stopwatch;
+
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.Stopwatch;
 
 /*************************************************************************
  *  Compilation:  javac ThreeSum.java

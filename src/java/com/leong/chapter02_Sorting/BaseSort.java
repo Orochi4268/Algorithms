@@ -1,13 +1,13 @@
 package com.leong.chapter02_Sorting;
 
 import com.leong.chapter02_Sorting.section21_Elementary.SelectionSort;
-import std.lib.In;
-import std.lib.StdOut;
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 
 import java.io.File;
 import java.util.Comparator;
 
-import static std.lib.StdOut.println;
+import static edu.princeton.cs.algs4.StdOut.println;
 
 /**
  * Sort 父类。

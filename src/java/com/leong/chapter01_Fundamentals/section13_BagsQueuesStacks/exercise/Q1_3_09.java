@@ -1,9 +1,9 @@
 package com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks.exercise;
 
 import com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks.Stack;
-import std.lib.StdIn;
+import edu.princeton.cs.algs4.StdIn;
 
-import static std.lib.StdOut.print;
+import static edu.princeton.cs.algs4.StdOut.print;
 
 /**
  * 左括号补全，输入：1 + 2 ) * 3 - 4 ) * 5 - 6 ) ) )， 输出：( (1 + 2 ) * ( ( 3 - 4 ) * ( 5 - 6 ) ) )

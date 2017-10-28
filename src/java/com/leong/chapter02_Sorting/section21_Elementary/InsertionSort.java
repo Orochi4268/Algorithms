@@ -1,6 +1,8 @@
 package com.leong.chapter02_Sorting.section21_Elementary;
 
 import com.leong.chapter02_Sorting.BaseSort;
+import edu.princeton.cs.algs4.In;
+
 import java.io.File;
 
 /**
