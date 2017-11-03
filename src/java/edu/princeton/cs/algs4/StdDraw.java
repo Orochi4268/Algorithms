@@ -1874,7 +1874,16 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        StdDraw.square(0.2, 0.8, 0.1);
+
+//        StdDraw.line(0.1,0.1, 0.2,0.2);
+        StdDraw.setXscale(0, 32768);
+        StdDraw.setYscale(0, 32768);
+        StdDraw.point(15900, 6600);
+        StdDraw.point(32300, 28100);
+        StdDraw.point(31400, 10100);
+        StdDraw.point(11100, 9400);
+        StdDraw.point(5100, 22300);
+        /*StdDraw.square(0.2, 0.8, 0.1);
         StdDraw.filledSquare(0.8, 0.8, 0.2);
         StdDraw.circle(0.8, 0.2, 0.2);
 
@@ -1893,7 +1902,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
         StdDraw.setPenColor(StdDraw.BLACK);
         StdDraw.text(0.2, 0.5, "black text");
         StdDraw.setPenColor(StdDraw.WHITE);
-        StdDraw.text(0.8, 0.8, "white text");
+        StdDraw.text(0.8, 0.8, "white text");*/
     }
 
 }
