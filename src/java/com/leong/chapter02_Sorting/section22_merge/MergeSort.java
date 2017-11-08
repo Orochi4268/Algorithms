@@ -26,6 +26,7 @@ public class MergeSort extends BaseSort{
 
     /**
      * 自顶向下归并排序操作。
+     * CUTOFF 约等于 10。
      * @param a
      * @param lo
      * @param hi
@@ -33,7 +34,7 @@ public class MergeSort extends BaseSort{
     private void sort(Comparable[] a, int lo, int hi){
         // 改进1：对小规模数组使用插入排序
         /**
-         if (hi <= lo + COUNT -1){
+         if (hi <= lo + CUTOFF -1){
             插入排序
          }
          */

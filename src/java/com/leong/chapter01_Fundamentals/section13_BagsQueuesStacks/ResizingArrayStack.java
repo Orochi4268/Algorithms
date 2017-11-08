@@ -34,7 +34,8 @@ public class ResizingArrayStack<Item> implements Iterable<Item>{
 
     public Item pop(){
         Item topItem = a[--N];
-        a[N] = null; //避免对象游离
+        //避免对象游离
+        a[N] = null;
         if (N > 0 && N == a.length / 4){
             resize(a.length / 2);
         }

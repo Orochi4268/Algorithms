@@ -3,6 +3,7 @@ package com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks;
 import java.util.Iterator;
 
 /**
+ * TODO 需要完成链表
  * @author leongfeng created on 2017/10/12.
  */
 public class CustomLinkedList<Item> implements Iterable {

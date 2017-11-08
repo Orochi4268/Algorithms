@@ -1,6 +1,6 @@
 /******************************************************************************
- *  Compilation:  javac MaxPQ.java
- *  Execution:    java MaxPQ < input.txt
+ *  Compilation:  javac Q_2_4_3_MaxPQWithUnorderedArray.java
+ *  Execution:    java Q_2_4_3_MaxPQWithUnorderedArray < input.txt
  *  Dependencies: StdIn.java StdOut.java
  *  Data files:   http://algs4.cs.princeton.edu/24pq/tinyPQ.txt
  *  
@@ -8,7 +8,7 @@
  *  Can be used with a comparator instead of the natural order,
  *  but the generic Key type must still be Comparable.
  *
- *  % java MaxPQ < tinyPQ.txt 
+ *  % java Q_2_4_3_MaxPQWithUnorderedArray < tinyPQ.txt
  *  Q X P (6 left on pq)
  *
  *  We use a one-based array to simplify parent and child calculations.
@@ -25,7 +25,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- *  The {@code MaxPQ} class represents a priority queue of generic keys.
+ *  The {@code Q_2_4_3_MaxPQWithUnorderedArray} class represents a priority queue of generic keys.
  *  It supports the usual <em>insert</em> and <em>delete-the-maximum</em>
  *  operations, along with methods for peeking at the maximum key,
  *  testing if the priority queue is empty, and iterating through
@@ -278,7 +278,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Unit tests the {@code MaxPQ} data type.
+     * Unit tests the {@code Q_2_4_3_MaxPQWithUnorderedArray} data type.
      *
      * @param args the command-line arguments
      */
