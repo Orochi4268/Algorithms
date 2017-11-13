@@ -1,28 +1,84 @@
 package com.leong.chapter03_Searching.section31_SymbolTables;
 
 /**
- * 简单泛型符号表
- * @author leongfeng created on 2017-11-10.
+ * @author leongfeng created on 2017-11-13.
  */
-public abstract class ST<Key, Value> {
+public class ST<Key extends Comparable<Key>, Value> extends BaseComparableBaseST<Key, Value> {
+    @Override
+    public void put(Key key, Value value) {
 
-    public abstract void put(Key key, Value value);
-
-    public abstract Value get(Key key);
-
-    public void delete(Key key){
-        put(key, null);
     }
 
-    public boolean contains(Key key){
-        return get(key) != null;
+    @Override
+    public Key select(int key) {
+        return null;
     }
 
-    public boolean isEmpty(){
-        return size() == 0;
+    @Override
+    public Value get(Key key) {
+        return null;
     }
 
-    public abstract int size();
+    @Override
+    public Key min() {
+        return null;
+    }
 
-    public abstract Iterable<Key> keys();
+    @Override
+    public Key max() {
+        return null;
+    }
+
+    @Override
+    public Key floor(Key key) {
+        return null;
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public Iterable<Key> keys() {
+        return null;
+    }
+
+    @Override
+    public Key ceiling(Key key) {
+        return null;
+    }
+
+    /**
+     * 小于 key 的键的数量.
+     * @param key
+     * @return
+     */
+    @Override
+    public int rank(Key key) {
+        return 0;
+    }
+
+    @Override
+    public void deleteMin() {
+        delete(min());
+    }
+
+    @Override
+    public void deleteMax() {
+        delete(max());
+    }
+
+    @Override
+    public int size(Key lo, Key hi) {
+        if (hi.compareTo(lo) < 0){
+            return rank(hi) - rank(lo) + 1;
+        }
+        return rank(hi) - rank(lo);
+    }
+
+    @Override
+    public Iterable<Key> keys(Key lo, Key hi) {
+        return keys(min(), max());
+    }
 }

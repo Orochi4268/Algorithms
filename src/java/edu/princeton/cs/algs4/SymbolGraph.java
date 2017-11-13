@@ -1,7 +1,7 @@
 /******************************************************************************
  *  Compilation:  javac SymbolGraph.java
  *  Execution:    java SymbolGraph filename.txt delimiter
- *  Dependencies: ST.java Graph.java In.java StdIn.java StdOut.java
+ *  Dependencies: BaseST.java Graph.java In.java StdIn.java StdOut.java
  *  Data files:   http://algs4.cs.princeton.edu/41graph/routes.txt
  *                http://algs4.cs.princeton.edu/41graph/movies.txt
  *                http://algs4.cs.princeton.edu/41graph/moviestiny.txt

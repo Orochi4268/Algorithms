@@ -1,7 +1,7 @@
 /******************************************************************************
  *  Compilation:  javac FileIndex.java
  *  Execution:    java FileIndex file1.txt file2.txt file3.txt ...
- *  Dependencies: ST.java SET.java In.java StdIn.java StdOut.java
+ *  Dependencies: BaseST.java SET.java In.java StdIn.java StdOut.java
  *  Data files:   http://algs4.cs.princeton.edu/35applications/ex1.txt
  *                http://algs4.cs.princeton.edu/35applications/ex2.txt
  *                http://algs4.cs.princeton.edu/35applications/ex3.txt

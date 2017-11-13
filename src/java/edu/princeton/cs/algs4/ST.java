@@ -1,6 +1,6 @@
 /******************************************************************************
- *  Compilation:  javac ST.java
- *  Execution:    java ST < input.txt
+ *  Compilation:  javac BaseST.java
+ *  Execution:    java BaseST < input.txt
  *  Dependencies: StdIn.java StdOut.java
  *  Data files:   http://algs4.cs.princeton.edu/35applications/tinyST.txt
  *  
@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
 import java.util.TreeMap;
 
 /**
- *  The {@code ST} class represents an ordered symbol table of generic
+ *  The {@code BaseST} class represents an ordered symbol table of generic
  *  key-value pairs.
  *  It supports the usual <em>put</em>, <em>get</em>, <em>contains</em>,
  *  <em>delete</em>, <em>size</em>, and <em>is-empty</em> methods.
@@ -215,7 +215,7 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
     }
 
     /**
-     * Unit tests the {@code ST} data type.
+     * Unit tests the {@code BaseST} data type.
      *
      * @param args the command-line arguments
      */

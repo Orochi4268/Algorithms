@@ -1,7 +1,7 @@
 /******************************************************************************
  *  Compilation:  javac LookupCSV.java
  *  Execution:    java LookupCSV file.csv keyField valField
- *  Dependencies: ST.java In.java StdIn.java StdOut.java
+ *  Dependencies: BaseST.java In.java StdIn.java StdOut.java
  *  Data files:   http://algs4.cs.princeton.edu/35applications/DJIA.csv
  *                http://algs4.cs.princeton.edu/35applications/UPC.csv
  *                http://algs4.cs.princeton.edu/35applications/amino.csv

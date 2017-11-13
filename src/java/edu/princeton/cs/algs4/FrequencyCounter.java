@@ -1,7 +1,7 @@
 /******************************************************************************
  *  Compilation:  javac FrequencyCounter.java
  *  Execution:    java FrequencyCounter L < input.txt
- *  Dependencies: ST.java StdIn.java StdOut.java
+ *  Dependencies: BaseST.java StdIn.java StdOut.java
  *  Data files:   http://algs4.cs.princeton.edu/31elementary/tnyTale.txt
  *                http://algs4.cs.princeton.edu/31elementary/tale.txt
  *                http://algs4.cs.princeton.edu/31elementary/leipzig100K.txt
