@@ -2,8 +2,10 @@ package com.leong.chapter03_Searching.section31_SymbolTables;
 
 
 import com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks.Queue;
+import com.leong.chapter03_Searching.BaseST;
 
 /**
+ * 顺序查的（基于无序链表）
  * @author leongfeng created on 2017-11-13.
  */
 public class SequentialSearchST<Key extends Comparable<Key>, Value> extends BaseST<Key, Value> {

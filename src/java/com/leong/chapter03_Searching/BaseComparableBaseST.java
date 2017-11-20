@@ -1,4 +1,4 @@
-package com.leong.chapter03_Searching.section31_SymbolTables;
+package com.leong.chapter03_Searching;
 
 /**
  * 有序符号表，只要声明中含有泛型变量 Key extends Comparable<Key> 的都要实现所有的API.
@@ -31,11 +31,11 @@ public abstract class BaseComparableBaseST<Key extends Comparable<Key>, Value> e
     public abstract int rank(Key key);
 
     /**
-     * 排名为 k 的键
-     * @param key
+     * 排名为 k 的键（树中正好有k个小于它的键）
+     * @param k
      * @return key
      */
-    public abstract Key select(int key);
+    public abstract Key select(int k);
 
     public abstract void deleteMin();
     public abstract void deleteMax();

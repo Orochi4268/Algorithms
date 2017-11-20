@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.StdRandom;
 
 /**
  * 可视化累加器
- * Created by leong on 2017/9/29.
+ * @author leongfeng created on 2017/9/29.
  */
 public class VisualAccumulator {
     private double total;

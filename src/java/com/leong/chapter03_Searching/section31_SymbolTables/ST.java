@@ -1,5 +1,7 @@
 package com.leong.chapter03_Searching.section31_SymbolTables;
 
+import com.leong.chapter03_Searching.BaseComparableBaseST;
+
 /**
  * @author leongfeng created on 2017-11-13.
  */

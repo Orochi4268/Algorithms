@@ -1,10 +1,8 @@
 package com.leong.chapter03_Searching.section31_SymbolTables;
 
+import com.leong.chapter03_Searching.BaseComparableBaseST;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdOut;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author leongfeng created on 2017-11-13.
@@ -23,6 +21,10 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
 
     }
 
+    /**
+     * O(1).
+     * @return
+     */
     @Override
     public Key min() {
         if (isEmpty()) {
@@ -31,6 +33,10 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
         return keys[0];
     }
 
+    /**
+     * O(1).
+     * @return
+     */
     @Override
     public Key max() {
         if (isEmpty()) {
@@ -40,8 +46,8 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
     }
 
     /**
-     * 小于等于 key 的最大键
-     *
+     * 小于等于 key 的最大键.
+     * O(lgN).
      * @param key
      * @return
      */
@@ -59,7 +65,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
 
     /**
      * 大于等于 key 的最小键
-     *
+     * O(lgN).
      * @param key
      * @return
      */
@@ -74,21 +80,12 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
 
     /**
      * 核心方法。
-     *
+     * O(lgN).
      * @param key key
      * @return 返回表中小于 key 的键的数量
      */
     @Override
     public int rank(Key key) {
-        /*int lo = 0, hi = N-1;
-        while (lo <= hi) {
-            int m = lo + (hi - lo) / 2;
-            int cmp = key.compareTo(keys[m]);
-            if      (cmp < 0) hi = m - 1;
-            else if (cmp > 0) lo = m + 1;
-            else return m;
-        }
-        return lo;*/
         return rank(key, 0, N - 1);
     }
 
@@ -107,11 +104,19 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
         }
     }
 
+    /**
+     * O(1).
+     * @param key
+     * @return
+     */
     @Override
     public Key select(int key) {
         return keys[key];
     }
 
+    /**
+     * O(N).
+     */
     @Override
     public void deleteMin() {
         for (int i = N; i > 0; N--) {
@@ -121,6 +126,9 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
         N--;
     }
 
+    /**
+     * O(1）.
+     */
     @Override
     public void deleteMax() {
         keys[N - 1] = null;
@@ -128,6 +136,12 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
         N--;
     }
 
+    /**
+     * O(1).
+     * @param lo
+     * @param hi
+     * @return
+     */
     @Override
     public int size(Key lo, Key hi) {
         if (lo.compareTo(hi) > 0) {
@@ -151,9 +165,17 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
         return queue;
     }
 
-
+    /**
+     * O(N).
+     * @param key
+     * @param value
+     */
     @Override
     public void put(Key key, Value value) {
+        if (value == null){
+            delete(key);
+            return;
+        }
         int i = rank(key);
         // key 存在
         if (i < N && keys[i].compareTo(key) == 0) {
@@ -170,6 +192,11 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends BaseComp
         N++;
     }
 
+    /**
+     * O(logN).
+     * @param key
+     * @return
+     */
     @Override
     public Value get(Key key) {
         if (isEmpty()) {

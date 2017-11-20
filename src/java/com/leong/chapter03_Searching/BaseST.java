@@ -1,4 +1,4 @@
-package com.leong.chapter03_Searching.section31_SymbolTables;
+package com.leong.chapter03_Searching;
 
 /**
  * 简单泛型符号表
@@ -10,6 +10,10 @@ public abstract class BaseST<Key, Value> {
 
     public abstract Value get(Key key);
 
+    /**
+     *
+     * @param key
+     */
     public void delete(Key key){
         put(key, null);
     }
