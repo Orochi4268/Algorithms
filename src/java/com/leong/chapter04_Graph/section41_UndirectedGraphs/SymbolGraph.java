@@ -1,7 +1,9 @@
 package com.leong.chapter04_Graph.section41_UndirectedGraphs;
 
-import com.leong.chapter03_Searching.section31_SymbolTables.ST;
+import com.leong.chapter04_Graph.TinyData;
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.ST;
+import edu.princeton.cs.algs4.StdOut;
 
 /**
  * 符号图.
@@ -9,14 +11,20 @@ import edu.princeton.cs.algs4.In;
  */
 public class SymbolGraph {
     /**
-     * 符号名 -> 索引
+     * 符号名（key） -> 索引
      */
     ST<String, Integer> st;
     /**
-     * 反向索引 -> 符号名.
+     * 索引 -> 符号名(key).
      */
     String[] keys;
     Graph G;
+
+    /**
+     *
+     * @param filename
+     * @param delim
+     */
     public SymbolGraph(String filename, String delim){
         st = new ST<>();
         In in = new In(filename);
@@ -33,7 +41,7 @@ public class SymbolGraph {
             keys[st.get(name)] = name;
         }
         in = new In(filename);
-        G = new Graph(in);
+        G = new Graph(st.size());
         while (in.hasNextLine()){
             String[] a = in.readLine().split(delim);
             int v = st.get(a[0]);
@@ -43,20 +51,36 @@ public class SymbolGraph {
         }
     }
 
-    public boolean contains(String key){
-
-        return false;
+    public boolean contains(String s){
+        return st.contains(s);
     }
 
+    /**
+     * key 索引.
+     * @param key key
+     * @return 索引
+     */
     public int index(String key){
-        return 0;
+        return st.get(key);
     }
 
+    /**
+     * 索引v的符号名.
+     * @param v 索引
+     * @return 符号名
+     */
     public String name(int v){
-        return "";
+        return keys[v];
     }
 
     public Graph G(){
-        return null;
+        return G;
+    }
+
+    public static void main(String[] args) {
+//        SymbolGraph symbolGraph = new SymbolGraph(TinyData.MOVIES_TXT, "/");
+        SymbolGraph symbolGraph = new SymbolGraph(TinyData.ROUTES_TXT, "\\s");
+        int index = symbolGraph.index("DFW");
+        StdOut.println(index);
     }
 }

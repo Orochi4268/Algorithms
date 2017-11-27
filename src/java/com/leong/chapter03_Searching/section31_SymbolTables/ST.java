@@ -2,85 +2,68 @@ package com.leong.chapter03_Searching.section31_SymbolTables;
 
 import com.leong.chapter03_Searching.BaseComparableBaseST;
 
+import java.util.Iterator;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 /**
+ *
  * @author leongfeng created on 2017-11-13.
  */
-public class ST<Key extends Comparable<Key>, Value> extends BaseComparableBaseST<Key, Value> {
-    @Override
+public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
+
+    private TreeMap<Key, Value> st;
+
+    public ST(){
+        st = new TreeMap<>();
+    }
+
     public void put(Key key, Value value) {
-
+        if (value == null) {
+            st.remove(key);
+        }
+        st.put(key, value);
     }
 
-    @Override
-    public Key select(int key) {
-        return null;
-    }
 
-    @Override
     public Value get(Key key) {
-        return null;
+        return st.get(key);
     }
 
-    @Override
     public Key min() {
-        return null;
+        return st.firstKey();
     }
 
-    @Override
     public Key max() {
-        return null;
+        return st.lastKey();
     }
 
-    @Override
     public Key floor(Key key) {
-        return null;
+        if (st.containsKey(key)){
+            return key;
+        }
+        SortedMap<Key, Value> head = st.headMap(key);
+        if (head.isEmpty()){
+            return null;
+        }
+        return head.lastKey();
     }
 
-    @Override
     public int size() {
         return 0;
     }
 
-    @Override
-    public Iterable<Key> keys() {
-        return null;
-    }
 
-    @Override
     public Key ceiling(Key key) {
-        return null;
-    }
-
-    /**
-     * 小于 key 的键的数量.
-     * @param key
-     * @return
-     */
-    @Override
-    public int rank(Key key) {
-        return 0;
-    }
-
-    @Override
-    public void deleteMin() {
-        delete(min());
-    }
-
-    @Override
-    public void deleteMax() {
-        delete(max());
-    }
-
-    @Override
-    public int size(Key lo, Key hi) {
-        if (hi.compareTo(lo) < 0){
-            return rank(hi) - rank(lo) + 1;
+        SortedMap<Key, Value> tail = st.tailMap(key);
+        if (tail.isEmpty()){
+            return null;
         }
-        return rank(hi) - rank(lo);
+        return tail.firstKey();
     }
 
     @Override
-    public Iterable<Key> keys(Key lo, Key hi) {
-        return keys(min(), max());
+    public Iterator<Key> iterator() {
+        return st.keySet().iterator();
     }
 }
