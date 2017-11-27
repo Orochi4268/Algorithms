@@ -38,6 +38,7 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
             StdOut.print(key + " ");
         }
         StdOut.println();
+        StdOut.println(bst.get("Y"));
     }
 
     /**
@@ -351,7 +352,7 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
     }
 
     private Value get(Node x, Key key) {
-        if (key == null) {
+        if (x == null) {
             return null;
         }
         int cmp = key.compareTo(x.key);

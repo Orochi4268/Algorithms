@@ -70,7 +70,7 @@ public class FenwickTree {
 
     /**
      * Range Sum Query from a to b.
-     * Search for the sum from array index from a to b
+     * BaseSearch for the sum from array index from a to b
      * a and b are 1-indexed
      * <p>
      * Time-Complexity:    O(log(n))

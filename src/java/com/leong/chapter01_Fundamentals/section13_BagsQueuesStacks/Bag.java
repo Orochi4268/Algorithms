@@ -40,6 +40,7 @@ public class Bag<Item> implements Iterable<Item> {
             StdOut.println(s);
         }
         StdOut.println("size of bag: " + bag.size());
+        StdOut.println(bag);
     }
 
     public boolean isEmpty() {
@@ -61,6 +62,16 @@ public class Bag<Item> implements Iterable<Item> {
         first.item = item;
         first.next = oldFirst;
         n++;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        Iterator iterator = iterator();
+        while (iterator.hasNext()){
+            sb.append(iterator.next()).append(" ");
+        }
+        return sb.toString();
     }
 
     @Override

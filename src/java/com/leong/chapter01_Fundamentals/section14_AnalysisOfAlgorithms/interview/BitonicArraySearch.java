@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 /**
- * 问题：Search in a bitonic array. An array is bitonic if it is comprised of an increasing sequence of integers followed
+ * 问题：BaseSearch in a bitonic array. An array is bitonic if it is comprised of an increasing sequence of integers followed
  * immediately by a decreasing sequence of integers. Write a program that, given a bitonic array of n distinct integer
  * values, determines whether a given integer is in the array.
  * 双调数组查找
