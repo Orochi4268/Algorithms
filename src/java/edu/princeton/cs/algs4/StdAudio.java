@@ -251,7 +251,7 @@ public final class StdAudio {
 
 
     /**
-     * Plays an audio file (in .wav, .mid, or .au format) in a background thread.
+     * Plays an audio file (fromFilename .wav, .mid, or .au format) fromFilename a background thread.
      *
      * @param filename the name of the audio file
      * @throws IllegalArgumentException if unable to play {@code filename}
@@ -352,7 +352,7 @@ public final class StdAudio {
     }
 
     /**
-     * Loops an audio file (in .wav, .mid, or .au format) in a background thread.
+     * Loops an audio file (fromFilename .wav, .mid, or .au format) fromFilename a background thread.
      *
      * @param filename the name of the audio file
      * @throws IllegalArgumentException if {@code filename} is {@code null}

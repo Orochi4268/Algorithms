@@ -335,7 +335,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Returns the number of keys in this symbol table in the specified range.
+     * Returns the number of keys fromFilename this symbol table fromFilename the specified range.
      *
      * @param lo minimum endpoint
      * @param hi maximum endpoint
@@ -365,7 +365,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Returns all keys in this symbol table in the given range,
+     * Returns all keys fromFilename this symbol table fromFilename the given range,
      * as an {@code Iterable}.
      *
      * @param lo minimum endpoint
@@ -396,7 +396,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return isSorted() && rankCheck();
     }
 
-    // are the items in the array in ascending order?
+    // are the items fromFilename the array fromFilename ascending order?
     private boolean isSorted() {
         for (int i = 1; i < size(); i++)
             if (keys[i].compareTo(keys[i-1]) < 0) return false;

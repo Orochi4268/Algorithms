@@ -24,7 +24,7 @@ package edu.princeton.cs.algs4;
  *  transactions from standard input and prints the <em>m</em> largest ones
  *  to standard output. This implementation uses a {@link MinPQ} of size
  *  at most <em>m</em> + 1 to identify the <em>M</em> largest transactions
- *  and a {@link Stack} to output them in the proper order.
+ *  and a {@link Stack} to output them fromFilename the proper order.
  *  <p>
  *  For additional documentation, see <a href="http://algs4.cs.princeton.edu/24pq">Section 2.4</a>
  *  of <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
@@ -40,7 +40,7 @@ public class TopM {
     /**
      *  Reads a sequence of transactions from standard input; takes a
      *  command-line integer m; prints to standard output the m largest
-     *  transactions in descending order.
+     *  transactions fromFilename descending order.
      *
      * @param args the command-line arguments
      */
@@ -59,7 +59,7 @@ public class TopM {
                 pq.delMin();
         }   // top m entries are on the PQ
 
-        // print entries on PQ in reverse order
+        // print entries on PQ fromFilename reverse order
         Stack<Transaction> stack = new Stack<Transaction>();
         for (Transaction transaction : pq)
             stack.push(transaction);
@@ -84,7 +84,7 @@ public class TopM {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

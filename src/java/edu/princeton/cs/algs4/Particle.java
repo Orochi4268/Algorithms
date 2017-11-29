@@ -3,7 +3,7 @@
  *  Execution:    none
  *  Dependencies: StdDraw.java
  *      
- *  A particle moving in the unit box with a given position, velocity,
+ *  A particle moving fromFilename the unit box with a given position, velocity,
  *  radius, and mass.
  *
  ******************************************************************************/
@@ -13,7 +13,7 @@ package edu.princeton.cs.algs4;
 import java.awt.Color;
 
 /**
- *  The {@code Particle} class represents a particle moving in the unit box,
+ *  The {@code Particle} class represents a particle moving fromFilename the unit box,
  *  with a given position, velocity, radius, and mass. Methods are provided
  *  for moving the particle and for predicting and resolvling elastic
  *  collisions with vertical walls, horizontal walls, and other particles.
@@ -60,7 +60,7 @@ public class Particle {
          
     /**
      * Initializes a particle with a random position and velocity.
-     * The position is uniform in the unit box; the velocity in
+     * The position is uniform fromFilename the unit box; the velocity fromFilename
      * either direciton is chosen uniformly at random.
      */
     public Particle() {
@@ -74,7 +74,7 @@ public class Particle {
     }
 
     /**
-     * Moves this particle in a straight line (based on its velocity)
+     * Moves this particle fromFilename a straight line (based on its velocity)
      * for the specified amount of time.
      *
      * @param  dt the amount of time
@@ -180,7 +180,7 @@ public class Particle {
         // magnitude of normal force
         double magnitude = 2 * this.mass * that.mass * dvdr / ((this.mass + that.mass) * dist);
 
-        // normal force, and in x and y directions
+        // normal force, and fromFilename x and y directions
         double fx = magnitude * dx / dist;
         double fy = magnitude * dy / dist;
 
@@ -197,7 +197,7 @@ public class Particle {
 
     /**
      * Updates the velocity of this particle upon collision with a vertical
-     * wall (by reflecting the velocity in the <em>x</em>-direction).
+     * wall (by reflecting the velocity fromFilename the <em>x</em>-direction).
      * Assumes that the particle is colliding with a vertical wall at this instant.
      */
     public void bounceOffVerticalWall() {
@@ -207,7 +207,7 @@ public class Particle {
 
     /**
      * Updates the velocity of this particle upon collision with a horizontal
-     * wall (by reflecting the velocity in the <em>y</em>-direction).
+     * wall (by reflecting the velocity fromFilename the <em>y</em>-direction).
      * Assumes that the particle is colliding with a horizontal wall at this instant.
      */
     public void bounceOffHorizontalWall() {
@@ -242,7 +242,7 @@ public class Particle {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

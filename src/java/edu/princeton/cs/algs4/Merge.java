@@ -73,7 +73,7 @@ public class Merge {
     }
 
     /**
-     * Rearranges the array in ascending order, using the natural order.
+     * Rearranges the array fromFilename ascending order, using the natural order.
      * @param a the array to be sorted
      */
     public static void sort(Comparable[] a) {
@@ -128,10 +128,10 @@ public class Merge {
     }
 
     /**
-     * Returns a permutation that gives the elements in the array in ascending order.
+     * Returns a permutation that gives the elements fromFilename the array fromFilename ascending order.
      * @param a the array
      * @return a permutation {@code p[]} such that {@code a[p[0]]}, {@code a[p[1]]},
-     *    ..., {@code a[p[N-1]]} are in ascending order
+     *    ..., {@code a[p[N-1]]} are fromFilename ascending order
      */
     public static int[] indexSort(Comparable[] a) {
         int n = a.length;
@@ -161,8 +161,8 @@ public class Merge {
     }
 
     /**
-     * Reads in a sequence of strings from standard input; mergesorts them; 
-     * and prints them to standard output in ascending order. 
+     * Reads fromFilename a sequence of strings from standard input; mergesorts them;
+     * and prints them to standard output fromFilename ascending order.
      *
      * @param args the command-line arguments
      */
@@ -188,7 +188,7 @@ public class Merge {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

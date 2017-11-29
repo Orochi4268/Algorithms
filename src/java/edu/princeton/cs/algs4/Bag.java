@@ -35,7 +35,7 @@ import java.util.NoSuchElementException;
 /**
  *  The {@code Bag} class represents a bag (or multiset) of 
  *  generic items. It supports insertion and iterating over the 
- *  items in arbitrary order.
+ *  items fromFilename arbitrary order.
  *  <p>
  *  This implementation uses a singly-linked list with a static nested class Node.
  *  See {@link LinkedBag} for the version from the
@@ -50,11 +50,11 @@ import java.util.NoSuchElementException;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  *
- *  @param <Item> the generic type of an item in this bag
+ *  @param <Item> the generic type of an item fromFilename this bag
  */
 public class Bag<Item> implements Iterable<Item> {
     private Node<Item> first;    // beginning of bag
-    private int n;               // number of elements in bag
+    private int n;               // number of elements fromFilename bag
 
     // helper linked list class
     private static class Node<Item> {
@@ -81,9 +81,9 @@ public class Bag<Item> implements Iterable<Item> {
     }
 
     /**
-     * Returns the number of items in this bag.
+     * Returns the number of items fromFilename this bag.
      *
-     * @return the number of items in this bag
+     * @return the number of items fromFilename this bag
      */
     public int size() {
         return n;
@@ -104,9 +104,9 @@ public class Bag<Item> implements Iterable<Item> {
 
 
     /**
-     * Returns an iterator that iterates over the items in this bag in arbitrary order.
+     * Returns an iterator that iterates over the items fromFilename this bag fromFilename arbitrary order.
      *
-     * @return an iterator that iterates over the items in this bag in arbitrary order
+     * @return an iterator that iterates over the items fromFilename this bag fromFilename arbitrary order
      */
     public Iterator<Item> iterator()  {
         return new ListIterator<Item>(first);  
@@ -166,7 +166,7 @@ public class Bag<Item> implements Iterable<Item> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

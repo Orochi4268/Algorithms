@@ -35,18 +35,18 @@ import java.util.TreeSet;
  *  {@code equals()} or {@code hashCode()}.
  *  The <em>add</em>, <em>contains</em>, <em>delete</em>, <em>minimum</em>,
  *  <em>maximum</em>, <em>ceiling</em>, and <em>floor</em> methods take
- *  logarithmic time in the worst case.
+ *  logarithmic time fromFilename the worst case.
  *  The <em>size</em>, and <em>is-empty</em> operations take constant time.
  *  Construction takes constant time.
  *  <p>
  *  For additional documentation, see
  *  <a href="http://algs4.cs.princeton.edu/35applications">Section 3.5</a> of
- *  <i>Algorithms in Java, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ *  <i>Algorithms fromFilename Java, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  *
- *  @param <Key> the generic type of a key in this set
+ *  @param <Key> the generic type of a key fromFilename this set
  */
 
 public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
@@ -105,9 +105,9 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
     }
 
     /**
-     * Returns the number of keys in this set.
+     * Returns the number of keys fromFilename this set.
      *
-     * @return the number of keys in this set
+     * @return the number of keys fromFilename this set
      */
     public int size() {
         return set.size();
@@ -124,20 +124,20 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
     }
  
     /**
-     * Returns all of the keys in this set, as an iterator.
-     * To iterate over all of the keys in a set named {@code set}, use the
+     * Returns all of the keys fromFilename this set, as an iterator.
+     * To iterate over all of the keys fromFilename a set named {@code set}, use the
      * foreach notation: {@code for (Key key : set)}.
      *
-     * @return an iterator to all of the keys in this set
+     * @return an iterator to all of the keys fromFilename this set
      */
     public Iterator<Key> iterator() {
         return set.iterator();
     }
 
     /**
-     * Returns the largest key in this set.
+     * Returns the largest key fromFilename this set.
      *
-     * @return the largest key in this set
+     * @return the largest key fromFilename this set
      * @throws NoSuchElementException if this set is empty
      */
     public Key max() {
@@ -146,9 +146,9 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
     }
 
     /**
-     * Returns the smallest key in this set.
+     * Returns the smallest key fromFilename this set.
      *
-     * @return the smallest key in this set
+     * @return the smallest key fromFilename this set
      * @throws NoSuchElementException if this set is empty
      */
     public Key min() {
@@ -158,10 +158,10 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
 
 
     /**
-     * Returns the smallest key in this set greater than or equal to {@code key}.
+     * Returns the smallest key fromFilename this set greater than or equal to {@code key}.
      *
      * @param  key the key
-     * @return the smallest key in this set greater than or equal to {@code key}
+     * @return the smallest key fromFilename this set greater than or equal to {@code key}
      * @throws IllegalArgumentException if {@code key} is {@code null}
      * @throws NoSuchElementException if there is no such key
      */
@@ -173,10 +173,10 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
     }
 
     /**
-     * Returns the largest key in this set less than or equal to {@code key}.
+     * Returns the largest key fromFilename this set less than or equal to {@code key}.
      *
      * @param  key the key
-     * @return the largest key in this set table less than or equal to {@code key}
+     * @return the largest key fromFilename this set table less than or equal to {@code key}
      * @throws IllegalArgumentException if {@code key} is {@code null}
      * @throws NoSuchElementException if there is no such key
      */
@@ -264,7 +264,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
     /**
      * Returns a string representation of this set.
      *
-     * @return a string representation of this set, enclosed in curly braces,
+     * @return a string representation of this set, enclosed fromFilename curly braces,
      *         with adjacent keys separated by a comma and a space
      */
     @Override
@@ -300,7 +300,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
         set.add("www.snopes.com");
         set.add("www.movies.com");
         set.add("www.cnn.com");
-        set.add("www.iitb.ac.in");
+        set.add("www.iitb.ac.fromFilename");
 
 
         StdOut.println(set.contains("www.cs.princeton.edu"));
@@ -319,7 +319,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
         StdOut.println("set = " + set);
         StdOut.println();
 
-        // print out all keys in this set in lexicographic order
+        // print out all keys fromFilename this set fromFilename lexicographic order
         for (String s : set) {
             StdOut.println(s);
         }
@@ -346,7 +346,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

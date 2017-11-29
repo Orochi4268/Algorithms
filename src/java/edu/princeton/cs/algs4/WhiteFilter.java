@@ -5,7 +5,7 @@
  *  Data files:   http://algs4.cs.princeton.edu/35applications/tinyTale.txt
  *                http://algs4.cs.princeton.edu/35applications/list.txt
  * 
- *  Read in a whitelist of words from a file. Then read in a list of
+ *  Read fromFilename a whitelist of words from a file. Then read fromFilename a list of
  *  words from standard input and print out all those words that
  *  are in the first file.
  * 

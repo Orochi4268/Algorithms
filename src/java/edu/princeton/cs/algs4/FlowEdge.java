@@ -3,7 +3,7 @@
  *  Execution:    java FlowEdge
  *  Dependencies: StdOut.java
  *
- *  Capacitated edge with a flow in a flow network.
+ *  Capacitated edge with a flow fromFilename a flow network.
  *
  ******************************************************************************/
 
@@ -11,7 +11,7 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code FlowEdge} class represents a capacitated edge with a 
-  * flow in a {@link FlowNetwork}. Each edge consists of two integers
+  * flow fromFilename a {@link FlowNetwork}. Each edge consists of two integers
  *  (naming the two vertices), a real-valued capacity, and a real-valued
  *  flow. The data type provides methods for accessing the two endpoints
  *  of the directed edge and the weight. It also provides methods for
@@ -123,10 +123,10 @@ public class FlowEdge {
 
     /**
      * Returns the endpoint of the edge that is different from the given vertex
-     * (unless the edge represents a self-loop in which case it returns the same vertex).
+     * (unless the edge represents a self-loop fromFilename which case it returns the same vertex).
      * @param vertex one endpoint of the edge
      * @return the endpoint of the edge that is different from the given vertex
-     *   (unless the edge represents a self-loop in which case it returns the same vertex)
+     *   (unless the edge represents a self-loop fromFilename which case it returns the same vertex)
      * @throws IllegalArgumentException if {@code vertex} is not one of the endpoints
      *   of the edge
      */
@@ -137,10 +137,10 @@ public class FlowEdge {
     }
 
     /**
-     * Returns the residual capacity of the edge in the direction
+     * Returns the residual capacity of the edge fromFilename the direction
      *  to the given {@code vertex}.
      * @param vertex one endpoint of the edge
-     * @return the residual capacity of the edge in the direction to the given vertex
+     * @return the residual capacity of the edge fromFilename the direction to the given vertex
      *   If {@code vertex} is the tail vertex, the residual capacity equals
      *   {@code capacity() - flow()}; if {@code vertex} is the head vertex, the
      *   residual capacity equals {@code flow()}.
@@ -153,7 +153,7 @@ public class FlowEdge {
     }
 
     /**
-     * Increases the flow on the edge in the direction to the given vertex.
+     * Increases the flow on the edge fromFilename the direction to the given vertex.
      *   If {@code vertex} is the tail vertex, this increases the flow on the edge by {@code delta};
      *   if {@code vertex} is the head vertex, this decreases the flow on the edge by {@code delta}.
      * @param vertex one endpoint of the edge
@@ -218,7 +218,7 @@ public class FlowEdge {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

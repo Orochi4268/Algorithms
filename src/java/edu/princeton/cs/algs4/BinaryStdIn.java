@@ -18,18 +18,18 @@ import java.util.NoSuchElementException;
 
 /**
  *  <i>Binary standard input</i>. This class provides methods for reading
- *  in bits from standard input, either one bit at a time (as a {@code boolean}),
+ *  fromFilename bits from standard input, either one bit at a time (as a {@code boolean}),
  *  8 bits at a time (as a {@code byte} or {@code char}),
  *  16 bits at a time (as a {@code short}), 32 bits at a time
  *  (as an {@code int} or {@code float}), or 64 bits at a time (as a
  *  {@code double} or {@code long}).
  *  <p>
  *  All primitive types are assumed to be represented using their 
- *  standard Java representations, in big-endian (most significant
+ *  standard Java representations, fromFilename big-endian (most significant
  *  byte first) order.
  *  <p>
  *  The client should not intermix calls to {@code BinaryStdIn} with calls
- *  to {@code StdIn} or {@code System.in};
+ *  to {@code StdIn} or {@code System.fromFilename};
  *  otherwise unexpected behavior will result.
  *
  *  @author Robert Sedgewick
@@ -40,7 +40,7 @@ public final class BinaryStdIn {
     private static final int EOF = -1;    // end of file
 
     private static int buffer;            // one character buffer
-    private static int n;                 // number of bits left in buffer
+    private static int n;                 // number of bits left fromFilename buffer
 
     // static initializer
     static {
@@ -274,7 +274,7 @@ public final class BinaryStdIn {
     }
     
    /**
-     * Test client. Reads in a binary input file from standard input and writes
+     * Test client. Reads fromFilename a binary input file from standard input and writes
      * it to standard output.
      *
      * @param args the command-line arguments
@@ -305,7 +305,7 @@ public final class BinaryStdIn {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

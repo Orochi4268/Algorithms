@@ -5,9 +5,9 @@
  *  Data files:   http://algs4.cs.princeton.edu/50strings/abra.txt
  *                http://algs4.cs.princeton.edu/50strings/pi.txt
  *
- *  Create an alphabet specified on the command line, read in a 
+ *  Create an alphabet specified on the command line, read fromFilename a
  *  sequence of characters over that alphabet (ignoring characters
- *  not in the alphabet), computes the frequency of occurrence of
+ *  not fromFilename the alphabet), computes the frequency of occurrence of
  *  each character, and print out the results.
  *
  *  %  java Count ABCDR < abra.txt 
@@ -36,7 +36,7 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code Count} class provides an {@link Alphabet} client for reading
- *  in a piece of text and computing the frequency of occurrence of each
+ *  fromFilename a piece of text and computing the frequency of occurrence of each
  *  character over a given alphabet.
  *  <p>
  *  For additional documentation,
@@ -52,7 +52,7 @@ public class Count {
     private Count() { }
 
     /**
-     * Reads in text from standard input; calculates the frequency of
+     * Reads fromFilename text from standard input; calculates the frequency of
      * occurrence of each character over the alphabet specified as a
      * commmand-line argument; and prints the frequencies to standard
      * output.
@@ -89,7 +89,7 @@ public class Count {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

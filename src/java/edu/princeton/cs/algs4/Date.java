@@ -42,7 +42,7 @@ public class Date implements Comparable<Date> {
     }
 
     /**
-     * Initializes new date specified as a string in form MM/DD/YYYY.
+     * Initializes new date specified as a string fromFilename form MM/DD/YYYY.
      * @param date the string representation of this date
      * @throws IllegalArgumentException if this date is invalid
      */
@@ -98,7 +98,7 @@ public class Date implements Comparable<Date> {
     }
 
     /**
-     * Returns the next date in the calendar.
+     * Returns the next date fromFilename the calendar.
      *
      * @return a date that represents the next day after this day
      */
@@ -150,7 +150,7 @@ public class Date implements Comparable<Date> {
     /**
      * Returns a string representation of this date.
      *
-     * @return the string representation in the format MM/DD/YYYY
+     * @return the string representation fromFilename the format MM/DD/YYYY
      */
     @Override
     public String toString() {
@@ -229,7 +229,7 @@ public class Date implements Comparable<Date> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

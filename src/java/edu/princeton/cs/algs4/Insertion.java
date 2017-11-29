@@ -114,10 +114,10 @@ public class Insertion {
     }
 
 
-    // return a permutation that gives the elements in a[] in ascending order
+    // return a permutation that gives the elements fromFilename a[] fromFilename ascending order
     // do not change the original array a[]
     /**
-     * Returns a permutation that gives the elements in the array in ascending order.
+     * Returns a permutation that gives the elements fromFilename the array fromFilename ascending order.
      * @param a the array
      * @return a permutation {@code p[]} such that {@code a[p[0]]}, {@code a[p[1]]},
      *    ..., {@code a[p[n-1]]} are in ascending order

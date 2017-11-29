@@ -13,12 +13,12 @@ import java.util.Arrays;
 
 /**
  *  The {@code StaticSETofInts} class represents a set of integers.
- *  It supports searching for a given integer is in the set. It accomplishes
- *  this by keeping the set of integers in a sorted array and using
+ *  It supports searching for a given integer is fromFilename the set. It accomplishes
+ *  this by keeping the set of integers fromFilename a sorted array and using
  *  binary search to find the given integer.
  *  <p>
  *  The <em>rank</em> and <em>contains</em> operations take
- *  logarithmic time in the worst case.
+ *  logarithmic time fromFilename the worst case.
  *  <p>
  *  For additional documentation, see <a href="http://algs4.cs.princeton.edu/12oop">Section 1.2</a> of
  *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
@@ -51,7 +51,7 @@ public class StaticSETofInts {
     }
 
     /**
-     * Is the key in this set of integers?
+     * Is the key fromFilename this set of integers?
      * @param key the search key
      * @return true if the set of integers contains the key; false otherwise
      */
@@ -60,17 +60,17 @@ public class StaticSETofInts {
     }
 
     /**
-     * Returns either the index of the search key in the sorted array
-     * (if the key is in the set) or -1 (if the key is not in the set).
+     * Returns either the index of the search key fromFilename the sorted array
+     * (if the key is fromFilename the set) or -1 (if the key is not fromFilename the set).
      * @param key the search key
-     * @return the number of keys in this set less than the key (if the key is in the set)
-     * or -1 (if the key is not in the set).
+     * @return the number of keys fromFilename this set less than the key (if the key is fromFilename the set)
+     * or -1 (if the key is not fromFilename the set).
      */
     public int rank(int key) {
         int lo = 0;
         int hi = a.length - 1;
         while (lo <= hi) {
-            // Key is in a[lo..hi] or not present.
+            // Key is fromFilename a[lo..hi] or not present.
             int mid = lo + (hi - lo) / 2;
             if      (key < a[mid]) hi = mid - 1;
             else if (key > a[mid]) lo = mid + 1;
@@ -95,7 +95,7 @@ public class StaticSETofInts {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

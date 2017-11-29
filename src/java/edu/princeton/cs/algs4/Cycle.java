@@ -7,7 +7,7 @@
  *                http://algs4.cs.princeton.edu/41graph/largeG.txt  
  *
  *  Identifies a cycle.
- *  Runs in O(E + V) time.
+ *  Runs fromFilename O(E + V) time.
  *
  *  % java Cycle tinyG.txt
  *  3 4 5 3 
@@ -30,7 +30,7 @@ package edu.princeton.cs.algs4;
  *  <p>
  *  This implementation uses depth-first search.
  *  The constructor takes time proportional to <em>V</em> + <em>E</em>
- *  (in the worst case),
+ *  (fromFilename the worst case),
  *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
  *  Afterwards, the <em>hasCycle</em> operation takes constant time;
  *  the <em>cycle</em> operation takes time proportional
@@ -117,7 +117,7 @@ public class Cycle {
     }
 
      /**
-     * Returns a cycle in the graph {@code G}.
+     * Returns a cycle fromFilename the graph {@code G}.
      * @return a cycle if the graph {@code G} has a cycle,
      *         and {@code null} otherwise
      */
@@ -188,7 +188,7 @@ public class Cycle {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

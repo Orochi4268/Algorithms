@@ -108,8 +108,8 @@ public class GraphGenerator {
 
     /**
      * Returns a complete bipartite graph on {@code V1} and {@code V2} vertices.
-     * @param V1 the number of vertices in one partition
-     * @param V2 the number of vertices in the other partition
+     * @param V1 the number of vertices fromFilename one partition
+     * @param V2 the number of vertices fromFilename the other partition
      * @return a complete bipartite graph on {@code V1} and {@code V2} vertices
      * @throws IllegalArgumentException if probability is not between 0 and 1
      */
@@ -120,8 +120,8 @@ public class GraphGenerator {
     /**
      * Returns a random simple bipartite graph on {@code V1} and {@code V2} vertices
      * with {@code E} edges.
-     * @param V1 the number of vertices in one partition
-     * @param V2 the number of vertices in the other partition
+     * @param V1 the number of vertices fromFilename one partition
+     * @param V2 the number of vertices fromFilename the other partition
      * @param E the number of edges
      * @return a random simple bipartite graph on {@code V1} and {@code V2} vertices,
      *    containing a total of {@code E} edges
@@ -153,9 +153,9 @@ public class GraphGenerator {
     /**
      * Returns a random simple bipartite graph on {@code V1} and {@code V2} vertices,
      * containing each possible edge with probability {@code p}.
-     * @param V1 the number of vertices in one partition
-     * @param V2 the number of vertices in the other partition
-     * @param p the probability that the graph contains an edge with one endpoint in either side
+     * @param V1 the number of vertices fromFilename one partition
+     * @param V2 the number of vertices fromFilename the other partition
+     * @param p the probability that the graph contains an edge with one endpoint fromFilename either side
      * @return a random simple bipartite graph on {@code V1} and {@code V2} vertices,
      *    containing each possible edge with probability {@code p}
      * @throws IllegalArgumentException if probability is not between 0 and 1
@@ -177,7 +177,7 @@ public class GraphGenerator {
 
     /**
      * Returns a path graph on {@code V} vertices.
-     * @param V the number of vertices in the path
+     * @param V the number of vertices fromFilename the path
      * @return a path graph on {@code V} vertices
      */
     public static Graph path(int V) {
@@ -194,7 +194,7 @@ public class GraphGenerator {
 
     /**
      * Returns a complete binary tree graph on {@code V} vertices.
-     * @param V the number of vertices in the binary tree
+     * @param V the number of vertices fromFilename the binary tree
      * @return a complete binary tree graph on {@code V} vertices
      */
     public static Graph binaryTree(int V) {
@@ -211,7 +211,7 @@ public class GraphGenerator {
 
     /**
      * Returns a cycle graph on {@code V} vertices.
-     * @param V the number of vertices in the cycle
+     * @param V the number of vertices fromFilename the cycle
      * @return a cycle graph on {@code V} vertices
      */
     public static Graph cycle(int V) {
@@ -230,8 +230,8 @@ public class GraphGenerator {
     /**
      * Returns an Eulerian cycle graph on {@code V} vertices.
      *
-     * @param  V the number of vertices in the cycle
-     * @param  E the number of edges in the cycle
+     * @param  V the number of vertices fromFilename the cycle
+     * @param  E the number of edges fromFilename the cycle
      * @return a graph that is an Eulerian cycle on {@code V} vertices
      *         and {@code E} edges
      * @throws IllegalArgumentException if either {@code V <= 0} or {@code E <= 0}
@@ -255,8 +255,8 @@ public class GraphGenerator {
     /**
      * Returns an Eulerian path graph on {@code V} vertices.
      *
-     * @param  V the number of vertices in the path
-     * @param  E the number of edges in the path
+     * @param  V the number of vertices fromFilename the path
+     * @param  E the number of edges fromFilename the path
      * @return a graph that is an Eulerian path on {@code V} vertices
      *         and {@code E} edges
      * @throws IllegalArgumentException if either {@code V <= 0} or {@code E < 0}
@@ -278,9 +278,9 @@ public class GraphGenerator {
 
     /**
      * Returns a wheel graph on {@code V} vertices.
-     * @param V the number of vertices in the wheel
+     * @param V the number of vertices fromFilename the wheel
      * @return a wheel graph on {@code V} vertices: a single vertex connected to
-     *     every vertex in a cycle on {@code V-1} vertices
+     *     every vertex fromFilename a cycle on {@code V-1} vertices
      */
     public static Graph wheel(int V) {
         if (V <= 1) throw new IllegalArgumentException("Number of vertices must be at least 2");
@@ -306,7 +306,7 @@ public class GraphGenerator {
 
     /**
      * Returns a star graph on {@code V} vertices.
-     * @param V the number of vertices in the star
+     * @param V the number of vertices fromFilename the star
      * @return a star graph on {@code V} vertices: a single vertex connected to
      *     every other vertex
      */
@@ -331,7 +331,7 @@ public class GraphGenerator {
      * (not necessarily simple). The graph is simple with probability only about e^(-k^2/4),
      * which is tiny when k = 14.
      *
-     * @param V the number of vertices in the graph
+     * @param V the number of vertices fromFilename the graph
      * @param k degree of each vertex
      * @return a uniformly random {@code k}-regular graph on {@code V} vertices.
      */
@@ -360,7 +360,7 @@ public class GraphGenerator {
     /**
      * Returns a uniformly random tree on {@code V} vertices.
      * This algorithm uses a Prufer sequence and takes time proportional to <em>V log V</em>.
-     * @param V the number of vertices in the tree
+     * @param V the number of vertices fromFilename the tree
      * @return a uniformly random tree on {@code V} vertices
      */
     public static Graph tree(int V) {
@@ -371,13 +371,13 @@ public class GraphGenerator {
 
         // Cayley's theorem: there are V^(V-2) labeled trees on V vertices
         // Prufer sequence: sequence of V-2 values between 0 and V-1
-        // Prufer's proof of Cayley's theorem: Prufer sequences are in 1-1
+        // Prufer's proof of Cayley's theorem: Prufer sequences are fromFilename 1-1
         // with labeled trees on V vertices
         int[] prufer = new int[V-2];
         for (int i = 0; i < V-2; i++)
             prufer[i] = StdRandom.uniform(V);
 
-        // degree of vertex v = 1 + number of times it appers in Prufer sequence
+        // degree of vertex v = 1 + number of times it appers fromFilename Prufer sequence
         int[] degree = new int[V];
         for (int v = 0; v < V; v++)
             degree[v] = 1;
@@ -484,7 +484,7 @@ public class GraphGenerator {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

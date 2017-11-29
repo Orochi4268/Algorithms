@@ -3,7 +3,7 @@
  *  Execution:    java Average < data.txt
  *  Dependencies: StdIn.java StdOut.java
  *  
- *  Reads in a sequence of real numbers, and computes their average.
+ *  Reads fromFilename a sequence of real numbers, and computes their average.
  *
  *  % java Average
  *  10.0 5.0 6.0
@@ -19,7 +19,7 @@
 package edu.princeton.cs.algs4;
 
 /**
- *  The {@code Average} class provides a client for reading in a sequence
+ *  The {@code Average} class provides a client for reading fromFilename a sequence
  *  of real numbers and printing out their average.
  *  <p>
  *  For additional documentation, see <a href="http://algs4.cs.princeton.edu/11model">Section 1.1</a> of
@@ -34,7 +34,7 @@ public class Average {
     private Average() { }
 
     /**
-     * Reads in a sequence of real numbers from standard input and prints
+     * Reads fromFilename a sequence of real numbers from standard input and prints
      * out their average to standard output.
      *
      * @param args the command-line arguments
@@ -73,7 +73,7 @@ public class Average {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

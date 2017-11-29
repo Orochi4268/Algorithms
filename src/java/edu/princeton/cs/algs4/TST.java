@@ -44,11 +44,11 @@ package edu.princeton.cs.algs4;
  *  It supports the usual <em>put</em>, <em>get</em>, <em>contains</em>,
  *  <em>delete</em>, <em>size</em>, and <em>is-empty</em> methods.
  *  It also provides character-based methods for finding the string
- *  in the symbol table that is the <em>longest prefix</em> of a given prefix,
- *  finding all strings in the symbol table that <em>start with</em> a given prefix,
- *  and finding all strings in the symbol table that <em>match</em> a given pattern.
+ *  fromFilename the symbol table that is the <em>longest prefix</em> of a given prefix,
+ *  finding all strings fromFilename the symbol table that <em>start with</em> a given prefix,
+ *  and finding all strings fromFilename the symbol table that <em>match</em> a given pattern.
  *  A symbol table implements the <em>associative array</em> abstraction:
- *  when associating a value with a key that is already in the symbol table,
+ *  when associating a value with a key that is already fromFilename the symbol table,
  *  the convention is to replace the old value with the new value.
  *  Unlike {@link java.util.Map}, this class uses the convention that
  *  values cannot be {@code null}—setting the
@@ -77,8 +77,8 @@ public class TST<Value> {
     }
 
     /**
-     * Returns the number of key-value pairs in this symbol table.
-     * @return the number of key-value pairs in this symbol table
+     * Returns the number of key-value pairs fromFilename this symbol table.
+     * @return the number of key-value pairs fromFilename this symbol table
      */
     public int size() {
         return n;
@@ -101,8 +101,8 @@ public class TST<Value> {
     /**
      * Returns the value associated with the given key.
      * @param key the key
-     * @return the value associated with the given key if the key is in the symbol table
-     *     and {@code null} if the key is not in the symbol table
+     * @return the value associated with the given key if the key is fromFilename the symbol table
+     *     and {@code null} if the key is not fromFilename the symbol table
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public Value get(String key) {
@@ -128,7 +128,7 @@ public class TST<Value> {
 
     /**
      * Inserts the key-value pair into the symbol table, overwriting the old value
-     * with the new value if the key is already in the symbol table.
+     * with the new value if the key is already fromFilename the symbol table.
      * If the value is {@code null}, this effectively deletes the key from the symbol table.
      * @param key the key
      * @param val the value
@@ -156,10 +156,10 @@ public class TST<Value> {
     }
 
     /**
-     * Returns the string in the symbol table that is the longest prefix of {@code query},
+     * Returns the string fromFilename the symbol table that is the longest prefix of {@code query},
      * or {@code null}, if no such string.
      * @param query the query string
-     * @return the string in the symbol table that is the longest prefix of {@code query},
+     * @return the string fromFilename the symbol table that is the longest prefix of {@code query},
      *     or {@code null} if no such string
      * @throws IllegalArgumentException if {@code query} is {@code null}
      */
@@ -185,10 +185,10 @@ public class TST<Value> {
     }
 
     /**
-     * Returns all keys in the symbol table as an {@code Iterable}.
-     * To iterate over all of the keys in the symbol table named {@code st},
+     * Returns all keys fromFilename the symbol table as an {@code Iterable}.
+     * To iterate over all of the keys fromFilename the symbol table named {@code st},
      * use the foreach notation: {@code for (Key key : st.keys())}.
-     * @return all keys in the symbol table as an {@code Iterable}
+     * @return all keys fromFilename the symbol table as an {@code Iterable}
      */
     public Iterable<String> keys() {
         Queue<String> queue = new Queue<String>();
@@ -197,9 +197,9 @@ public class TST<Value> {
     }
 
     /**
-     * Returns all of the keys in the set that start with {@code prefix}.
+     * Returns all of the keys fromFilename the set that start with {@code prefix}.
      * @param prefix the prefix
-     * @return all of the keys in the set that start with {@code prefix},
+     * @return all of the keys fromFilename the set that start with {@code prefix},
      *     as an iterable
      * @throws IllegalArgumentException if {@code prefix} is {@code null}
      */
@@ -215,7 +215,7 @@ public class TST<Value> {
         return queue;
     }
 
-    // all keys in subtrie rooted at x with given prefix
+    // all keys fromFilename subtrie rooted at x with given prefix
     private void collect(Node<Value> x, StringBuilder prefix, Queue<String> queue) {
         if (x == null) return;
         collect(x.left,  prefix, queue);
@@ -227,10 +227,10 @@ public class TST<Value> {
 
 
     /**
-     * Returns all of the keys in the symbol table that match {@code pattern},
+     * Returns all of the keys fromFilename the symbol table that match {@code pattern},
      * where . symbol is treated as a wildcard character.
      * @param pattern the pattern
-     * @return all of the keys in the symbol table that match {@code pattern},
+     * @return all of the keys fromFilename the symbol table that match {@code pattern},
      *     as an iterable, where . is treated as a wildcard character.
      */
     public Iterable<String> keysThatMatch(String pattern) {
@@ -311,7 +311,7 @@ public class TST<Value> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

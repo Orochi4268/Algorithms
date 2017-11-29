@@ -5,7 +5,7 @@
  *  Data files:   http://algs4.cs.princeton.edu/63suffix/tale.txt
  *                http://algs4.cs.princeton.edu/63suffix/mobydick.txt 
  *
- *  Keyword-in-context search.
+ *  Keyword-fromFilename-context search.
  *
  *  %  java KWIK tale.txt 15
  *  majesty
@@ -18,15 +18,15 @@
  *  the worst
  *  w the best and the worst are known to y
  *  f them give me the worst first there th
- *  for in case of the worst is a friend in
+ *  for fromFilename case of the worst is a friend fromFilename
  *  e roomdoor and the worst is over then a
  *  pect mr darnay the worst its the wisest
  *  is his brother the worst of a bad race 
- *  ss in them for the worst of health for 
+ *  ss fromFilename them for the worst of health for
  *   you have seen the worst of her agitati
  *  cumwented into the worst of luck buuust
  *  n your brother the worst of the bad rac
- *   full share in the worst of the day pla
+ *   full share fromFilename the worst of the day pla
  *  mes to himself the worst of the strife 
  *  f times it was the worst of times it wa
  *  ould hope that the worst was over well 
@@ -39,8 +39,8 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code KWIK} class provides a {@link SuffixArray} client for computing
- *  all occurrences of a keyword in a given string, with surrounding context.
- *  This is known as <em>keyword-in-context search</em>.
+ *  all occurrences of a keyword fromFilename a given string, with surrounding context.
+ *  This is known as <em>keyword-fromFilename-context search</em>.
  *  <p>
  *  For additional documentation,
  *  see <a href="http://algs4.cs.princeton.edu/63suffix">Section 6.3</a> of
@@ -59,7 +59,7 @@ public class KWIK {
      * command-line argument; read an integer k specified as the
      * second command line argument; then repeatedly processes
      * use queries, printing all occurrences of the given query
-     * string in the text string with k characters of surrounding
+     * string fromFilename the text string with k characters of surrounding
      * context on either side.
      *
      * @param args the command-line arguments
@@ -68,7 +68,7 @@ public class KWIK {
         In in = new In(args[0]);
         int context = Integer.parseInt(args[1]);
 
-        // read in text
+        // read fromFilename text
         String text = in.readAll().replaceAll("\\s+", " ");
         int n = text.length();
 
@@ -106,7 +106,7 @@ public class KWIK {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

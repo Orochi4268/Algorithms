@@ -9,7 +9,6 @@ import com.leong.chapter04_Graph.section41_UndirectedGraphs.Graph;
 public abstract class BaseSearch {
     public Graph graph;
     public int s;
-
     public BaseSearch(){
 
     }

@@ -4,9 +4,9 @@
  *  Dependencies: none
  *
  *  Data type for manipulating individual pixels of an image. The original
- *  image can be read from a file in jpg, gif, or png format, or the
+ *  image can be read from a file fromFilename jpg, gif, or png format, or the
  *  user can create a blank image of a given size. Includes methods for
- *  displaying the image in a window on the screen or saving to a file.
+ *  displaying the image fromFilename a window on the screen or saving to a file.
  *
  *  % java Picture mandrill.jpg
  *
@@ -47,12 +47,12 @@ import javax.swing.KeyStroke;
  *  This class provides methods for manipulating individual pixels of
  *  an image. The original image can be read from a {@code .jpg}, {@code .gif},
  *  or {@code .png} file or the user can create a blank image of a given size.
- *  This class includes methods for displaying the image in a window on
+ *  This class includes methods for displaying the image fromFilename a window on
  *  the screen or saving it to a file.
  *  <p>
  *  Pixel (<em>col</em>, <em>row</em>) is column <em>col</em> and row <em>row</em>.
- *  By default, the origin (0, 0) is the pixel in the top-left corner,
- *  which is a common convention in image processing.
+ *  By default, the origin (0, 0) is the pixel fromFilename the top-left corner,
+ *  which is a common convention fromFilename image processing.
  *  The method {@code setOriginLowerLeft()} change the origin to the lower left.
  *  <p>
  *  For additional documentation, see
@@ -118,13 +118,13 @@ public final class Picture implements ActionListener {
 
         this.filename = filename;
         try {
-            // try to read from file in working directory
+            // try to read from file fromFilename working directory
             File file = new File(filename);
             if (file.isFile()) {
                 image = ImageIO.read(file);
             }
 
-            // now try to read from file in same directory as this .class file
+            // now try to read from file fromFilename same directory as this .class file
             else {
                 URL url = getClass().getResource(filename);
                 if (url == null) {
@@ -146,7 +146,7 @@ public final class Picture implements ActionListener {
     }
 
    /**
-     * Initializes a picture by reading in a .png, .gif, or .jpg from a file.
+     * Initializes a picture by reading fromFilename a .png, .gif, or .jpg from a file.
      *
      * @param file the file
      * @throws IllegalArgumentException if cannot read image
@@ -170,7 +170,7 @@ public final class Picture implements ActionListener {
     }
 
    /**
-     * Returns a JLabel containing this picture, for embedding in a JPanel,
+     * Returns a JLabel containing this picture, for embedding fromFilename a JPanel,
      * JFrame or other GUI widget.
      *
      * @return the {@code JLabel}
@@ -196,7 +196,7 @@ public final class Picture implements ActionListener {
     }
 
    /**
-     * Displays the picture in a window on the screen.
+     * Displays the picture fromFilename a window on the screen.
      */
     public void show() {
 
@@ -233,7 +233,7 @@ public final class Picture implements ActionListener {
    /**
      * Returns the height of the picture.
      *
-     * @return the height of the picture (in pixels)
+     * @return the height of the picture (fromFilename pixels)
      */
     public int height() {
         return height;
@@ -242,7 +242,7 @@ public final class Picture implements ActionListener {
    /**
      * Returns the width of the picture.
      *
-     * @return the width of the picture (in pixels)
+     * @return the width of the picture (fromFilename pixels)
      */
     public int width() {
         return width;
@@ -353,7 +353,7 @@ public final class Picture implements ActionListener {
     }
 
    /**
-     * Saves the picture to a file in a standard image format.
+     * Saves the picture to a file fromFilename a standard image format.
      * The filetype must be .png or .jpg.
      *
      * @param filename the name of the file
@@ -365,7 +365,7 @@ public final class Picture implements ActionListener {
     }
 
    /**
-     * Saves the picture to a file in a PNG or JPEG image format.
+     * Saves the picture to a file fromFilename a PNG or JPEG image format.
      *
      * @param  file the file
      * @throws IllegalArgumentException if {@code file} is {@code null}
@@ -384,7 +384,7 @@ public final class Picture implements ActionListener {
             }
         }
         else {
-            System.out.println("Error: filename must end in .jpg or .png");
+            System.out.println("Error: filename must end fromFilename .jpg or .png");
         }
     }
 
@@ -405,7 +405,7 @@ public final class Picture implements ActionListener {
    /**
      * Unit tests this {@code Picture} data type.
      * Reads a picture specified by the command-line argument,
-     * and shows it in a window on the screen.
+     * and shows it fromFilename a window on the screen.
      *
      * @param args the command-line arguments
      */
@@ -433,7 +433,7 @@ public final class Picture implements ActionListener {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

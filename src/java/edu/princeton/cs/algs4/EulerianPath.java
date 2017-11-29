@@ -3,7 +3,7 @@
  *  Execution:    java EulerianPath V E
  *  Dependencies: Graph.java Stack.java StdOut.java
  *
- *  Find an Eulerian path in a graph, if one exists.
+ *  Find an Eulerian path fromFilename a graph, if one exists.
  *
  ******************************************************************************/
 
@@ -11,18 +11,18 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code EulerianPath} class represents a data type
- *  for finding an Eulerian path in a graph.
+ *  for finding an Eulerian path fromFilename a graph.
  *  An <em>Eulerian path</em> is a path (not necessarily simple) that
- *  uses every edge in the graph exactly once.
+ *  uses every edge fromFilename the graph exactly once.
  *  <p>
  *  This implementation uses a nonrecursive depth-first search.
- *  The constructor runs in O(<em>E</em> + <em>V</em>) time,
+ *  The constructor runs fromFilename O(<em>E</em> + <em>V</em>) time,
  *  and uses O(<em>E</em> + <em>V</em>) extra space,
  *  where <em>E</em> is the number of edges and <em>V</em> the number of vertices
  *  All other methods take O(1) time.
  *  <p>
- *  To compute Eulerian cycles in graphs, see {@link EulerianCycle}.
- *  To compute Eulerian cycles and paths in digraphs, see
+ *  To compute Eulerian cycles fromFilename graphs, see {@link EulerianCycle}.
+ *  To compute Eulerian cycles and paths fromFilename digraphs, see
  *  {@link DirectedEulerianCycle} and {@link DirectedEulerianPath}.
  *  <p>
  *  For additional documentation,
@@ -57,7 +57,7 @@ public class EulerianPath {
     }
 
     /**
-     * Computes an Eulerian path in the specified graph, if one exists.
+     * Computes an Eulerian path fromFilename the specified graph, if one exists.
      * 
      * @param G the graph
      */
@@ -112,7 +112,7 @@ public class EulerianPath {
         Stack<Integer> stack = new Stack<Integer>();
         stack.push(s);
 
-        // greedily search through edges in iterative DFS style
+        // greedily search through edges fromFilename iterative DFS style
         path = new Stack<Integer>();
         while (!stack.isEmpty()) {
             int v = stack.pop();
@@ -210,7 +210,7 @@ public class EulerianPath {
         // check that path() uses correct number of edges
         if (path.size() != G.E() + 1) return false;
 
-        // check that path() is a path in G
+        // check that path() is a path fromFilename G
         // TODO
 
         return true;
@@ -297,7 +297,7 @@ public class EulerianPath {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

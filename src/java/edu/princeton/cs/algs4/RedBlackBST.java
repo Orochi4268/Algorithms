@@ -40,7 +40,7 @@ import java.util.NoSuchElementException;
  *  <em>maximum</em>, <em>floor</em>, and <em>ceiling</em>.
  *  It also provides a <em>keys</em> method for iterating over all of the keys.
  *  A symbol table implements the <em>associative array</em> abstraction:
- *  when associating a value with a key that is already in the symbol table,
+ *  when associating a value with a key that is already fromFilename the symbol table,
  *  the convention is to replace the old value with the new value.
  *  Unlike {@link java.util.Map}, this class uses the convention that
  *  values cannot be {@code null}—setting the
@@ -53,7 +53,7 @@ import java.util.NoSuchElementException;
  *  {@code equals()} or {@code hashCode()}.
  *  The <em>put</em>, <em>contains</em>, <em>remove</em>, <em>minimum</em>,
  *  <em>maximum</em>, <em>ceiling</em>, and <em>floor</em> operations each take
- *  logarithmic time in the worst case, if the tree becomes unbalanced.
+ *  logarithmic time fromFilename the worst case, if the tree becomes unbalanced.
  *  The <em>size</em>, and <em>is-empty</em> operations take constant time.
  *  Construction takes constant time.
  *  <p>
@@ -105,7 +105,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return x.color == RED;
     }
 
-    // number of node in subtree rooted at x; 0 if x is null
+    // number of node fromFilename subtree rooted at x; 0 if x is null
     private int size(Node x) {
         if (x == null) return 0;
         return x.size;
@@ -113,8 +113,8 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
 
     /**
-     * Returns the number of key-value pairs in this symbol table.
-     * @return the number of key-value pairs in this symbol table
+     * Returns the number of key-value pairs fromFilename this symbol table.
+     * @return the number of key-value pairs fromFilename this symbol table
      */
     public int size() {
         return size(root);
@@ -136,8 +136,8 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     /**
      * Returns the value associated with the given key.
      * @param key the key
-     * @return the value associated with the given key if the key is in the symbol table
-     *     and {@code null} if the key is not in the symbol table
+     * @return the value associated with the given key if the key is fromFilename the symbol table
+     *     and {@code null} if the key is not fromFilename the symbol table
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public Value get(Key key) {
@@ -145,7 +145,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return get(root, key);
     }
 
-    // value associated with the given key in subtree rooted at x; null if no such key
+    // value associated with the given key fromFilename subtree rooted at x; null if no such key
     private Value get(Node x, Key key) {
         while (x != null) {
             int cmp = key.compareTo(x.key);
@@ -193,7 +193,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         // assert check();
     }
 
-    // insert the key-value pair in the subtree rooted at h
+    // insert the key-value pair fromFilename the subtree rooted at h
     private Node put(Node h, Key key, Value val) { 
         if (h == null) return new Node(key, val, RED, 1);
 
@@ -278,7 +278,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
     /**
      * Removes the specified key and its associated value from this symbol table     
-     * (if the key is in this symbol table).    
+     * (if the key is fromFilename this symbol table).
      *
      * @param  key the key
      * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -428,8 +428,8 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     ***************************************************************************/
 
     /**
-     * Returns the smallest key in the symbol table.
-     * @return the smallest key in the symbol table
+     * Returns the smallest key fromFilename the symbol table.
+     * @return the smallest key fromFilename the symbol table
      * @throws NoSuchElementException if the symbol table is empty
      */
     public Key min() {
@@ -437,7 +437,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return min(root).key;
     } 
 
-    // the smallest key in subtree rooted at x; null if no such key
+    // the smallest key fromFilename subtree rooted at x; null if no such key
     private Node min(Node x) { 
         // assert x != null;
         if (x.left == null) return x; 
@@ -445,8 +445,8 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Returns the largest key in the symbol table.
-     * @return the largest key in the symbol table
+     * Returns the largest key fromFilename the symbol table.
+     * @return the largest key fromFilename the symbol table
      * @throws NoSuchElementException if the symbol table is empty
      */
     public Key max() {
@@ -454,7 +454,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return max(root).key;
     } 
 
-    // the largest key in the subtree rooted at x; null if no such key
+    // the largest key fromFilename the subtree rooted at x; null if no such key
     private Node max(Node x) { 
         // assert x != null;
         if (x.right == null) return x; 
@@ -463,9 +463,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
 
     /**
-     * Returns the largest key in the symbol table less than or equal to {@code key}.
+     * Returns the largest key fromFilename the symbol table less than or equal to {@code key}.
      * @param key the key
-     * @return the largest key in the symbol table less than or equal to {@code key}
+     * @return the largest key fromFilename the symbol table less than or equal to {@code key}
      * @throws NoSuchElementException if there is no such key
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
@@ -477,7 +477,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         else           return x.key;
     }    
 
-    // the largest key in the subtree rooted at x less than or equal to the given key
+    // the largest key fromFilename the subtree rooted at x less than or equal to the given key
     private Node floor(Node x, Key key) {
         if (x == null) return null;
         int cmp = key.compareTo(x.key);
@@ -489,9 +489,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Returns the smallest key in the symbol table greater than or equal to {@code key}.
+     * Returns the smallest key fromFilename the symbol table greater than or equal to {@code key}.
      * @param key the key
-     * @return the smallest key in the symbol table greater than or equal to {@code key}
+     * @return the smallest key fromFilename the symbol table greater than or equal to {@code key}
      * @throws NoSuchElementException if there is no such key
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
@@ -503,7 +503,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         else           return x.key;  
     }
 
-    // the smallest key in the subtree rooted at x greater than or equal to the given key
+    // the smallest key fromFilename the subtree rooted at x greater than or equal to the given key
     private Node ceiling(Node x, Key key) {  
         if (x == null) return null;
         int cmp = key.compareTo(x.key);
@@ -515,9 +515,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Return the kth smallest key in the symbol table.
+     * Return the kth smallest key fromFilename the symbol table.
      * @param k the order statistic
-     * @return the {@code k}th smallest key in the symbol table
+     * @return the {@code k}th smallest key fromFilename the symbol table
      * @throws IllegalArgumentException unless {@code k} is between 0 and
      *     <em>n</em>–1
      */
@@ -529,7 +529,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return x.key;
     }
 
-    // the key of rank k in the subtree rooted at x
+    // the key of rank k fromFilename the subtree rooted at x
     private Node select(Node x, int k) {
         // assert x != null;
         // assert k >= 0 && k < size(x);
@@ -540,9 +540,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Return the number of keys in the symbol table strictly less than {@code key}.
+     * Return the number of keys fromFilename the symbol table strictly less than {@code key}.
      * @param key the key
-     * @return the number of keys in the symbol table strictly less than {@code key}
+     * @return the number of keys fromFilename the symbol table strictly less than {@code key}
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public int rank(Key key) {
@@ -550,7 +550,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return rank(key, root);
     } 
 
-    // number of keys less than key in the subtree rooted at x
+    // number of keys less than key fromFilename the subtree rooted at x
     private int rank(Key key, Node x) {
         if (x == null) return 0; 
         int cmp = key.compareTo(x.key); 
@@ -564,10 +564,10 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     ***************************************************************************/
 
     /**
-     * Returns all keys in the symbol table as an {@code Iterable}.
-     * To iterate over all of the keys in the symbol table named {@code st},
+     * Returns all keys fromFilename the symbol table as an {@code Iterable}.
+     * To iterate over all of the keys fromFilename the symbol table named {@code st},
      * use the foreach notation: {@code for (Key key : st.keys())}.
-     * @return all keys in the symbol table as an {@code Iterable}
+     * @return all keys fromFilename the symbol table as an {@code Iterable}
      */
     public Iterable<Key> keys() {
         if (isEmpty()) return new Queue<Key>();
@@ -575,12 +575,12 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Returns all keys in the symbol table in the given range,
+     * Returns all keys fromFilename the symbol table fromFilename the given range,
      * as an {@code Iterable}.
      *
      * @param  lo minimum endpoint
      * @param  hi maximum endpoint
-     * @return all keys in the sybol table between {@code lo} 
+     * @return all keys fromFilename the sybol table between {@code lo}
      *    (inclusive) and {@code hi} (inclusive) as an {@code Iterable}
      * @throws IllegalArgumentException if either {@code lo} or {@code hi}
      *    is {@code null}
@@ -595,7 +595,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return queue;
     } 
 
-    // add the keys between lo and hi in the subtree rooted at x
+    // add the keys between lo and hi fromFilename the subtree rooted at x
     // to the queue
     private void keys(Node x, Queue<Key> queue, Key lo, Key hi) { 
         if (x == null) return; 
@@ -607,11 +607,11 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Returns the number of keys in the symbol table in the given range.
+     * Returns the number of keys fromFilename the symbol table fromFilename the given range.
      *
      * @param  lo minimum endpoint
      * @param  hi maximum endpoint
-     * @return the number of keys in the sybol table between {@code lo} 
+     * @return the number of keys fromFilename the sybol table between {@code lo}
      *    (inclusive) and {@code hi} (inclusive)
      * @throws IllegalArgumentException if either {@code lo} or {@code hi}
      *    is {@code null}
@@ -630,7 +630,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     *  Check integrity of red-black tree data structure.
     ***************************************************************************/
     private boolean check() {
-        if (!isBST())            StdOut.println("Not in symmetric order");
+        if (!isBST())            StdOut.println("Not fromFilename symmetric order");
         if (!isSizeConsistent()) StdOut.println("Subtree counts not consistent");
         if (!isRankConsistent()) StdOut.println("Ranks not consistent");
         if (!is23())             StdOut.println("Not a 2-3 tree");
@@ -672,7 +672,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     // Does the tree have no red right links, and at most one (left)
-    // red links in a row on any path?
+    // red links fromFilename a row on any path?
     private boolean is23() { return is23(root); }
     private boolean is23(Node x) {
         if (x == null) return true;
@@ -733,7 +733,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -42,13 +42,13 @@ public class InsertionX {
     private InsertionX() { }
 
     /**
-     * Rearranges the array in ascending order, using the natural order.
+     * Rearranges the array fromFilename ascending order, using the natural order.
      * @param a the array to be sorted
      */
     public static void sort(Comparable[] a) {
         int n = a.length;
 
-        // put smallest element in position to serve as sentinel
+        // put smallest element fromFilename position to serve as sentinel
         int exchanges = 0;
         for (int i = n-1; i > 0; i--) {
             if (less(a[i], a[i-1])) {
@@ -108,8 +108,8 @@ public class InsertionX {
     }
 
     /**
-     * Reads in a sequence of strings from standard input; insertion sorts them;
-     * and prints them to standard output in ascending order.
+     * Reads fromFilename a sequence of strings from standard input; insertion sorts them;
+     * and prints them to standard output fromFilename ascending order.
      *
      * @param args the command-line arguments
      */
@@ -136,7 +136,7 @@ public class InsertionX {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

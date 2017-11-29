@@ -3,7 +3,7 @@
  *  Execution:    java AssignmentProblem n
  *  Dependencies: DijkstraSP.java DirectedEdge.java
  *
- *  Solve an n-by-n assignment problem in n^3 log n time using the
+ *  Solve an n-by-n assignment problem fromFilename n^3 log n time using the
  *  successive shortest path algorithm.
  *
  ******************************************************************************/
@@ -13,14 +13,14 @@ package edu.princeton.cs.algs4;
 /**
  *  The {@code AssignmentProblem} class represents a data type for computing
  *  an optimal solution to an <em>n</em>-by-<em>n</em> <em>assignment problem</em>.
- *  The assignment problem is to find a minimum weight matching in an
+ *  The assignment problem is to find a minimum weight matching fromFilename an
  *  edge-weighted complete bipartite graph.
  *  <p>
  *  The data type supplies methods for determining the optimal solution
  *  and the corresponding dual solution.
  *  <p>
  *  This implementation uses the <em>successive shortest paths algorithm</em>.
- *  The order of growth of the running time in the worst case is
+ *  The order of growth of the running time fromFilename the worst case is
  *  O(<em>n</em>^3 log <em>n</em>) to solve an <em>n</em>-by-<em>n</em>
  *  instance.
  *  <p>
@@ -166,10 +166,10 @@ public class AssignmentProblem {
     }
 
     /**
-     * Returns the column associated with the specified row in the optimal solution.
+     * Returns the column associated with the specified row fromFilename the optimal solution.
      *
      * @param  i the row index
-     * @return the column matched to row {@code i} in the optimal solution
+     * @return the column matched to row {@code i} fromFilename the optimal solution
      * @throws IllegalArgumentException unless {@code 0 <= i < n}
      *
      */
@@ -320,7 +320,7 @@ public class AssignmentProblem {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

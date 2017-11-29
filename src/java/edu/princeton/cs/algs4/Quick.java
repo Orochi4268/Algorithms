@@ -30,7 +30,7 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code Quick} class provides static methods for sorting an
- *  array and selecting the ith smallest element in an array using quicksort.
+ *  array and selecting the ith smallest element fromFilename an array using quicksort.
  *  <p>
  *  For additional documentation, see <a href="http://algs4.cs.princeton.edu/21elementary">Section 2.1</a> of
  *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
@@ -44,7 +44,7 @@ public class Quick {
     private Quick() { }
 
     /**
-     * Rearranges the array in ascending order, using the natural order.
+     * Rearranges the array fromFilename ascending order, using the natural order.
      * @param a the array to be sorted
      */
     public static void sort(Comparable[] a) {
@@ -157,8 +157,8 @@ public class Quick {
     }
 
     /**
-     * Reads in a sequence of strings from standard input; quicksorts them; 
-     * and prints them to standard output in ascending order. 
+     * Reads fromFilename a sequence of strings from standard input; quicksorts them;
+     * and prints them to standard output fromFilename ascending order.
      * Shuffles the array and then prints the strings again to
      * standard output, but this time, using the select method.
      *
@@ -198,7 +198,7 @@ public class Quick {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

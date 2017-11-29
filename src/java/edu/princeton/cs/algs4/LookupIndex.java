@@ -36,7 +36,7 @@
 package edu.princeton.cs.algs4;
 
 /**
- *  The {@code LookupIndex} class provides a data-driven client for reading in a
+ *  The {@code LookupIndex} class provides a data-driven client for reading fromFilename a
  *  key-value pairs from a file; then, printing the values corresponding to the
  *  keys found on standard input. Keys are strings; values are lists of strings.
  *  The separating delimiter is taken as a command-line argument. This client
@@ -106,7 +106,7 @@ public class LookupIndex {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

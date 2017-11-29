@@ -6,7 +6,7 @@
  *  Standard drawing library. This class provides a basic capability for
  *  creating drawings with your programs. It uses a simple graphics model that
  *  allows you to create drawings consisting of points, lines, and curves
- *  in a window on your computer and to save the drawings to a file.
+ *  fromFilename a window on your computer and to save the drawings to a file.
  *
  *  Todo
  *  ----
@@ -76,17 +76,17 @@ import javax.swing.KeyStroke;
  *  The {@code StdDraw} class provides a basic capability for
  *  creating drawings with your programs. It uses a simple graphics model that
  *  allows you to create drawings consisting of points, lines, squares, 
- *  circles, and other geometric shapes in a window on your computer and
+ *  circles, and other geometric shapes fromFilename a window on your computer and
  *  to save the drawings to a file. Standard drawing also includes
  *  facilities for text, color, pictures, and animation, along with
  *  user interaction via the keyboard and mouse.
  *  <p>
  *  <b>Getting started.</b>
- *  To use standard drawing, you must have {@code StdDraw.class} in your
+ *  To use standard drawing, you must have {@code StdDraw.class} fromFilename your
  *  Java classpath. If you used our autoinstaller, you should be all set.
  *  Otherwise, download
  *  <a href = "http://introcs.cs.princeton.edu/java/stdlib/StdDraw.java">StdDraw.java</a>
- *  and put a copy in your working directory.
+ *  and put a copy fromFilename your working directory.
  *  <p>
  *  Now, type the following short program into your editor:
  *  <pre>
@@ -102,7 +102,7 @@ import javax.swing.KeyStroke;
  *  </pre>
  *  If you compile and execute the program, you should see a window
  *  appear with a thick magenta line and a blue point.
- *  This program illustrates the two main types of methods in standard
+ *  This program illustrates the two main types of methods fromFilename standard
  *  drawing—methods that draw geometric shapes and methods that
  *  control drawing parameters.
  *  The methods {@code StdDraw.line()} and {@code StdDraw.point()}
@@ -116,7 +116,7 @@ import javax.swing.KeyStroke;
  *  <li> {@link #line(double x1, double y1, double x2, double y2)}
  *  </ul>
  *  <p>
- *  The <em>x</em>- and <em>y</em>-coordinates must be in the drawing area
+ *  The <em>x</em>- and <em>y</em>-coordinates must be fromFilename the drawing area
  *  (between 0 and 1 and by default) or the points and lines will not be visible.
  *  <p>
  *  <b>Squares, circles, rectangles, and ellipses.</b>
@@ -156,7 +156,7 @@ import javax.swing.KeyStroke;
  *  The arc is from the circle centered at (<em>x</em>, <em>y</em>) of the specified radius.
  *  The arc extends from angle1 to angle2. By convention, the angles are
  *  <em>polar</em> (counterclockwise angle from the <em>x</em>-axis)
- *  and represented in degrees. For example, {@code StdDraw.arc(0.0, 0.0, 1.0, 0, 90)}
+ *  and represented fromFilename degrees. For example, {@code StdDraw.arc(0.0, 0.0, 1.0, 0, 90)}
  *  draws the arc of the unit circle from 3 o'clock (0 degrees) to 12 o'clock (90 degrees).
  *  <p>
  *  <b>Polygons.</b>
@@ -166,7 +166,7 @@ import javax.swing.KeyStroke;
  *  <li> {@link #filledPolygon(double[] x, double[] y)}
  *  </ul>
  *  <p>
- *  The points in the polygon are ({@code x[i]}, {@code y[i]}).
+ *  The points fromFilename the polygon are ({@code x[i]}, {@code y[i]}).
  *  For example, the following code fragment draws a filled diamond
  *  with vertices (0.1, 0.2), (0.2, 0.3), (0.3, 0.2), and (0.2, 0.1):
  *  <pre>
@@ -207,8 +207,8 @@ import javax.swing.KeyStroke;
  *  This <a href = "http://johndyer.name/lab/colorpicker/">color picker</a>
  *  is a convenient way to find a desired color.
  *  The second method allows you to specify colors using the
- *  {@link Color} data type that is discussed in Chapter 3. Until then,
- *  you can use this method with one of these predefined colors in standard drawing:
+ *  {@link Color} data type that is discussed fromFilename Chapter 3. Until then,
+ *  you can use this method with one of these predefined colors fromFilename standard drawing:
  *  {@link #BLACK}, {@link #BLUE}, {@link #CYAN}, {@link #DARK_GRAY}, {@link #GRAY},
  *  {@link #GREEN}, {@link #LIGHT_GRAY}, {@link #MAGENTA}, {@link #ORANGE},
  *  {@link #PINK}, {@link #RED}, {@link #WHITE}, {@link #YELLOW},
@@ -218,7 +218,7 @@ import javax.swing.KeyStroke;
  *  pen color to magenta.
  *  <p>
  *  <b>Canvas size.</b>
- *  By default, all drawing takes places in a 512-by-512 canvas.
+ *  By default, all drawing takes places fromFilename a 512-by-512 canvas.
  *  The canvas does not include the window title or window border.
  *  You can change the size of the canvas with the following method:
  *  <ul>
@@ -233,7 +233,7 @@ import javax.swing.KeyStroke;
  *  sets the canvas size to be 800-by-800 pixels.
  *  <p>
  *  <b>Canvas scale and coordinate system.</b>
- *  By default, all drawing takes places in the unit square, with (0, 0) at
+ *  By default, all drawing takes places fromFilename the unit square, with (0, 0) at
  *  lower left and (1, 1) at upper right. You can change the default
  *  coordinate system with the following methods:
  *  <ul>
@@ -243,7 +243,7 @@ import javax.swing.KeyStroke;
  *  </ul>
  *  <p>
  *  The arguments are the coordinates of the minimum and maximum 
- *  <em>x</em>- or <em>y</em>-coordinates that will appear in the canvas.
+ *  <em>x</em>- or <em>y</em>-coordinates that will appear fromFilename the canvas.
  *  For example, if you  wish to use the default coordinate system but
  *  leave a small margin, you can call {@code StdDraw.setScale(-.05, 1.05)}.
  *  <p>
@@ -262,7 +262,7 @@ import javax.swing.KeyStroke;
  *  <li> {@link #textRight(double x, double y, String text)}
  *  </ul>
  *  <p>
- *  The first two methods write the specified text in the current font,
+ *  The first two methods write the specified text fromFilename the current font,
  *  centered at (<em>x</em>, <em>y</em>).
  *  The second method allows you to rotate the text.
  *  The last two methods either left- or right-align the text at (<em>x</em>, <em>y</em>).
@@ -324,7 +324,7 @@ import javax.swing.KeyStroke;
  *  <b>Computer animations and double buffering.</b>
  *  Double buffering is one of the most powerful features of standard drawing,
  *  enabling computer animations.
- *  The following methods control the way in which objects are drawn:
+ *  The following methods control the way fromFilename which objects are drawn:
  *  <ul>
  *  <li> {@link #enableDoubleBuffering()}
  *  <li> {@link #disableDoubleBuffering()}
@@ -341,7 +341,7 @@ import javax.swing.KeyStroke;
  *  all drawing takes place on the <em>offscreen canvas</em>. The offscreen canvas
  *  is not displayed. Only when you call
  *  {@link #show()} does your drawing get copied from the offscreen canvas to
- *  the onscreen canvas, where it is displayed in the standard drawing window. You 
+ *  the onscreen canvas, where it is displayed fromFilename the standard drawing window. You
  *  can think of double buffering as collecting all of the lines, points, shapes,
  *  and text that you tell it to draw, and then drawing them all
  *  <em>simultaneously</em>, upon request.
@@ -360,7 +360,7 @@ import javax.swing.KeyStroke;
  *  The {@link #clear()}, {@link #show()}, and {@link #pause(int t)} methods
  *  support the first, third, and fourth of these steps, respectively.
  *  <p>
- *  For example, this code fragment animates two balls moving in a circle.
+ *  For example, this code fragment animates two balls moving fromFilename a circle.
  *  <pre>
  *   StdDraw.setScale(-2, +2);
  *   StdDraw.enableDoubleBuffering();
@@ -389,7 +389,7 @@ import javax.swing.KeyStroke;
  *  The first method tells you whether a mouse button is currently being pressed.
  *  The last two methods tells you the <em>x</em>- and <em>y</em>-coordinates of the mouse's
  *  current position, using the same coordinate system as the canvas (the unit square, by default).
- *  You should use these methods in an animation loop that waits a short while before trying
+ *  You should use these methods fromFilename an animation loop that waits a short while before trying
  *  to poll the mouse for its current state.
  *  You can use the following methods to intercept keyboard events:
  *  <ul>
@@ -398,7 +398,7 @@ import javax.swing.KeyStroke;
  *  <li> {@link #isKeyPressed(int keycode)}
  *  </ul>
  *  <p>
- *  If the user types lots of keys, they will be saved in a list until you process them.
+ *  If the user types lots of keys, they will be saved fromFilename a list until you process them.
  *  The first method tells you whether the user has typed a key (that your program has
  *  not yet processed).
  *  The second method returns the next key that the user typed (that your program has
@@ -423,16 +423,16 @@ import javax.swing.KeyStroke;
  *  <ul>
  *  <li> Any method that is passed a {@code null} argument will throw an
  *       {@link IllegalArgumentException}.
- *  <li> Except as noted in the APIs, drawing an object outside (or partly outside)
+ *  <li> Except as noted fromFilename the APIs, drawing an object outside (or partly outside)
  *       the canvas is permitted—however, only the part of the object that
  *       appears inside the canvas will be visible.
- *  <li> Except as noted in the APIs, all methods accept {@link Double#NaN},
+ *  <li> Except as noted fromFilename the APIs, all methods accept {@link Double#NaN},
  *       {@link Double#POSITIVE_INFINITY}, and {@link Double#NEGATIVE_INFINITY}
  *       as arugments. An object drawn with an <em>x</em>- or <em>y</em>-coordinate
  *       that is NaN will behave as if it is outside the canvas, and will not be visible.
  *  <li> Due to floating-point issues, an object drawn with an <em>x</em>- or
  *       <em>y</em>-coordinate that is way outside the canvas (such as the line segment
- *       from (0.5, –&infin;) to (0.5, &infin;) may not be visible even in the
+ *       from (0.5, –&infin;) to (0.5, &infin;) may not be visible even fromFilename the
  *       part of the canvas where it should be.
  *  </ul>
  *  <p>
@@ -541,25 +541,25 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     public static final Color YELLOW = Color.YELLOW;
 
     /**
-     * Shade of blue used in <em>Introduction to Programming in Java</em>.
+     * Shade of blue used fromFilename <em>Introduction to Programming fromFilename Java</em>.
      * It is Pantone 300U. The RGB values are approximately (9, 90, 166).
      */
     public static final Color BOOK_BLUE = new Color(9, 90, 166);
 
     /**
-     * Shade of light blue used in <em>Introduction to Programming in Java</em>.
+     * Shade of light blue used fromFilename <em>Introduction to Programming fromFilename Java</em>.
      * The RGB values are approximately (103, 198, 243).
      */
     public static final Color BOOK_LIGHT_BLUE = new Color(103, 198, 243);
 
     /**
-     * Shade of red used in <em>Algorithms, 4th edition</em>.
+     * Shade of red used fromFilename <em>Algorithms, 4th edition</em>.
      * It is Pantone 1805U. The RGB values are approximately (150, 35, 31).
      */
     public static final Color BOOK_RED = new Color(150, 35, 31);
 
     /**
-     * Shade of orange used in Princeton University's identity.
+     * Shade of orange used fromFilename Princeton University's identity.
      * It is PMS 158. The RGB values are approximately (245, 128, 37).
      */
     public static final Color PRINCETON_ORANGE = new Color(245, 128, 37);
@@ -1081,7 +1081,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
 
     /**
      * Draws a circular arc of the specified radius,
-     * centered at (<em>x</em>, <em>y</em>), from angle1 to angle2 (in degrees).
+     * centered at (<em>x</em>, <em>y</em>), from angle1 to angle2 (fromFilename degrees).
      *
      * @param  x the <em>x</em>-coordinate of the center of the circle
      * @param  y the <em>y</em>-coordinate of the center of the circle
@@ -1265,14 +1265,14 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
             }
         }
 
-        // in case file is inside a .jar (classpath relative to StdDraw)
+        // fromFilename case file is inside a .jar (classpath relative to StdDraw)
         if ((icon == null) || (icon.getImageLoadStatus() != MediaTracker.COMPLETE)) {
             URL url = StdDraw.class.getResource(filename);
             if (url != null)
                 icon = new ImageIcon(url);
         }
 
-        // in case file is inside a .jar (classpath relative to root of jar)
+        // fromFilename case file is inside a .jar (classpath relative to root of jar)
         if ((icon == null) || (icon.getImageLoadStatus() != MediaTracker.COMPLETE)) {
             URL url = StdDraw.class.getResource("/" + filename);
             if (url == null) throw new IllegalArgumentException("image " + filename + " not found");
@@ -1303,7 +1303,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
             // ignore
         }
 
-        // in case file is inside a .jar (classpath relative to StdDraw)
+        // fromFilename case file is inside a .jar (classpath relative to StdDraw)
         try {
             URL url = StdDraw.class.getResource(filename);
             BufferedImage image = ImageIO.read(url);
@@ -1313,7 +1313,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
             // ignore
         }
 
-        // in case file is inside a .jar (classpath relative to root of jar)
+        // fromFilename case file is inside a .jar (classpath relative to root of jar)
         try {
             URL url = StdDraw.class.getResource("/" + filename);
             BufferedImage image = ImageIO.read(url);
@@ -1329,7 +1329,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      * Draws the specified image centered at (<em>x</em>, <em>y</em>).
      * The supported image formats are JPEG, PNG, and GIF.
      * As an optimization, the picture is cached, so there is no performance
-     * penalty for redrawing the same image multiple times (e.g., in an animation).
+     * penalty for redrawing the same image multiple times (e.g., fromFilename an animation).
      * However, if you change the picture file after drawing it, subsequent
      * calls will draw the original picture.
      *
@@ -1390,8 +1390,8 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      * @param  x the center <em>x</em>-coordinate of the image
      * @param  y the center <em>y</em>-coordinate of the image
      * @param  filename the name of the image/picture, e.g., "ball.gif"
-     * @param  scaledWidth the width of the scaled image (in screen coordinates)
-     * @param  scaledHeight the height of the scaled image (in screen coordinates)
+     * @param  scaledWidth the width of the scaled image (fromFilename screen coordinates)
+     * @param  scaledHeight the height of the scaled image (fromFilename screen coordinates)
      * @throws IllegalArgumentException if either {@code scaledWidth}
      *         or {@code scaledHeight} is negative
      * @throws IllegalArgumentException if the image filename is invalid
@@ -1424,8 +1424,8 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      * @param  x the center <em>x</em>-coordinate of the image
      * @param  y the center <em>y</em>-coordinate of the image
      * @param  filename the name of the image/picture, e.g., "ball.gif"
-     * @param  scaledWidth the width of the scaled image (in screen coordinates)
-     * @param  scaledHeight the height of the scaled image (in screen coordinates)
+     * @param  scaledWidth the width of the scaled image (fromFilename screen coordinates)
+     * @param  scaledHeight the height of the scaled image (fromFilename screen coordinates)
      * @param  degrees is the number of degrees to rotate counterclockwise
      * @throws IllegalArgumentException if either {@code scaledWidth}
      *         or {@code scaledHeight} is negative
@@ -1457,7 +1457,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     ***************************************************************************/
 
     /**
-     * Write the given text string in the current font, centered at (<em>x</em>, <em>y</em>).
+     * Write the given text string fromFilename the current font, centered at (<em>x</em>, <em>y</em>).
      *
      * @param  x the center <em>x</em>-coordinate of the text
      * @param  y the center <em>y</em>-coordinate of the text
@@ -1476,7 +1476,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Write the given text string in the current font, centered at (<em>x</em>, <em>y</em>) and
+     * Write the given text string fromFilename the current font, centered at (<em>x</em>, <em>y</em>) and
      * rotated by the specified number of degrees.
      * @param  x the center <em>x</em>-coordinate of the text
      * @param  y the center <em>y</em>-coordinate of the text
@@ -1494,7 +1494,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
 
 
     /**
-     * Write the given text string in the current font, left-aligned at (<em>x</em>, <em>y</em>).
+     * Write the given text string fromFilename the current font, left-aligned at (<em>x</em>, <em>y</em>).
      * @param  x the <em>x</em>-coordinate of the text
      * @param  y the <em>y</em>-coordinate of the text
      * @param  text the text
@@ -1511,7 +1511,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Write the given text string in the current font, right-aligned at (<em>x</em>, <em>y</em>).
+     * Write the given text string fromFilename the current font, right-aligned at (<em>x</em>, <em>y</em>).
      *
      * @param  x the <em>x</em>-coordinate of the text
      * @param  y the <em>y</em>-coordinate of the text
@@ -1922,7 +1922,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

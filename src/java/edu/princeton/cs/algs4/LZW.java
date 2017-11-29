@@ -58,7 +58,7 @@ public class LZW {
             int t = s.length();
             if (t < input.length() && code < L)    // Add s to symbol table.
                 st.put(input.substring(0, t + 1), code++);
-            input = input.substring(t);            // Scan past s in input.
+            input = input.substring(t);            // Scan past s fromFilename input.
         }
         BinaryStdOut.write(R, W);
         BinaryStdOut.close();
@@ -123,7 +123,7 @@ public class LZW {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

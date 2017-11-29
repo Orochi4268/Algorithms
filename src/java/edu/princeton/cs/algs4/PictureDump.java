@@ -4,8 +4,8 @@
  *  Dependencies: BinaryStdIn.java Picture.java
  *  Data file:    http://introcs.cs.princeton.edu/stdlib/abra.txt
  *  
- *  Reads in a binary file and writes out the bits as w-by-h picture,
- *  with the 1 bits in black and the 0 bits in white.
+ *  Reads fromFilename a binary file and writes out the bits as w-by-h picture,
+ *  with the 1 bits fromFilename black and the 0 bits fromFilename white.
  *
  *  % more abra.txt 
  *  ABRACADABRA!
@@ -38,7 +38,7 @@ public class PictureDump {
     private PictureDump() { }
 
     /**
-     * Reads in a sequence of bytes from standard input and draws
+     * Reads fromFilename a sequence of bytes from standard input and draws
      * them to standard drawing output as a width-by-height picture,
      * using black for 1 and white for 0 (and red for any leftover
      * pixels).
@@ -80,7 +80,7 @@ public class PictureDump {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

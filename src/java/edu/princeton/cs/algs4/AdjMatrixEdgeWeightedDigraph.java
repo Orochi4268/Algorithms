@@ -24,7 +24,7 @@ import java.util.NoSuchElementException;
  *  of edges <em>E</em>. Parallel edges are disallowed; self-loops are permitted.
  *  <p>
  *  This implementation uses an adjacency-matrix representation.
- *  All operations take constant time (in the worst case) except
+ *  All operations take constant time (fromFilename the worst case) except
  *  iterating over the edges incident from a given vertex, which takes
  *  time proportional to <em>V</em>.
  *  <p>
@@ -76,16 +76,16 @@ public class AdjMatrixEdgeWeightedDigraph {
     }
 
     /**
-     * Returns the number of vertices in the edge-weighted digraph.
-     * @return the number of vertices in the edge-weighted digraph
+     * Returns the number of vertices fromFilename the edge-weighted digraph.
+     * @return the number of vertices fromFilename the edge-weighted digraph
      */
     public int V() {
         return V;
     }
 
     /**
-     * Returns the number of edges in the edge-weighted digraph.
-     * @return the number of edges in the edge-weighted digraph
+     * Returns the number of edges fromFilename the edge-weighted digraph.
+     * @return the number of edges fromFilename the edge-weighted digraph
      */
     public int E() {
         return E;
@@ -206,7 +206,7 @@ public class AdjMatrixEdgeWeightedDigraph {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

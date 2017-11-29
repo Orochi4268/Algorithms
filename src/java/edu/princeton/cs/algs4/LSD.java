@@ -47,7 +47,7 @@ public class LSD {
     private LSD() { }
 
    /**  
-     * Rearranges the array of W-character strings in ascending order.
+     * Rearranges the array of W-character strings fromFilename ascending order.
      *
      * @param a the array to be sorted
      * @param w the number of characters per string
@@ -80,7 +80,7 @@ public class LSD {
     }
 
    /**
-     * Rearranges the array of 32-bit integers in ascending order.
+     * Rearranges the array of 32-bit integers fromFilename ascending order.
      * This is about 2-3x faster than Arrays.sort().
      *
      * @param a the array to be sorted
@@ -130,9 +130,9 @@ public class LSD {
     }
 
     /**
-     * Reads in a sequence of fixed-length strings from standard input;
+     * Reads fromFilename a sequence of fixed-length strings from standard input;
      * LSD radix sorts them;
-     * and prints them to standard output in ascending order.
+     * and prints them to standard output fromFilename ascending order.
      *
      * @param args the command-line arguments
      */
@@ -169,7 +169,7 @@ public class LSD {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

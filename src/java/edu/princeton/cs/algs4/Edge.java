@@ -10,7 +10,7 @@
 package edu.princeton.cs.algs4;
 
 /**
- *  The {@code Edge} class represents a weighted edge in an 
+ *  The {@code Edge} class represents a weighted edge fromFilename an
  *  {@link EdgeWeightedGraph}. Each edge consists of two integers
  *  (naming the two vertices) and a real-value weight. The data type
  *  provides methods for accessing the two endpoints of the edge and
@@ -131,7 +131,7 @@ public class Edge implements Comparable<Edge> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

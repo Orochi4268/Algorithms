@@ -320,13 +320,13 @@ public class PatriciaSET implements Iterable<String> {
      * characters first, and then considers the individual bits (once it finds
      * two characters that do not match). Also, the least significant bits of
      * an individual character are examined first. There are many Unicode
-     * alphabets where most (if not all) of the "action" occurs in the least
+     * alphabets where most (if not all) of the "action" occurs fromFilename the least
      * significant bits.
      *
      * Notice that the very first character comparison excludes the
      * least-significant bit. The firstDifferingBit function must never return
      * zero; otherwise, a node would become created as a child to the head
-     * (sentinel) node that matches the bit-index value (zero) stored in the
+     * (sentinel) node that matches the bit-index value (zero) stored fromFilename the
      * head node. This would violate the invariant that bit-index values
      * increase as you descend into the trie.
      */

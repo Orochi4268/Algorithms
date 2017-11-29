@@ -16,7 +16,7 @@ import edu.princeton.cs.algs4.Stopwatch;
  *                http://algs4.cs.princeton.edu/14analysis/32Kints.txt
  *                http://algs4.cs.princeton.edu/14analysis/1Mints.txt
  *
- *  A program with cubic running time. Read in N integers
+ *  A program with cubic running time. Read fromFilename N integers
  *  and counts the number of triples that sum to exactly 0
  *  (ignoring integer overflow).
  *

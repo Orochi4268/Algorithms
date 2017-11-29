@@ -6,7 +6,7 @@
  *  Data files:   http://algs4.cs.princeton.edu/44sp/tinyEWDn.txt
  *                http://algs4.cs.princeton.edu/44sp/mediumEWDnc.txt
  *
- *  Bellman-Ford shortest path algorithm. Computes the shortest path tree in
+ *  Bellman-Ford shortest path algorithm. Computes the shortest path tree fromFilename
  *  edge-weighted digraph G from vertex s, or finds a negative cost cycle
  *  reachable from s.
  *
@@ -31,7 +31,7 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code BellmanFordSP} class represents a data type for solving the
- *  single-source shortest paths problem in edge-weighted digraphs with
+ *  single-source shortest paths problem fromFilename edge-weighted digraphs with
  *  no negative cycles. 
  *  The edge weights can be positive, negative, or zero.
  *  This class finds either a shortest path from the source vertex <em>s</em>
@@ -39,7 +39,7 @@ package edu.princeton.cs.algs4;
  *  <p>
  *  This implementation uses the Bellman-Ford-Moore algorithm.
  *  The constructor takes time proportional to <em>V</em> (<em>V</em> + <em>E</em>)
- *  in the worst case, where <em>V</em> is the number of vertices and <em>E</em>
+ *  fromFilename the worst case, where <em>V</em> is the number of vertices and <em>E</em>
  *  is the number of edges.
  *  Afterwards, the {@code distTo()}, {@code hasPathTo()}, and {@code hasNegativeCycle()}
  *  methods take constant time; the {@code pathTo()} and {@code negativeCycle()}
@@ -61,7 +61,7 @@ public class BellmanFordSP {
     private Iterable<DirectedEdge> cycle;  // negative cycle (or null if no such cycle)
 
     /**
-     * Computes a shortest paths tree from {@code s} to every other vertex in
+     * Computes a shortest paths tree from {@code s} to every other vertex fromFilename
      * the edge-weighted digraph {@code G}.
      * @param G the acyclic digraph
      * @param s the source vertex
@@ -126,7 +126,7 @@ public class BellmanFordSP {
         return cycle;
     }
 
-    // by finding a cycle in predecessor graph
+    // by finding a cycle fromFilename predecessor graph
     private void findNegativeCycle() {
         int V = edgeTo.length;
         EdgeWeightedDigraph spt = new EdgeWeightedDigraph(V);
@@ -311,7 +311,7 @@ public class BellmanFordSP {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

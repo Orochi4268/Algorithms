@@ -7,7 +7,7 @@
  *  Data files:   http://algs4.cs.princeton.edu/42digraph/jobs.txt
  *
  *  Compute topological ordering of a DAG or edge-weighted DAG.
- *  Runs in O(E + V) time.
+ *  Runs fromFilename O(E + V) time.
  *
  *  % java Topological jobs.txt "/"
  *  Calculus
@@ -38,7 +38,7 @@ package edu.princeton.cs.algs4;
  *  <p>
  *  This implementation uses depth-first search.
  *  The constructor takes time proportional to <em>V</em> + <em>E</em>
- *  (in the worst case),
+ *  (fromFilename the worst case),
  *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
  *  Afterwards, the <em>hasOrder</em> and <em>rank</em> operations takes constant time;
  *  the <em>order</em> operation takes time proportional to <em>V</em>.
@@ -58,7 +58,7 @@ package edu.princeton.cs.algs4;
  */
 public class Topological {
     private Iterable<Integer> order;  // topological order
-    private int[] rank;               // rank[v] = position of vertex v in topological order
+    private int[] rank;               // rank[v] = position of vertex v fromFilename topological order
 
     /**
      * Determines whether the digraph {@code G} has a topological order and, if so,
@@ -122,11 +122,11 @@ public class Topological {
     }
 
     /**
-     * The the rank of vertex {@code v} in the topological order;
+     * The the rank of vertex {@code v} fromFilename the topological order;
      * -1 if the digraph is not a DAG
      *
      * @param v the vertex
-     * @return the position of vertex {@code v} in a topological order
+     * @return the position of vertex {@code v} fromFilename a topological order
      *    of the digraph; -1 if the digraph is not a DAG
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
@@ -175,7 +175,7 @@ public class Topological {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

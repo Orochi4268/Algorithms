@@ -125,7 +125,7 @@ public class Stack<Item> implements Iterable<Item> {
     /**
      * Returns a string representation of this stack.
      *
-     * @return the sequence of items in this stack in LIFO order, separated by spaces
+     * @return the sequence of items fromFilename this stack fromFilename LIFO order, separated by spaces
      */
     public String toString() {
         StringBuilder s = new StringBuilder();

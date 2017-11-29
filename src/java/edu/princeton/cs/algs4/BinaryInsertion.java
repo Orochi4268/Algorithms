@@ -29,7 +29,7 @@ package edu.princeton.cs.algs4;
  *  array using an optimized binary insertion sort with half exchanges.
  *  <p>
  *  This implementation makes ~ n lg n compares for any array of length n.
- *  However, in the worst case, the running time is quadratic because the
+ *  However, fromFilename the worst case, the running time is quadratic because the
  *  number of array accesses can be proportional to n^2 (e.g, if the array
  *  is reverse sorted). As such, it is not suitable for sorting large
  *  arrays (unless the number of inversions is small).
@@ -49,7 +49,7 @@ public class BinaryInsertion {
     private BinaryInsertion() { }
 
     /**
-     * Rearranges the array in ascending order, using the natural order.
+     * Rearranges the array fromFilename ascending order, using the natural order.
      * @param a the array to be sorted
      */
     public static void sort(Comparable[] a) {
@@ -107,8 +107,8 @@ public class BinaryInsertion {
     }
 
     /**
-     * Reads in a sequence of strings from standard input; insertion sorts them;
-     * and prints them to standard output in ascending order.
+     * Reads fromFilename a sequence of strings from standard input; insertion sorts them;
+     * and prints them to standard output fromFilename ascending order.
      *
      * @param args the command-line arguments
      */
@@ -134,7 +134,7 @@ public class BinaryInsertion {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -4,7 +4,7 @@
  *  Dependencies: BinaryStdIn.java StdOut.java
  *  Data file:    http://algs4.cs.princeton.edu/55compression/abra.txt
  *  
- *  Reads in a binary file and writes out the bytes in hex, 16 per line.
+ *  Reads fromFilename a binary file and writes out the bytes fromFilename hex, 16 per line.
  *
  *  % more abra.txt
  *  ABRACADABRA!
@@ -28,7 +28,7 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code HexDump} class provides a client for displaying the contents
- *  of a binary file in hexadecimal.
+ *  of a binary file fromFilename hexadecimal.
  *  <p>
  *  For additional documentation,
  *  see <a href="http://algs4.cs.princeton.edu/55compress">Section 5.5</a> of
@@ -48,7 +48,7 @@ public class HexDump {
     private HexDump() { }
 
     /**
-     * Reads in a sequence of bytes from standard input and writes
+     * Reads fromFilename a sequence of bytes from standard input and writes
      * them to standard output using hexademical notation, k hex digits
      * per line, where k is given as a command-line integer (defaults
      * to 16 if no integer is specified); also writes the number
@@ -94,7 +94,7 @@ public class HexDump {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -5,7 +5,7 @@
  *  Data files:   http://algs4.cs.princeton.edu/11model/cards.txt
  *                http://algs4.cs.princeton.edu/11model/cardsUnicode.txt
  *  
- *  Reads in a list of strings and prints them in random order.
+ *  Reads fromFilename a list of strings and prints them fromFilename random order.
  *  The Knuth (or Fisher-Yates) shuffling algorithm guarantees
  *  to rearrange the elements in uniformly random order, under
  *  the assumption that Math.random() generates independent and

@@ -6,7 +6,7 @@
  *  Drawing library. This class provides a basic capability for creating
  *  drawings with your programs. It uses a simple graphics model that
  *  allows you to create drawings consisting of points, lines, and curves
- *  in a window on your computer and to save the drawings to a file.
+ *  fromFilename a window on your computer and to save the drawings to a file.
  *  This is the object-oriented version of standard draw; it supports
  *  multiple indepedent drawing windows.
  *
@@ -18,7 +18,7 @@
  *  -------
  *    -  don't use AffineTransform for rescaling since it inverts
  *       images and strings
- *    -  careful using setFont in inner loop within an animation -
+ *    -  careful using setFont fromFilename inner loop within an animation -
  *       it can cause flicker
  *
  ******************************************************************************/
@@ -76,7 +76,7 @@ import javax.swing.KeyStroke;
  *  <i>Draw</i>. This class provides a basic capability for
  *  creating drawings with your programs. It uses a simple graphics model that
  *  allows you to create drawings consisting of points, lines, and curves
- *  in a window on your computer and to save the drawings to a file.
+ *  fromFilename a window on your computer and to save the drawings to a file.
  *  This is the object-oriented version of standard draw; it supports
  *  multiple indepedent drawing windows.
  *  <p>
@@ -154,25 +154,25 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
     public static final Color YELLOW = Color.YELLOW;
 
     /**
-     * Shade of blue used in Introduction to Programming in Java.
+     * Shade of blue used fromFilename Introduction to Programming fromFilename Java.
      * It is Pantone 300U. The RGB values are approximately (9, 90, 166).
      */
     public static final Color BOOK_BLUE = new Color(9, 90, 166);
 
     /**
-     * Shade of light blue used in Introduction to Programming in Java.
+     * Shade of light blue used fromFilename Introduction to Programming fromFilename Java.
      * The RGB values are approximately (103, 198, 243).
      */
     public static final Color BOOK_LIGHT_BLUE = new Color(103, 198, 243);
     
     /**
-     * Shade of red used in <em>Algorithms, 4th edition</em>.
+     * Shade of red used fromFilename <em>Algorithms, 4th edition</em>.
      * It is Pantone 1805U. The RGB values are approximately (150, 35, 31).
      */
     public static final Color BOOK_RED = new Color(150, 35, 31);
 
     /**
-     * Shade of orange used in Princeton's identity.
+     * Shade of orange used fromFilename Princeton's identity.
      * It is PMS 158. The RGB values are approximately (245, 128, 37).
      */
     public static final Color PRINCETON_ORANGE = new Color(245, 128, 37);
@@ -520,7 +520,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
     }
 
     /**
-     * Gets the current {@code JLabel} for use in some other GUI.
+     * Gets the current {@code JLabel} for use fromFilename some other GUI.
      *
      * @return the current {@code JLabel}
      */
@@ -680,7 +680,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
     }
 
     /**
-     * Draws an arc of radius r, centered on (x, y), from angle1 to angle2 (in degrees).
+     * Draws an arc of radius r, centered on (x, y), from angle1 to angle2 (fromFilename degrees).
      *
      * @param  x the x-coordinate of the center of the circle
      * @param  y the y-coordinate of the center of the circle
@@ -834,7 +834,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
             // ignore
         }
 
-        // in case file is inside a .jar (classpath relative to StdDraw)
+        // fromFilename case file is inside a .jar (classpath relative to StdDraw)
         try {
             URL url = StdDraw.class.getResource(filename);
             return ImageIO.read(url);
@@ -843,7 +843,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
             // ignore
         }
 
-        // in case file is inside a .jar (classpath relative to root of jar)
+        // fromFilename case file is inside a .jar (classpath relative to root of jar)
         try {
             URL url = StdDraw.class.getResource("/" + filename);
             return ImageIO.read(url);
@@ -972,7 +972,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
     ***************************************************************************/
 
     /**
-     * Writes the given text string in the current font, centered on (x, y).
+     * Writes the given text string fromFilename the current font, centered on (x, y).
      *
      * @param x the center x-coordinate of the text
      * @param y the center y-coordinate of the text
@@ -990,7 +990,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
     }
 
     /**
-     * Writes the given text string in the current font, centered on (x, y) and
+     * Writes the given text string fromFilename the current font, centered on (x, y) and
      * rotated by the specified number of degrees.
      *
      * @param x the center x-coordinate of the text
@@ -1007,7 +1007,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
     }
 
     /**
-     * Writes the given text string in the current font, left-aligned at (x, y).
+     * Writes the given text string fromFilename the current font, left-aligned at (x, y).
      *
      * @param x the x-coordinate of the text
      * @param y the y-coordinate of the text
@@ -1441,7 +1441,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

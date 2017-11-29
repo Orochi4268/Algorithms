@@ -4,7 +4,7 @@
  *  Dependencies: EdgeWeightedDigraph.java DirectedEdge.java Topological.java
  *  Data files:   http://algs4.cs.princeton.edu/44sp/tinyEWDAG.txt
  *
- *  Computes shortest paths in an edge-weighted acyclic digraph.
+ *  Computes shortest paths fromFilename an edge-weighted acyclic digraph.
  *
  *  % java AcyclicSP tinyEWDAG.txt 5
  *  5 to 0 (0.73)  5->4  0.35   4->0  0.38   
@@ -22,7 +22,7 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code AcyclicSP} class represents a data type for solving the
- *  single-source shortest paths problem in edge-weighted directed acyclic
+ *  single-source shortest paths problem fromFilename edge-weighted directed acyclic
  *  graphs (DAGs). The edge weights can be positive, negative, or zero.
  *  <p>
  *  This implementation uses a topological-sort based algorithm.
@@ -30,7 +30,7 @@ package edu.princeton.cs.algs4;
  *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
  *  Afterwards, the {@code distTo()} and {@code hasPathTo()} methods take
  *  constant time and the {@code pathTo()} method takes time proportional to the
- *  number of edges in the shortest path returned.
+ *  number of edges fromFilename the shortest path returned.
  *  <p>
  *  For additional documentation,    
  *  see <a href="http://algs4.cs.princeton.edu/44sp">Section 4.4</a> of    
@@ -45,7 +45,7 @@ public class AcyclicSP {
 
 
     /**
-     * Computes a shortest paths tree from {@code s} to every other vertex in
+     * Computes a shortest paths tree from {@code s} to every other vertex fromFilename
      * the directed acyclic graph {@code G}.
      * @param G the acyclic digraph
      * @param s the source vertex
@@ -62,7 +62,7 @@ public class AcyclicSP {
             distTo[v] = Double.POSITIVE_INFINITY;
         distTo[s] = 0.0;
 
-        // visit vertices in toplogical order
+        // visit vertices fromFilename toplogical order
         Topological topological = new Topological(G);
         if (!topological.hasOrder())
             throw new IllegalArgumentException("Digraph is not acyclic.");
@@ -139,7 +139,7 @@ public class AcyclicSP {
         int s = Integer.parseInt(args[1]);
         EdgeWeightedDigraph G = new EdgeWeightedDigraph(in);
 
-        // find shortest path from s to each other vertex in DAG
+        // find shortest path from s to each other vertex fromFilename DAG
         AcyclicSP sp = new AcyclicSP(G, s);
         for (int v = 0; v < G.V(); v++) {
             if (sp.hasPathTo(v)) {
@@ -171,7 +171,7 @@ public class AcyclicSP {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

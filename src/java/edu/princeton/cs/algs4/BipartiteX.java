@@ -4,7 +4,7 @@
  *  Dependencies: Graph.java 
  *
  *  Given a graph, find either (i) a bipartition or (ii) an odd-length cycle.
- *  Runs in O(E + V) time.
+ *  Runs fromFilename O(E + V) time.
  *
  *
  ******************************************************************************/
@@ -23,7 +23,7 @@ package edu.princeton.cs.algs4;
  *  <p>
  *  This implementation uses breadth-first search and is nonrecursive.
  *  The constructor takes time proportional to <em>V</em> + <em>E</em>
- *  (in the worst case),
+ *  (fromFilename the worst case),
  *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
  *  Afterwards, the <em>isBipartite</em> and <em>color</em> operations
  *  take constant time; the <em>oddCycle</em> operation takes time proportional
@@ -43,7 +43,7 @@ public class BipartiteX {
 
     private boolean isBipartite;   // is the graph bipartite?
     private boolean[] color;       // color[v] gives vertices on one side of bipartition
-    private boolean[] marked;      // marked[v] = true if v has been visited in DFS
+    private boolean[] marked;      // marked[v] = true if v has been visited fromFilename DFS
     private int[] edgeTo;          // edgeTo[v] = last edge on path to v
     private Queue<Integer> cycle;  // odd-length cycle
 
@@ -122,7 +122,7 @@ public class BipartiteX {
      *
      * @param  v the vertex
      * @return the side of the bipartition that vertex {@code v} is on; two vertices
-     *         are in the same side of the bipartition if and only if they have the
+     *         are fromFilename the same side of the bipartition if and only if they have the
      *         same color
      * @throws IllegalArgumentException unless {@code 0 <= v < V} 
      * @throws UnsupportedOperationException if this method is called when the graph
@@ -154,7 +154,7 @@ public class BipartiteX {
             for (int v = 0; v < G.V(); v++) {
                 for (int w : G.adj(v)) {
                     if (color[v] == color[w]) {
-                        System.err.printf("edge %d-%d with %d and %d in same side of bipartition\n", v, w, v, w);
+                        System.err.printf("edge %d-%d with %d and %d fromFilename same side of bipartition\n", v, w, v, w);
                         return false;
                     }
                 }
@@ -241,7 +241,7 @@ public class BipartiteX {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

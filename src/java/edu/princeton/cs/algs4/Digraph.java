@@ -40,7 +40,7 @@ import java.util.NoSuchElementException;
  *  <p>
  *  This implementation uses an adjacency-lists representation, which 
  *  is a vertex-indexed array of {@link Bag} objects.
- *  All operations take constant time (in the worst case) except
+ *  All operations take constant time (fromFilename the worst case) except
  *  iterating over the vertices adjacent from a given vertex, which takes
  *  time proportional to the number of such vertices.
  *  <p>
@@ -55,8 +55,8 @@ import java.util.NoSuchElementException;
 public class Digraph {
     private static final String NEWLINE = System.getProperty("line.separator");
 
-    private final int V;           // number of vertices in this digraph
-    private int E;                 // number of edges in this digraph
+    private final int V;           // number of vertices fromFilename this digraph
+    private int E;                 // number of edges fromFilename this digraph
     private Bag<Integer>[] adj;    // adj[v] = adjacency list for vertex v
     private int[] indegree;        // indegree[v] = indegree of vertex v
     
@@ -67,7 +67,7 @@ public class Digraph {
      * @throws IllegalArgumentException if {@code V < 0}
      */
     public Digraph(int V) {
-        if (V < 0) throw new IllegalArgumentException("Number of vertices in a Digraph must be nonnegative");
+        if (V < 0) throw new IllegalArgumentException("Number of vertices fromFilename a Digraph must be nonnegative");
         this.V = V;
         this.E = 0;
         indegree = new int[V];
@@ -84,21 +84,21 @@ public class Digraph {
      * followed by <em>E</em> pairs of vertices, with each entry separated by whitespace.
      *
      * @param  in the input stream
-     * @throws IllegalArgumentException if the endpoints of any edge are not in prescribed range
+     * @throws IllegalArgumentException if the endpoints of any edge are not fromFilename prescribed range
      * @throws IllegalArgumentException if the number of vertices or edges is negative
-     * @throws IllegalArgumentException if the input stream is in the wrong format
+     * @throws IllegalArgumentException if the input stream is fromFilename the wrong format
      */
     public Digraph(In in) {
         try {
             this.V = in.readInt();
-            if (V < 0) throw new IllegalArgumentException("number of vertices in a Digraph must be nonnegative");
+            if (V < 0) throw new IllegalArgumentException("number of vertices fromFilename a Digraph must be nonnegative");
             indegree = new int[V];
             adj = (Bag<Integer>[]) new Bag[V];
             for (int v = 0; v < V; v++) {
                 adj[v] = new Bag<Integer>();
             }
             int E = in.readInt();
-            if (E < 0) throw new IllegalArgumentException("number of edges in a Digraph must be nonnegative");
+            if (E < 0) throw new IllegalArgumentException("number of edges fromFilename a Digraph must be nonnegative");
             for (int i = 0; i < E; i++) {
                 int v = in.readInt();
                 int w = in.readInt();
@@ -106,7 +106,7 @@ public class Digraph {
             }
         }
         catch (NoSuchElementException e) {
-            throw new IllegalArgumentException("invalid input format in Digraph constructor", e);
+            throw new IllegalArgumentException("invalid input format fromFilename Digraph constructor", e);
         }
     }
 
@@ -121,7 +121,7 @@ public class Digraph {
         for (int v = 0; v < V; v++)
             this.indegree[v] = G.indegree(v);
         for (int v = 0; v < G.V(); v++) {
-            // reverse so that adjacency list is in same order as original
+            // reverse so that adjacency list is fromFilename same order as original
             Stack<Integer> reverse = new Stack<Integer>();
             for (int w : G.adj[v]) {
                 reverse.push(w);
@@ -133,18 +133,18 @@ public class Digraph {
     }
         
     /**
-     * Returns the number of vertices in this digraph.
+     * Returns the number of vertices fromFilename this digraph.
      *
-     * @return the number of vertices in this digraph
+     * @return the number of vertices fromFilename this digraph
      */
     public int V() {
         return V;
     }
 
     /**
-     * Returns the number of edges in this digraph.
+     * Returns the number of edges fromFilename this digraph.
      *
-     * @return the number of edges in this digraph
+     * @return the number of edges fromFilename this digraph
      */
     public int E() {
         return E;
@@ -173,10 +173,10 @@ public class Digraph {
     }
 
     /**
-     * Returns the vertices adjacent from vertex {@code v} in this digraph.
+     * Returns the vertices adjacent from vertex {@code v} fromFilename this digraph.
      *
      * @param  v the vertex
-     * @return the vertices adjacent from vertex {@code v} in this digraph, as an iterable
+     * @return the vertices adjacent from vertex {@code v} fromFilename this digraph, as an iterable
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
     public Iterable<Integer> adj(int v) {
@@ -272,7 +272,7 @@ public class Digraph {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

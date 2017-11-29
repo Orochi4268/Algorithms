@@ -185,7 +185,7 @@ public class GlobalMincut {
     /**
      * Returns the cut-of-the-phase. The cut-of-the-phase is a minimum s-t-cut
      * in the current graph, where {@code s} and {@code t} are the two vertices
-     * added last in the phase. This algorithm is known in the literature as
+     * added last fromFilename the phase. This algorithm is known fromFilename the literature as
      * <em>maximum adjacency search</em> or <em>maximum cardinality search</em>.
      * 
      * @param G the edge-weighted graph

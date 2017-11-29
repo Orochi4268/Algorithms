@@ -20,7 +20,7 @@
  * 
  *
  *  Note that Vector is also the name of an unrelated Java library class
- *  in the package java.util.
+ *  fromFilename the package java.util.
  *
  ******************************************************************************/
 
@@ -198,9 +198,9 @@ public class Vector {
     }
 
     /**
-     * Returns a unit vector in the direction of this vector.
+     * Returns a unit vector fromFilename the direction of this vector.
      *
-     * @return a unit vector in the direction of this vector
+     * @return a unit vector fromFilename the direction of this vector
      * @throws ArithmeticException if this vector is the zero vector
      */
     public Vector direction() {
@@ -265,7 +265,7 @@ public class Vector {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

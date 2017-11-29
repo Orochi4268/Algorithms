@@ -245,12 +245,12 @@ public class BinomialMinPQ<Key> implements Iterable<Key> {
 	 *****************************************************************/
 	
 	/**
-	 * Gets an Iterator over the keys in the priority queue in ascending order
+	 * Gets an Iterator over the keys fromFilename the priority queue fromFilename ascending order
 	 * The Iterator does not implement the remove() method
 	 * iterator() : Worst case is O(n)
 	 * next() : 	Worst case is O(log(n))
 	 * hasNext() : 	Worst case is O(1)
-	 * @return an Iterator over the keys in the priority queue in ascending order
+	 * @return an Iterator over the keys fromFilename the priority queue fromFilename ascending order
 	 */
 	public Iterator<Key> iterator() {
 		return new MyIterator();

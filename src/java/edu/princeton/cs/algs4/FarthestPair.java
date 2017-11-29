@@ -21,14 +21,14 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code FarthestPair} data type computes the farthest pair of points
- *  in a set of <em>n</em> points in the plane and provides accessor methods
+ *  fromFilename a set of <em>n</em> points fromFilename the plane and provides accessor methods
  *  for getting the farthest pair of points and the distance between them.
  *  The distance between two points is their Euclidean distance.
  *  <p>
  *  This implementation computes the convex hull of the set of points and
  *  uses the rotating calipers method to find all antipodal point pairs
  *  and the farthest pair.
- *  It runs in O(<em>n</em> log <em>n</em>) time in the worst case and uses
+ *  It runs fromFilename O(<em>n</em> log <em>n</em>) time fromFilename the worst case and uses
  *  O(<em>N</em>) extra space.
  *  See also {@link ClosestPair} and {@link GrahamScan}.
  *  <p>

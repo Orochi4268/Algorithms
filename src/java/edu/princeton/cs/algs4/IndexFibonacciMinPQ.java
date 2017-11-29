@@ -25,7 +25,7 @@ import java.util.NoSuchElementException;
  *  the keys.
  *  
  *  This implementation uses a Fibonacci heap along with an array to associate
- *  keys with integers in the given range.
+ *  keys with integers fromFilename the given range.
  *  The insert, size, is-empty, contains, minimum-index, minimum-key
  *  and key-of take constant time.
  *  The decrease-key operation takes amortized constant time.
@@ -35,11 +35,11 @@ import java.util.NoSuchElementException;
  *  @author Tristan Claverie
  */
 public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
-	private Node<Key>[] nodes;			//Array of Nodes in the heap
+	private Node<Key>[] nodes;			//Array of Nodes fromFilename the heap
 	private Node<Key> head;				//Head of the circular root list
-	private Node<Key> min;				//Minimum Node in the heap
-	private int size;					//Number of keys in the heap
-	private int n;						//Maximum number of elements in the heap
+	private Node<Key> min;				//Minimum Node fromFilename the heap
+	private int size;					//Number of keys fromFilename the heap
+	private int n;						//Maximum number of elements fromFilename the heap
 	private final Comparator<Key> comp; //Comparator over the keys
 	private HashMap<Integer, Node<Key>> table = new HashMap<Integer, Node<Key>>(); //Used for the consolidate operation
 	
@@ -56,7 +56,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
     /**
      * Initializes an empty indexed priority queue with indices between {@code 0} and {@code N-1}
      * Worst case is O(n)
-     * @param N number of keys in the priority queue, index from {@code 0} to {@code N-1}
+     * @param N number of keys fromFilename the priority queue, index from {@code 0} to {@code N-1}
      * @throws java.lang.IllegalArgumentException if {@code N < 0}
      */
 	public IndexFibonacciMinPQ(int N) {
@@ -69,7 +69,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
     /**
      * Initializes an empty indexed priority queue with indices between {@code 0} and {@code N-1}
      * Worst case is O(n)
-     * @param N number of keys in the priority queue, index from {@code 0} to {@code N-1}
+     * @param N number of keys fromFilename the priority queue, index from {@code 0} to {@code N-1}
      * @param C a Comparator over the keys
      * @throws java.lang.IllegalArgumentException if {@code N < 0}
      */
@@ -119,12 +119,12 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	 * @param i an index
 	 * @param key a Key associated with i
 	 * @throws java.lang.IllegalArgumentException if the specified index is invalid
-	 * @throws java.lang.IllegalArgumentException if the index is already in the queue
+	 * @throws java.lang.IllegalArgumentException if the index is already fromFilename the queue
 	 */
 	
 	public void insert(int i, Key key) {
 		if (i < 0 || i >= n) throw new IllegalArgumentException();
-		if (contains(i)) throw new IllegalArgumentException("Specified index is already in the queue");
+		if (contains(i)) throw new IllegalArgumentException("Specified index is already fromFilename the queue");
 		Node<Key> x = new Node<Key>();
 		x.key = key;
 		x.index = i;
@@ -148,10 +148,10 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	}
 
 	/**
-	 * Get the minimum key currently in the queue
+	 * Get the minimum key currently fromFilename the queue
 	 * Worst case is O(1)
 	 * @throws java.util.NoSuchElementException if the priority queue is empty
-	 * @return the minimum key currently in the priority queue
+	 * @return the minimum key currently fromFilename the priority queue
 	 */
 	
 	public Key minKey() {
@@ -192,13 +192,13 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	 * Worst case is O(1)
 	 * @param i an index
 	 * @throws java.lang.IllegalArgumentException if the specified index is invalid
-	 * @throws java.util.NoSuchElementException if the index is not in the queue
+	 * @throws java.util.NoSuchElementException if the index is not fromFilename the queue
 	 * @return the key associated with index i
 	 */
 	
 	public Key keyOf(int i) {
 		if (i < 0 || i >= n) throw new IllegalArgumentException();
-		if (!contains(i)) throw new NoSuchElementException("Specified index is not in the queue");
+		if (!contains(i)) throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		return nodes[i].key;
 	}
 
@@ -214,7 +214,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	
 	public void changeKey(int i, Key key) {
 		if (i < 0 || i >= n) 		throw new IllegalArgumentException();
-		if (!contains(i))			throw new NoSuchElementException("Specified index is not in the queue");
+		if (!contains(i))			throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		if (greater(key, nodes[i].key))  increaseKey(i, key);
 		else 							 decreaseKey(i, key);
 	}
@@ -231,7 +231,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	
 	public void decreaseKey(int i, Key key) {
 		if (i < 0 || i >= n) 		throw new IllegalArgumentException();
-		if (!contains(i))			throw new NoSuchElementException("Specified index is not in the queue");
+		if (!contains(i))			throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		if (greater(key, nodes[i].key))  throw new IllegalArgumentException("Calling with this argument would not decrease the key");
 		Node<Key> x = nodes[i];
 		x.key = key;
@@ -253,7 +253,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	
 	public void increaseKey(int i, Key key) {
 		if (i < 0 || i >= n) 		throw new IllegalArgumentException();
-		if (!contains(i))			throw new NoSuchElementException("Specified index is not in the queue");
+		if (!contains(i))			throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		if (greater(nodes[i].key, key))  throw new IllegalArgumentException("Calling with this argument would not increase the key");
 		delete(i);
 		insert(i, key);
@@ -269,7 +269,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	
 	public void delete(int i) {
 		if (i < 0 || i >= n) 		throw new IllegalArgumentException();
-		if (!contains(i))			throw new NoSuchElementException("Specified index is not in the queue");
+		if (!contains(i))			throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		Node<Key> x = nodes[i];
 		x.key = null;				//For garbage collection
 		if (x.parent != null) {
@@ -314,7 +314,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	 * Function for decreasing a key
 	 ************************************/
 	
-	//Removes a Node from its parent's child list and insert it in the root list
+	//Removes a Node from its parent's child list and insert it fromFilename the root list
 	//If the parent Node already lost a child, reshapes the heap accordingly
 	private void cut(int i) {
 		Node<Key> x = nodes[i];
@@ -329,7 +329,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	}
 	
 	/*************************************
-	 * Function for consolidating all trees in the root list
+	 * Function for consolidating all trees fromFilename the root list
 	 ************************************/
 	
 	//Coalesces the roots, thus reshapes the heap
@@ -368,7 +368,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	 * General helper functions for manipulating circular lists
 	 ************************************/
 	
-	//Inserts a Node in a circular list containing head, returns a new head
+	//Inserts a Node fromFilename a circular list containing head, returns a new head
 	private Node<Key> insert(Node<Key> x, Node<Key> head) {
 		if (head == null) {
 			x.prev = x;
@@ -415,12 +415,12 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
 	 ************************************/
 	
 	/**
-	 * Get an Iterator over the indexes in the priority queue in ascending order
+	 * Get an Iterator over the indexes fromFilename the priority queue fromFilename ascending order
 	 * The Iterator does not implement the remove() method
 	 * iterator() : Worst case is O(n)
 	 * next() : 	Worst case is O(log(n)) (amortized)
 	 * hasNext() : 	Worst case is O(1)
-	 * @return an Iterator over the indexes in the priority queue in ascending order
+	 * @return an Iterator over the indexes fromFilename the priority queue fromFilename ascending order
 	 */
 	
 	public Iterator<Integer> iterator() {
@@ -483,7 +483,7 @@ public class IndexFibonacciMinPQ<Key> implements Iterable<Integer> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

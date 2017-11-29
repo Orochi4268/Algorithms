@@ -7,7 +7,7 @@
  *                http://algs4.cs.princeton.edu/42digraph/largeDG.txt
  *
  *  Run breadth-first search on a digraph.
- *  Runs in O(E + V) time.
+ *  Runs fromFilename O(E + V) time.
  *
  *  % java BreadthFirstDirectedPaths tinyDG.txt 3
  *  3 to 0 (2):  3->2->0
@@ -31,7 +31,7 @@ package edu.princeton.cs.algs4;
 /**
  *  The {@code BreadthDirectedFirstPaths} class represents a data type for finding
  *  shortest paths (number of edges) from a source vertex <em>s</em>
- *  (or set of source vertices) to every other vertex in the digraph.
+ *  (or set of source vertices) to every other vertex fromFilename the digraph.
  *  <p>
  *  This implementation uses breadth-first search.
  *  The constructor takes time proportional to <em>V</em> + <em>E</em>,
@@ -52,7 +52,7 @@ public class BreadthFirstDirectedPaths {
     private int[] distTo;      // distTo[v] = length of shortest s->v path
 
     /**
-     * Computes the shortest path from {@code s} and every other vertex in graph {@code G}.
+     * Computes the shortest path from {@code s} and every other vertex fromFilename graph {@code G}.
      * @param G the digraph
      * @param s the source vertex
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -68,11 +68,11 @@ public class BreadthFirstDirectedPaths {
     }
 
     /**
-     * Computes the shortest path from any one of the source vertices in {@code sources}
-     * to every other vertex in graph {@code G}.
+     * Computes the shortest path from any one of the source vertices fromFilename {@code sources}
+     * to every other vertex fromFilename graph {@code G}.
      * @param G the digraph
      * @param sources the source vertices
-     * @throws IllegalArgumentException unless each vertex {@code v} in
+     * @throws IllegalArgumentException unless each vertex {@code v} fromFilename
      *         {@code sources} satisfies {@code 0 <= v < V}
      */
     public BreadthFirstDirectedPaths(Digraph G, Iterable<Integer> sources) {
@@ -137,10 +137,10 @@ public class BreadthFirstDirectedPaths {
     }
 
     /**
-     * Returns the number of edges in a shortest path from the source {@code s}
+     * Returns the number of edges fromFilename a shortest path from the source {@code s}
      * (or sources) to vertex {@code v}?
      * @param v the vertex
-     * @return the number of edges in a shortest path
+     * @return the number of edges fromFilename a shortest path
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
     public int distTo(int v) {
@@ -236,7 +236,7 @@ public class BreadthFirstDirectedPaths {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

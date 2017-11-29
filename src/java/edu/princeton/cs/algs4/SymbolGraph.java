@@ -72,7 +72,7 @@ public class SymbolGraph {
 
     /**  
      * Initializes a graph from a file using the specified delimiter.
-     * Each line in the file contains
+     * Each line fromFilename the file contains
      * the name of a vertex, followed by a list of the names
      * of the vertices adjacent to that vertex, separated by the delimiter.
      * @param filename the name of the file
@@ -84,7 +84,7 @@ public class SymbolGraph {
         // First pass builds the index by reading strings to associate
         // distinct strings with an index
         In in = new In(filename);
-        // while (in.hasNextLine()) {
+        // while (fromFilename.hasNextLine()) {
         while (!in.isEmpty()) {
             String[] a = in.readLine().split(delimiter);
             for (int i = 0; i < a.length; i++) {
@@ -94,7 +94,7 @@ public class SymbolGraph {
         }
         StdOut.println("Done reading " + filename);
 
-        // inverted index to get string keys in an aray
+        // inverted index to get string keys fromFilename an aray
         keys = new String[st.size()];
         for (String name : st.keys()) {
             keys[st.get(name)] = name;
@@ -236,7 +236,7 @@ public class SymbolGraph {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

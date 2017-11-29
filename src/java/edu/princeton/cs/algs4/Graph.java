@@ -45,13 +45,13 @@ import java.util.NoSuchElementException;
  *  iterate over all of the vertices adjacent to a vertex. It also provides
  *  methods for returning the number of vertices <em>V</em> and the number
  *  of edges <em>E</em>. Parallel edges and self-loops are permitted.
- *  By convention, a self-loop <em>v</em>-<em>v</em> appears in the
+ *  By convention, a self-loop <em>v</em>-<em>v</em> appears fromFilename the
  *  adjacency list of <em>v</em> twice and contributes two to the degree
  *  of <em>v</em>.
  *  <p>
  *  This implementation uses an adjacency-lists representation, which 
  *  is a vertex-indexed array of {@link Bag} objects.
- *  All operations take constant time (in the worst case) except
+ *  All operations take constant time (fromFilename the worst case) except
  *  iterating over the vertices adjacent to a given vertex, which takes
  *  time proportional to the number of such vertices.
  *  <p>
@@ -92,20 +92,20 @@ public class Graph {
      * followed by <em>E</em> pairs of vertices, with each entry separated by whitespace.
      *
      * @param  in the input stream
-     * @throws IllegalArgumentException if the endpoints of any edge are not in prescribed range
+     * @throws IllegalArgumentException if the endpoints of any edge are not fromFilename prescribed range
      * @throws IllegalArgumentException if the number of vertices or edges is negative
-     * @throws IllegalArgumentException if the input stream is in the wrong format
+     * @throws IllegalArgumentException if the input stream is fromFilename the wrong format
      */
     public Graph(In in) {
         try {
             this.V = in.readInt();
-            if (V < 0) throw new IllegalArgumentException("number of vertices in a Graph must be nonnegative");
+            if (V < 0) throw new IllegalArgumentException("number of vertices fromFilename a Graph must be nonnegative");
             adj = (Bag<Integer>[]) new Bag[V];
             for (int v = 0; v < V; v++) {
                 adj[v] = new Bag<Integer>();
             }
             int E = in.readInt();
-            if (E < 0) throw new IllegalArgumentException("number of edges in a Graph must be nonnegative");
+            if (E < 0) throw new IllegalArgumentException("number of edges fromFilename a Graph must be nonnegative");
             for (int i = 0; i < E; i++) {
                 int v = in.readInt();
                 int w = in.readInt();
@@ -115,7 +115,7 @@ public class Graph {
             }
         }
         catch (NoSuchElementException e) {
-            throw new IllegalArgumentException("invalid input format in Graph constructor", e);
+            throw new IllegalArgumentException("invalid input format fromFilename Graph constructor", e);
         }
     }
 
@@ -129,7 +129,7 @@ public class Graph {
         this(G.V());
         this.E = G.E();
         for (int v = 0; v < G.V(); v++) {
-            // reverse so that adjacency list is in same order as original
+            // reverse so that adjacency list is fromFilename same order as original
             Stack<Integer> reverse = new Stack<Integer>();
             for (int w : G.adj[v]) {
                 reverse.push(w);
@@ -141,18 +141,18 @@ public class Graph {
     }
 
     /**
-     * Returns the number of vertices in this graph.
+     * Returns the number of vertices fromFilename this graph.
      *
-     * @return the number of vertices in this graph
+     * @return the number of vertices fromFilename this graph
      */
     public int V() {
         return V;
     }
 
     /**
-     * Returns the number of edges in this graph.
+     * Returns the number of edges fromFilename this graph.
      *
-     * @return the number of edges in this graph
+     * @return the number of edges fromFilename this graph
      */
     public int E() {
         return E;
@@ -167,8 +167,8 @@ public class Graph {
     /**
      * Adds the undirected edge v-w to this graph.
      *
-     * @param  v one vertex in the edge
-     * @param  w the other vertex in the edge
+     * @param  v one vertex fromFilename the edge
+     * @param  w the other vertex fromFilename the edge
      * @throws IllegalArgumentException unless both {@code 0 <= v < V} and {@code 0 <= w < V}
      */
     public void addEdge(int v, int w) {
@@ -253,7 +253,7 @@ public class Graph {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -8,7 +8,7 @@
  *                http://algs4.cs.princeton.edu/41graph/largeG.txt
  *
  *  Run depth first search on an undirected graph.
- *  Runs in O(E + V) time.
+ *  Runs fromFilename O(E + V) time.
  *
  *  %  java Graph tinyCG.txt
  *  6 8
@@ -34,7 +34,7 @@ package edu.princeton.cs.algs4;
 /**
  *  The {@code DepthFirstPaths} class represents a data type for finding
  *  paths from a source vertex <em>s</em> to every other vertex
- *  in an undirected graph.
+ *  fromFilename an undirected graph.
  *  <p>
  *  This implementation uses depth-first search.
  *  The constructor takes time proportional to <em>V</em> + <em>E</em>,
@@ -53,7 +53,7 @@ public class DepthFirstPaths {
     private final int s;         // source vertex
 
     /**
-     * Computes a path between {@code s} and every other vertex in graph {@code G}.
+     * Computes a path between {@code s} and every other vertex fromFilename graph {@code G}.
      * @param G the graph
      * @param s the source vertex
      * @throws IllegalArgumentException unless {@code 0 <= s < V}
@@ -158,7 +158,7 @@ public class DepthFirstPaths {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

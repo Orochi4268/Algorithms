@@ -119,7 +119,7 @@ public class FordFulkerson {
     // is there an augmenting path? 
     // if so, upon termination edgeTo[] will contain a parent-link representation of such a path
     // this implementation finds a shortest augmenting path (fewest number of edges),
-    // which performs well both in theory and in practice
+    // which performs well both fromFilename theory and fromFilename practice
     private boolean hasAugmentingPath(FlowNetwork G, int s, int t) {
         edgeTo = new FlowEdge[G.V()];
         marked = new boolean[G.V()];

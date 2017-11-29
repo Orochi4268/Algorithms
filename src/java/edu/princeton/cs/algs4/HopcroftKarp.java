@@ -5,7 +5,7 @@
  *                BipartiteX.java
  *
  *  Find a maximum cardinality matching (and minimum cardinality vertex cover)
- *  in a bipartite graph using Hopcroft-Karp algorithm.
+ *  fromFilename a bipartite graph using Hopcroft-Karp algorithm.
  *
  ******************************************************************************/
 
@@ -16,34 +16,34 @@ import java.util.Iterator;
 /**
  *  The {@code HopcroftKarp} class represents a data type for computing a
  *  <em>maximum (cardinality) matching</em> and a
- *  <em>minimum (cardinality) vertex cover</em> in a bipartite graph.
- *  A <em>bipartite graph</em> in a graph whose vertices can be partitioned
- *  into two disjoint sets such that every edge has one endpoint in either set.
- *  A <em>matching</em> in a graph is a subset of its edges with no common
+ *  <em>minimum (cardinality) vertex cover</em> fromFilename a bipartite graph.
+ *  A <em>bipartite graph</em> fromFilename a graph whose vertices can be partitioned
+ *  into two disjoint sets such that every edge has one endpoint fromFilename either set.
+ *  A <em>matching</em> fromFilename a graph is a subset of its edges with no common
  *  vertices. A <em>maximum matching</em> is a matching with the maximum number
  *  of edges.
- *  A <em>perfect matching</em> is a matching which matches all vertices in the graph.
- *  A <em>vertex cover</em> in a graph is a subset of its vertices such that
+ *  A <em>perfect matching</em> is a matching which matches all vertices fromFilename the graph.
+ *  A <em>vertex cover</em> fromFilename a graph is a subset of its vertices such that
  *  every edge is incident to at least one vertex. A <em>minimum vertex cover</em>
  *  is a vertex cover with the minimum number of vertices.
- *  By Konig's theorem, in any biparite
- *  graph, the maximum number of edges in matching equals the minimum number
- *  of vertices in a vertex cover.
- *  The maximum matching problem in <em>nonbipartite</em> graphs is
+ *  By Konig's theorem, fromFilename any biparite
+ *  graph, the maximum number of edges fromFilename matching equals the minimum number
+ *  of vertices fromFilename a vertex cover.
+ *  The maximum matching problem fromFilename <em>nonbipartite</em> graphs is
  *  also important, but all known algorithms for this more general problem
  *  are substantially more complicated.
  *  <p>
  *  This implementation uses the <em>Hopcroft-Karp algorithm</em>.
- *  The order of growth of the running time in the worst case is
+ *  The order of growth of the running time fromFilename the worst case is
  *  (<em>E</em> + <em>V</em>) sqrt(<em>V</em>),
  *  where <em>E</em> is the number of edges and <em>V</em> is the number
- *  of vertices in the graph. It uses extra space (not including the graph)
+ *  of vertices fromFilename the graph. It uses extra space (not including the graph)
  *  proportional to <em>V</em>.
  *  <p>
- *  See also {@link BipartiteMatching}, which solves the problem in
+ *  See also {@link BipartiteMatching}, which solves the problem fromFilename
  *  O(<em>E V</em>) time using the <em>alternating path algorithm</em>
  *  and <a href = "http://algs4.cs.princeton.edu/65reductions/BipartiteMatchingToMaxflow.java.html">BipartiteMatchingToMaxflow</a>,
- *  which solves the problem in O(<em>E V</em>) time via a reduction
+ *  which solves the problem fromFilename O(<em>E V</em>) time via a reduction
  *  to the maxflow problem.
  *  <p>
  *  For additional documentation, see
@@ -56,18 +56,18 @@ import java.util.Iterator;
 public class HopcroftKarp {
     private static final int UNMATCHED = -1;
 
-    private final int V;                 // number of vertices in the graph
+    private final int V;                 // number of vertices fromFilename the graph
     private BipartiteX bipartition;      // the bipartition
     private int cardinality;             // cardinality of current matching
-    private int[] mate;                  // mate[v] =  w if v-w is an edge in current matching
-                                         //         = -1 if v is not in current matching
-    private boolean[] inMinVertexCover;  // inMinVertexCover[v] = true iff v is in min vertex cover
+    private int[] mate;                  // mate[v] =  w if v-w is an edge fromFilename current matching
+                                         //         = -1 if v is not fromFilename current matching
+    private boolean[] inMinVertexCover;  // inMinVertexCover[v] = true iff v is fromFilename min vertex cover
     private boolean[] marked;            // marked[v] = true iff v is reachable via alternating path
     private int[] distTo;                // distTo[v] = number of edges on shortest path to v
 
     /**
      * Determines a maximum matching (and a minimum vertex cover)
-     * in a bipartite graph.
+     * fromFilename a bipartite graph.
      *
      * @param  G the bipartite graph
      * @throws IllegalArgumentException if {@code G} is not bipartite
@@ -88,7 +88,7 @@ public class HopcroftKarp {
         while (hasAugmentingPath(G)) {
 
             // to be able to iterate over each adjacency list, keeping track of which
-            // vertex in each adjacency list needs to be explored next
+            // vertex fromFilename each adjacency list needs to be explored next
             Iterator<Integer>[] adj = (Iterator<Integer>[]) new Iterator[G.V()];
             for (int v = 0; v < G.V(); v++)
                 adj[v] = G.adj(v).iterator();
@@ -103,13 +103,13 @@ public class HopcroftKarp {
                 while (!path.isEmpty()) {
                     int v = path.peek();
 
-                    // retreat, no more edges in level graph leaving v
+                    // retreat, no more edges fromFilename level graph leaving v
                     if (!adj[v].hasNext())
                         path.pop();
 
                     // advance
                     else {
-                        // process edge v-w only if it is an edge in level graph
+                        // process edge v-w only if it is an edge fromFilename level graph
                         int w = adj[v].next();
                         if (!isLevelGraphEdge(v, w)) continue;
 
@@ -153,12 +153,12 @@ public class HopcroftKarp {
         return s;
     }
 
-   // is the edge v-w in the level graph?
+   // is the edge v-w fromFilename the level graph?
     private boolean isLevelGraphEdge(int v, int w) {
         return (distTo[w] == distTo[v] + 1) && isResidualGraphEdge(v, w);
     }
 
-   // is the edge v-w a forward edge not in the matching or a reverse edge in the matching?
+   // is the edge v-w a forward edge not fromFilename the matching or a reverse edge fromFilename the matching?
     private boolean isResidualGraphEdge(int v, int w) {
         if ((mate[v] != w) &&  bipartition.color(v)) return true;
         if ((mate[v] == w) && !bipartition.color(v)) return true;
@@ -201,7 +201,7 @@ public class HopcroftKarp {
             int v = queue.dequeue();
             for (int w : G.adj(v)) {
 
-                // forward edge not in matching or backwards edge in matching
+                // forward edge not fromFilename matching or backwards edge fromFilename matching
                 if (isResidualGraphEdge(v, w)) {
                     if (!marked[w]) {
                         distTo[w] = distTo[v] + 1;
@@ -221,11 +221,11 @@ public class HopcroftKarp {
     }
 
     /**
-     * Returns the vertex to which the specified vertex is matched in
+     * Returns the vertex to which the specified vertex is matched fromFilename
      * the maximum matching computed by the algorithm.
      *
      * @param  v the vertex
-     * @return the vertex to which vertex {@code v} is matched in the
+     * @return the vertex to which vertex {@code v} is matched fromFilename the
      *         maximum matching; {@code -1} if the vertex is not matched
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      *
@@ -236,11 +236,11 @@ public class HopcroftKarp {
     }
 
     /**
-     * Returns true if the specified vertex is matched in the maximum matching
+     * Returns true if the specified vertex is matched fromFilename the maximum matching
      * computed by the algorithm.
      *
      * @param  v the vertex
-     * @return {@code true} if vertex {@code v} is matched in maximum matching;
+     * @return {@code true} if vertex {@code v} is matched fromFilename maximum matching;
      *         {@code false} otherwise
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      *
@@ -251,9 +251,9 @@ public class HopcroftKarp {
     }
 
     /**
-     * Returns the number of edges in any maximum matching.
+     * Returns the number of edges fromFilename any maximum matching.
      *
-     * @return the number of edges in any maximum matching
+     * @return the number of edges fromFilename any maximum matching
      */
     public int size() {
         return cardinality;
@@ -261,8 +261,8 @@ public class HopcroftKarp {
 
     /**
      * Returns true if the graph contains a perfect matching.
-     * That is, the number of edges in a maximum matching is equal to one half
-     * of the number of vertices in the graph (so that every vertex is matched).
+     * That is, the number of edges fromFilename a maximum matching is equal to one half
+     * of the number of vertices fromFilename the graph (so that every vertex is matched).
      *
      * @return {@code true} if the graph contains a perfect matching;
      *         {@code false} otherwise
@@ -272,11 +272,11 @@ public class HopcroftKarp {
     }
 
     /**
-     * Returns true if the specified vertex is in the minimum vertex cover
+     * Returns true if the specified vertex is fromFilename the minimum vertex cover
      * computed by the algorithm.
      *
      * @param  v the vertex
-     * @return {@code true} if vertex {@code v} is in the minimum vertex cover;
+     * @return {@code true} if vertex {@code v} is fromFilename the minimum vertex cover;
      *         {@code false} otherwise
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
@@ -331,7 +331,7 @@ public class HopcroftKarp {
             isMatched[w] = true;
         }
 
-        // check that mate() uses only edges that appear in the graph
+        // check that mate() uses only edges that appear fromFilename the graph
         for (int v = 0; v < V; v++) {
             if (mate(v) == -1) continue;
             boolean isEdge = false;
@@ -369,8 +369,8 @@ public class HopcroftKarp {
         HopcroftKarp matching = new HopcroftKarp(G);
 
         // print maximum matching
-        StdOut.printf("Number of edges in max matching        = %d\n", matching.size());
-        StdOut.printf("Number of vertices in min vertex cover = %d\n", matching.size());
+        StdOut.printf("Number of edges fromFilename max matching        = %d\n", matching.size());
+        StdOut.printf("Number of vertices fromFilename min vertex cover = %d\n", matching.size());
         StdOut.printf("Graph has a perfect matching           = %b\n", matching.isPerfect());
         StdOut.println();
 
@@ -409,7 +409,7 @@ public class HopcroftKarp {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

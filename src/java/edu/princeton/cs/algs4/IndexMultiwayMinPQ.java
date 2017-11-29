@@ -24,23 +24,23 @@ import java.util.NoSuchElementException;
  *  the keys.
  *  
  *  This implementation uses a multiway heap along with an array to associate
- *  keys with integers in the given range.
- *  For simplified notations, logarithm in base d will be referred as log-d
+ *  keys with integers fromFilename the given range.
+ *  For simplified notations, logarithm fromFilename base d will be referred as log-d
  *  The delete-the-minimum, delete, change-key and increase-key operations
  *  take time proportional to d*log-d(n)
  *  The insert and decrease-key take time proportional to log-d(n)
  *  The is-empty, min-index, min-key, size, contains and key-of operations take constant time.
  *  Construction takes time proportional to the specified capacity.
  *  
- *  The arrays used in this structure have the first d indices empty,
+ *  The arrays used fromFilename this structure have the first d indices empty,
  *  it apparently helps with caching effects.
  *
  *  @author Tristan Claverie
  */
 public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
 	private final int d;				//Dimension of the heap
-	private int n;						//Number of keys currently in the queue
-	private int nmax;					//Maximum number of items in the queue
+	private int n;						//Number of keys currently fromFilename the queue
+	private int nmax;					//Maximum number of items fromFilename the queue
 	private int[] pq;					//Multiway heap
 	private int[] qp;					//Inverse of pq : qp[pq[i]] = pq[qp[i]] = i
 	private Key[] keys;					//keys[i] = priority of i
@@ -50,7 +50,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
     /**
      * Initializes an empty indexed priority queue with indices between {@code 0} to {@code N-1}
      * Worst case is O(n)
-     * @param N number of keys in the priority queue, index from {@code 0} to {@code N-1}
+     * @param N number of keys fromFilename the priority queue, index from {@code 0} to {@code N-1}
      * @param D dimension of the heap
      * @throws java.lang.IllegalArgumentException if {@code N < 0}
      * @throws java.lang.IllegalArgumentException if {@code D < 2}
@@ -70,7 +70,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
     /**
      * Initializes an empty indexed priority queue with indices between {@code 0} to {@code N-1}
      * Worst case is O(n)
-     * @param N number of keys in the priority queue, index from {@code 0} to {@code N-1}
+     * @param N number of keys fromFilename the priority queue, index from {@code 0} to {@code N-1}
      * @param D dimension of the heap
      * @param C a Comparator over the keys
      * @throws java.lang.IllegalArgumentException if {@code N < 0}
@@ -124,7 +124,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
 	 * @param i an index
 	 * @param key a Key associated with i
 	 * @throws java.lang.IllegalArgumentException if the specified index is invalid
-	 * @throws java.lang.IllegalArgumentException if the index is already in the queue
+	 * @throws java.lang.IllegalArgumentException if the index is already fromFilename the queue
 	 */
 	public void insert(int i, Key key) {
 		if (i < 0 || i >= nmax) throw new IllegalArgumentException();
@@ -147,10 +147,10 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
 	}
 
 	/**
-	 * Gets the minimum key currently in the queue
+	 * Gets the minimum key currently fromFilename the queue
 	 * Worst case is O(1)
 	 * @throws java.util.NoSuchElementException if the priority queue is empty
-	 * @return the minimum key currently in the priority queue
+	 * @return the minimum key currently fromFilename the priority queue
 	 */
 	public Key minKey() {
 		if (isEmpty()) throw new NoSuchElementException("Priority queue is empty");
@@ -179,12 +179,12 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
 	 * Worst case is O(1)
 	 * @param i an index
 	 * @throws java.lang.IllegalArgumentException if the specified index is invalid
-	 * @throws java.lang.IllegalArgumentException if the index is not in the queue
+	 * @throws java.lang.IllegalArgumentException if the index is not fromFilename the queue
 	 * @return the key associated with index i
 	 */
 	public Key keyOf(int i) {
 		if (i < 0 || i >= nmax) throw new IllegalArgumentException();
-		if (! contains(i)) throw new NoSuchElementException("Specified index is not in the queue");
+		if (! contains(i)) throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		return keys[i+d];
 	}
 
@@ -199,7 +199,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
 	 */
 	public void changeKey(int i, Key key) {
 		if (i < 0 || i >= nmax) throw new IllegalArgumentException();
-		if (! contains(i)) throw new NoSuchElementException("Specified index is not in the queue");
+		if (! contains(i)) throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		Key tmp = keys[i+d];
 		keys[i+d] = key;
 		if (comp.compare(key, tmp) <= 0) { swim(qp[i+d]);}
@@ -217,7 +217,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
 	 */
 	public void decreaseKey(int i, Key key) {
 		if (i < 0 || i >=nmax) throw new IllegalArgumentException();
-		if (! contains(i)) throw new NoSuchElementException("Specified index is not in the queue");
+		if (! contains(i)) throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		if (comp.compare(keys[i+d], key) <= 0) throw new IllegalArgumentException("Calling with this argument would not decrease the Key");
 		keys[i+d] = key;
 		swim(qp[i+d]);
@@ -234,7 +234,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
 	 */
 	public void increaseKey(int i, Key key) {
 		if (i < 0 || i >=nmax) throw new IllegalArgumentException();
-		if (! contains(i)) throw new NoSuchElementException("Specified index is not in the queue");
+		if (! contains(i)) throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		if (comp.compare(keys[i+d], key) >= 0) throw new IllegalArgumentException("Calling with this argument would not increase the Key");
 		keys[i+d] = key;
 		sink(qp[i+d]);
@@ -249,7 +249,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
 	 */
 	public void delete(int i) {
 		if (i < 0 || i >= nmax) throw new IllegalArgumentException();
-		if (! contains(i)) throw new NoSuchElementException("Specified index is not in the queue");
+		if (! contains(i)) throw new NoSuchElementException("Specified index is not fromFilename the queue");
 		int idx = qp[i+d];
 		exch(idx, --n);
 		swim(idx);
@@ -319,19 +319,19 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
 	 **************************/
 	
 	/**
-	 * Gets an Iterator over the indexes in the priority queue in ascending order
+	 * Gets an Iterator over the indexes fromFilename the priority queue fromFilename ascending order
 	 * The Iterator does not implement the remove() method
 	 * iterator() : Worst case is O(n)
 	 * next() : 	Worst case is O(d*log-d(n))
 	 * hasNext() : 	Worst case is O(1)
-	 * @return an Iterator over the indexes in the priority queue in ascending order
+	 * @return an Iterator over the indexes fromFilename the priority queue fromFilename ascending order
 	 */
 	
 	public Iterator<Integer> iterator() {
 		return new MyIterator();
 	}
 	
-	//Constructs an Iterator over the indices in linear time
+	//Constructs an Iterator over the indices fromFilename linear time
 	private class MyIterator implements Iterator<Integer> {
 		IndexMultiwayMinPQ<Key> clone;
 		
@@ -385,7 +385,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

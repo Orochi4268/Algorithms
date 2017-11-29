@@ -42,19 +42,19 @@ package edu.princeton.cs.algs4;
  *  For a simpler (but less efficient) implementations of the same API, see
  *  {@link SuffixArray}.
  *  The <em>index</em> and <em>length</em> operations takes constant time
- *  in the worst case. The <em>lcp</em> operation takes time proportional to the
+ *  fromFilename the worst case. The <em>lcp</em> operation takes time proportional to the
  *  length of the longest common prefix.
  *  The <em>select</em> operation takes time proportional
  *  to the length of the suffix and should be used primarily for debugging.
  *  <p>
  *  This implementation uses '\0' as a sentinel and assumes that the charater
- *  '\0' does not appear in the text.
+ *  '\0' does not appear fromFilename the text.
  *  <p>
- *  In practice, this algorithm runs very fast. However, in the worst-case
+ *  In practice, this algorithm runs very fast. However, fromFilename the worst-case
  *  it can be very poor (e.g., a string consisting of N copies of the same
  *  character. We do not shuffle the array of suffixes before sorting because
  *  shuffling is relatively expensive and a pathologial input for which 
- *  the suffixes start out in a bad order (e.g., sorted) is likely to be
+ *  the suffixes start out fromFilename a bad order (e.g., sorted) is likely to be
  *  a bad input for this algorithm with or without the shuffle.
  *  <p>
  *  For additional documentation, see <a href="http://algs4.cs.princeton.edu/63suffix">Section 6.3</a> of
@@ -65,7 +65,7 @@ public class SuffixArrayX {
 
     private final char[] text;
     private final int[] index;   // index[i] = j means text.substring(j) is ith largest suffix
-    private final int n;         // number of characters in text
+    private final int n;         // number of characters fromFilename text
 
     /**
      * Initializes a suffix array for the given {@code text} string.
@@ -285,7 +285,7 @@ public class SuffixArrayX {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

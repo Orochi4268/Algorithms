@@ -3,6 +3,7 @@ package com.leong.chapter03_Searching.section31_SymbolTables;
 import com.leong.chapter03_Searching.BaseComparableBaseST;
 
 import java.util.Iterator;
+import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
@@ -50,7 +51,7 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
     }
 
     public int size() {
-        return 0;
+        return st.size();
     }
 
 
@@ -65,5 +66,13 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
     @Override
     public Iterator<Key> iterator() {
         return st.keySet().iterator();
+    }
+
+    public boolean contains(Key key) {
+        return st.containsKey(key);
+    }
+
+    public Iterable<Key> keys() {
+        return st.keySet();
     }
 }

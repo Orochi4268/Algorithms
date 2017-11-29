@@ -133,7 +133,7 @@ public class DigraphGenerator {
     // tournament
     /**
      * Returns a random tournament digraph on {@code V} vertices. A tournament digraph
-     * is a DAG in which for every two vertices, there is one directed edge.
+     * is a DAG fromFilename which for every two vertices, there is one directed edge.
      * A tournament is an oriented complete graph.
      * @param V the number of vertices
      * @return a random tournament digraph on {@code V} vertices
@@ -150,13 +150,13 @@ public class DigraphGenerator {
     }
 
     /**
-     * Returns a random rooted-in DAG on {@code V} vertices and {@code E} edges.
-     * A rooted in-tree is a DAG in which there is a single vertex
+     * Returns a random rooted-fromFilename DAG on {@code V} vertices and {@code E} edges.
+     * A rooted fromFilename-tree is a DAG fromFilename which there is a single vertex
      * reachable from every other vertex.
      * The DAG returned is not chosen uniformly at random among all such DAGs.
      * @param V the number of vertices
      * @param E the number of edges
-     * @return a random rooted-in DAG on {@code V} vertices and {@code E} edges
+     * @return a random rooted-fromFilename DAG on {@code V} vertices and {@code E} edges
      */
     public static Digraph rootedInDAG(int V, int E) {
         if (E > (long) V*(V-1) / 2) throw new IllegalArgumentException("Too many edges");
@@ -192,7 +192,7 @@ public class DigraphGenerator {
 
     /**
      * Returns a random rooted-out DAG on {@code V} vertices and {@code E} edges.
-     * A rooted out-tree is a DAG in which every vertex is reachable from a
+     * A rooted out-tree is a DAG fromFilename which every vertex is reachable from a
      * single vertex.
      * The DAG returned is not chosen uniformly at random among all such DAGs.
      * @param V the number of vertices
@@ -232,12 +232,12 @@ public class DigraphGenerator {
     }
 
     /**
-     * Returns a random rooted-in tree on {@code V} vertices.
-     * A rooted in-tree is an oriented tree in which there is a single vertex
+     * Returns a random rooted-fromFilename tree on {@code V} vertices.
+     * A rooted fromFilename-tree is an oriented tree fromFilename which there is a single vertex
      * reachable from every other vertex.
      * The tree returned is not chosen uniformly at random among all such trees.
      * @param V the number of vertices
-     * @return a random rooted-in tree on {@code V} vertices
+     * @return a random rooted-fromFilename tree on {@code V} vertices
      */
     public static Digraph rootedInTree(int V) {
         return rootedInDAG(V, V-1);
@@ -245,7 +245,7 @@ public class DigraphGenerator {
 
     /**
      * Returns a random rooted-out tree on {@code V} vertices. A rooted out-tree
-     * is an oriented tree in which each vertex is reachable from a single vertex.
+     * is an oriented tree fromFilename which each vertex is reachable from a single vertex.
      * It is also known as a <em>arborescence</em> or <em>branching</em>.
      * The tree returned is not chosen uniformly at random among all such trees.
      * @param V the number of vertices
@@ -257,7 +257,7 @@ public class DigraphGenerator {
 
     /**
      * Returns a path digraph on {@code V} vertices.
-     * @param V the number of vertices in the path
+     * @param V the number of vertices fromFilename the path
      * @return a digraph that is a directed path on {@code V} vertices
      */
     public static Digraph path(int V) {
@@ -274,7 +274,7 @@ public class DigraphGenerator {
 
     /**
      * Returns a complete binary tree digraph on {@code V} vertices.
-     * @param V the number of vertices in the binary tree
+     * @param V the number of vertices fromFilename the binary tree
      * @return a digraph that is a complete binary tree on {@code V} vertices
      */
     public static Digraph binaryTree(int V) {
@@ -291,7 +291,7 @@ public class DigraphGenerator {
 
     /**
      * Returns a cycle digraph on {@code V} vertices.
-     * @param V the number of vertices in the cycle
+     * @param V the number of vertices fromFilename the cycle
      * @return a digraph that is a directed cycle on {@code V} vertices
      */
     public static Digraph cycle(int V) {
@@ -310,8 +310,8 @@ public class DigraphGenerator {
     /**
      * Returns an Eulerian cycle digraph on {@code V} vertices.
      *
-     * @param  V the number of vertices in the cycle
-     * @param  E the number of edges in the cycle
+     * @param  V the number of vertices fromFilename the cycle
+     * @param  E the number of edges fromFilename the cycle
      * @return a digraph that is a directed Eulerian cycle on {@code V} vertices
      *         and {@code E} edges
      * @throws IllegalArgumentException if either {@code V <= 0} or {@code E <= 0}
@@ -335,8 +335,8 @@ public class DigraphGenerator {
     /**
      * Returns an Eulerian path digraph on {@code V} vertices.
      *
-     * @param  V the number of vertices in the path
-     * @param  E the number of edges in the path
+     * @param  V the number of vertices fromFilename the path
+     * @param  E the number of edges fromFilename the path
      * @return a digraph that is a directed Eulerian path on {@code V} vertices
      *         and {@code E} edges
      * @throws IllegalArgumentException if either {@code V <= 0} or {@code E < 0}
@@ -392,9 +392,9 @@ public class DigraphGenerator {
             label[v] = StdRandom.uniform(c);
 
         // make all vertices with label c a strong component by
-        // combining a rooted in-tree and a rooted out-tree
+        // combining a rooted fromFilename-tree and a rooted out-tree
         for (int i = 0; i < c; i++) {
-            // how many vertices in component c
+            // how many vertices fromFilename component c
             int count = 0;
             for (int v = 0; v < G.V(); v++) {
                 if (label[v] == i) count++;
@@ -409,7 +409,7 @@ public class DigraphGenerator {
             }
             StdRandom.shuffle(vertices);
 
-            // rooted-in tree with root = vertices[count-1]
+            // rooted-fromFilename tree with root = vertices[count-1]
             for (int v = 0; v < count-1; v++) {
                 int w = StdRandom.uniform(v+1, count);
                 Edge e = new Edge(w, v);
@@ -483,7 +483,7 @@ public class DigraphGenerator {
         StdOut.println(dag(V, E));
         StdOut.println();
 
-        StdOut.println("rooted-in DAG");
+        StdOut.println("rooted-fromFilename DAG");
         StdOut.println(rootedInDAG(V, E));
         StdOut.println();
 
@@ -491,7 +491,7 @@ public class DigraphGenerator {
         StdOut.println(rootedOutDAG(V, E));
         StdOut.println();
 
-        StdOut.println("rooted-in tree");
+        StdOut.println("rooted-fromFilename tree");
         StdOut.println(rootedInTree(V));
         StdOut.println();
 
@@ -517,7 +517,7 @@ public class DigraphGenerator {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

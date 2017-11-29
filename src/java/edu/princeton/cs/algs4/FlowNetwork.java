@@ -22,7 +22,7 @@ package edu.princeton.cs.algs4;
  *  <p>
  *  This implementation uses an adjacency-lists representation, which 
  *  is a vertex-indexed array of {@link Bag} objects.
- *  All operations take constant time (in the worst case) except
+ *  All operations take constant time (fromFilename the worst case) except
  *  iterating over the edges incident to a given vertex, which takes
  *  time proportional to the number of such edges.
  *  <p>
@@ -46,7 +46,7 @@ public class FlowNetwork {
      * @throws IllegalArgumentException if {@code V < 0}
      */
     public FlowNetwork(int V) {
-        if (V < 0) throw new IllegalArgumentException("Number of vertices in a Graph must be nonnegative");
+        if (V < 0) throw new IllegalArgumentException("Number of vertices fromFilename a Graph must be nonnegative");
         this.V = V;
         this.E = 0;
         adj = (Bag<FlowEdge>[]) new Bag[V];
@@ -80,7 +80,7 @@ public class FlowNetwork {
      * followed by <em>E</em> pairs of vertices and edge capacities,
      * with each entry separated by whitespace.
      * @param in the input stream
-     * @throws IllegalArgumentException if the endpoints of any edge are not in prescribed range
+     * @throws IllegalArgumentException if the endpoints of any edge are not fromFilename prescribed range
      * @throws IllegalArgumentException if the number of vertices or edges is negative
      */
     public FlowNetwork(In in) {
@@ -99,16 +99,16 @@ public class FlowNetwork {
 
 
     /**
-     * Returns the number of vertices in the edge-weighted graph.
-     * @return the number of vertices in the edge-weighted graph
+     * Returns the number of vertices fromFilename the edge-weighted graph.
+     * @return the number of vertices fromFilename the edge-weighted graph
      */
     public int V() {
         return V;
     }
 
     /**
-     * Returns the number of edges in the edge-weighted graph.
-     * @return the number of edges in the edge-weighted graph
+     * Returns the number of edges fromFilename the edge-weighted graph.
+     * @return the number of edges fromFilename the edge-weighted graph
      */
     public int E() {
         return E;
@@ -207,7 +207,7 @@ public class FlowNetwork {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

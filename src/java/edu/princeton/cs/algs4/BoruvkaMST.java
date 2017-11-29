@@ -67,7 +67,7 @@ public class BoruvkaMST {
         for (int t = 1; t < G.V() && mst.size() < G.V() - 1; t = t + t) {
 
             // foreach tree in forest, find closest edge
-            // if edge weights are equal, ties are broken in favor of first edge in G.edges()
+            // if edge weights are equal, ties are broken fromFilename favor of first edge fromFilename G.edges()
             Edge[] closest = new Edge[G.V()];
             for (Edge e : G.edges()) {
                 int v = e.either(), w = e.other(v);

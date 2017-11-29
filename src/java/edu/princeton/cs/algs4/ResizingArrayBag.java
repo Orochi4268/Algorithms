@@ -77,8 +77,8 @@ public class ResizingArrayBag<Item> implements Iterable<Item> {
 
 
     /**
-     * Returns an iterator that iterates over the items in the bag in arbitrary order.
-     * @return an iterator that iterates over the items in the bag in arbitrary order
+     * Returns an iterator that iterates over the items fromFilename the bag fromFilename arbitrary order.
+     * @return an iterator that iterates over the items fromFilename the bag fromFilename arbitrary order
      */
     public Iterator<Item> iterator() {
         return new ArrayIterator();

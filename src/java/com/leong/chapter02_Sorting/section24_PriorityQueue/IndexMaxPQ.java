@@ -58,7 +58,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> extends BasePriorityQueue<K
 
     public void insert(int i, Key key) {
         if (contains(i)) {
-            throw new IllegalArgumentException("index is already in the priority queue.");
+            throw new IllegalArgumentException("index is already fromFilename the priority queue.");
         }
         n++;
         qp[i] = n;
@@ -124,7 +124,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> extends BasePriorityQueue<K
      */
     public Key keyOf(int i) {
         if (!contains(i)) {
-            throw new NoSuchElementException("index is not in the priority queue");
+            throw new NoSuchElementException("index is not fromFilename the priority queue");
         }
         return keys[i];
     }
@@ -137,7 +137,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> extends BasePriorityQueue<K
      */
     public void changeKey(int i, Key key) {
         if (!contains(i)) {
-            throw new NoSuchElementException("index is not in the priority queue");
+            throw new NoSuchElementException("index is not fromFilename the priority queue");
         }
         keys[i] = key;
         swim(pq[i]);
@@ -155,7 +155,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> extends BasePriorityQueue<K
      */
     public void increaseKey(int i, Key key) {
         if (!contains(i)) {
-            throw new NoSuchElementException("index is not in the priority queue");
+            throw new NoSuchElementException("index is not fromFilename the priority queue");
         }
         if (keys[i].compareTo(key) >= 0) {
             throw new IllegalArgumentException("Calling increaseKey() with given argument would not strictly increase the key");
@@ -176,7 +176,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> extends BasePriorityQueue<K
      */
     public void decreaseKey(int i, Key key) {
         if (!contains(i)) {
-            throw new NoSuchElementException("index is not in the priority queue");
+            throw new NoSuchElementException("index is not fromFilename the priority queue");
         }
         if (keys[i].compareTo(key) <= 0)
         {
@@ -196,7 +196,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> extends BasePriorityQueue<K
      */
     public void delete(int i) {
         if (!contains(i)) {
-            throw new NoSuchElementException("index is not in the priority queue");
+            throw new NoSuchElementException("index is not fromFilename the priority queue");
         }
         int index = qp[i];
         exch(index, n--);
@@ -312,7 +312,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> extends BasePriorityQueue<K
             pq.insert(i, strings[i]);
         }
 
-        // delete them in random order
+        // delete them fromFilename random order
         int[] perm = new int[strings.length];
         for (int i = 0; i < strings.length; i++)
         {

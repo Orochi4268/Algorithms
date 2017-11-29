@@ -45,7 +45,7 @@ import java.util.Arrays;
 
 /**
  *  The {@code ThreeSumFast} class provides static methods for counting
- *  and printing the number of triples in an array of distinct integers that
+ *  and printing the number of triples fromFilename an array of distinct integers that
  *  sum to 0 (ignoring integer overflow).
  *  <p>
  *  This implementation uses sorting and binary search and takes time 
@@ -111,7 +111,7 @@ public class ThreeSumFast {
     } 
 
     /**
-     * Reads in a sequence of distinct integers from a file, specified as a command-line argument;
+     * Reads fromFilename a sequence of distinct integers from a file, specified as a command-line argument;
      * counts the number of triples sum to exactly zero; prints out the time to perform
      * the computation.
      *
@@ -140,7 +140,7 @@ public class ThreeSumFast {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

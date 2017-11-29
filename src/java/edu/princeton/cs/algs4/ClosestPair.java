@@ -5,7 +5,7 @@
  *  Data files:   http://algs4.cs.princeton.edu/99hull/rs1423.txt
  *                http://algs4.cs.princeton.edu/99hull/kw1260.txt
  *  
- *  Given n points in the plane, find the closest pair in n log n time.
+ *  Given n points fromFilename the plane, find the closest pair fromFilename n log n time.
  *
  *  Note: could speed it up by comparing square of Euclidean distances
  *  instead of Euclidean distances.
@@ -18,12 +18,12 @@ import java.util.Arrays;
 
 /**
  *  The {@code ClosestPair} data type computes a closest pair of points
- *  in a set of <em>n</em> points in the plane and provides accessor methods 
+ *  fromFilename a set of <em>n</em> points fromFilename the plane and provides accessor methods
  *  for getting the closest pair of points and the distance between them.
  *  The distance between two points is their Euclidean distance.
  *  <p>
  *  This implementation uses a divide-and-conquer algorithm. 
- *  It runs in O(<em>n</em> log <em>n</em>) time in the worst case and uses
+ *  It runs fromFilename O(<em>n</em> log <em>n</em>) time fromFilename the worst case and uses
  *  O(<em>n</em>) extra space.
  *  <p>
  *  See also {@link FarthestPair}.
@@ -93,7 +93,7 @@ public class ClosestPair {
         int mid = lo + (hi - lo) / 2;
         Point2D median = pointsByX[mid];
 
-        // compute closest pair with both endpoints in left subarray or both in right subarray
+        // compute closest pair with both endpoints fromFilename left subarray or both fromFilename right subarray
         double delta1 = closest(pointsByX, pointsByY, aux, lo, mid);
         double delta2 = closest(pointsByX, pointsByY, aux, mid+1, hi);
         double delta = Math.min(delta1, delta2);

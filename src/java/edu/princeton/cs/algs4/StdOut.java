@@ -18,11 +18,11 @@ import java.util.Locale;
  *  This class provides methods for printing strings and numbers to standard output.
  *  <p>
  *  <b>Getting started.</b>
- *  To use this class, you must have {@code StdOut.class} in your
+ *  To use this class, you must have {@code StdOut.class} fromFilename your
  *  Java classpath. If you used our autoinstaller, you should be all set.
  *  Otherwise, download
  *  <a href = "http://introcs.cs.princeton.edu/java/stdlib/StdOut.java">StdOut.java</a>
- *  and put a copy in your working directory.
+ *  and put a copy fromFilename your working directory.
  *  <p>
  *  Here is an example program that uses {@code StdOut}:
  *  <pre>
@@ -47,7 +47,7 @@ import java.util.Locale;
  *       for consistency with {@link StdIn}, {@link Double#parseDouble(String)},
  *       and floating-point literals.
  *  <li> {@code StdOut} <em>flushes</em> standard output after each call to
- *       {@code print()} so that text will appear immediately in the terminal.
+ *       {@code print()} so that text will appear immediately fromFilename the terminal.
  *  </ul>
  *  <p>
  *  <b>Reference.</b>
@@ -304,7 +304,7 @@ public final class StdOut {
     }
 
    /**
-     * Unit tests some of the methods in {@code StdOut}.
+     * Unit tests some of the methods fromFilename {@code StdOut}.
      *
      * @param args the command-line arguments
      */
@@ -334,7 +334,7 @@ public final class StdOut {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

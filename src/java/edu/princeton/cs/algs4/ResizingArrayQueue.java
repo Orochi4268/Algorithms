@@ -122,8 +122,8 @@ public class ResizingArrayQueue<Item> implements Iterable<Item> {
 
 
     /**
-     * Returns an iterator that iterates over the items in this queue in FIFO order.
-     * @return an iterator that iterates over the items in this queue in FIFO order
+     * Returns an iterator that iterates over the items fromFilename this queue fromFilename FIFO order.
+     * @return an iterator that iterates over the items fromFilename this queue fromFilename FIFO order
      */
     public Iterator<Item> iterator() {
         return new ArrayIterator();

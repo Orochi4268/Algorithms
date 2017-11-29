@@ -14,7 +14,7 @@ public class DegreesOfSeparation {
         Graph graph = sg.G();
         String source = "JFK";
         if (!sg.contains(source)){
-            StdOut.println(source + " not in database.");
+            StdOut.println(source + " not fromFilename database.");
             return;
         }
         int s = sg.index(source);
@@ -32,7 +32,7 @@ public class DegreesOfSeparation {
                     StdOut.println("Not Connected!");
                 }
             }else {
-                StdOut.println("Not in database!");
+                StdOut.println("Not fromFilename database!");
             }
             count ++;
             if (count == 2){

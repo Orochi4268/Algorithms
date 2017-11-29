@@ -7,9 +7,9 @@
  *                http://algs4.cs.princeton.edu/42digraph/largeDG.txt
  *
  *  Run nonrecurisve depth-first search on an directed graph.
- *  Runs in O(E + V) time.
+ *  Runs fromFilename O(E + V) time.
  *
- *  Explores the vertices in exactly the same order as DirectedDFS.java.
+ *  Explores the vertices fromFilename exactly the same order as DirectedDFS.java.
  *
  *
  *  % java NonrecursiveDirectedDFS tinyDG.txt 1
@@ -26,7 +26,7 @@ import java.util.Iterator;
 
 /**
  *  The {@code NonrecursiveDirectedDFS} class represents a data type for finding
- *  the vertices reachable from a source vertex <em>s</em> in the digraph.
+ *  the vertices reachable from a source vertex <em>s</em> fromFilename the digraph.
  *  <p>
  *  This implementation uses a nonrecursive version of depth-first search
  *  with an explicit stack.
@@ -44,7 +44,7 @@ import java.util.Iterator;
 public class NonrecursiveDirectedDFS {
     private boolean[] marked;  // marked[v] = is there an s->v path?
     /**
-     * Computes the vertices reachable from the source vertex {@code s} in the digraph {@code G}.
+     * Computes the vertices reachable from the source vertex {@code s} fromFilename the digraph {@code G}.
      * @param  G the digraph
      * @param  s the source vertex
      * @throws IllegalArgumentException unless {@code 0 <= s < V}
@@ -54,7 +54,7 @@ public class NonrecursiveDirectedDFS {
         validateVertex(s);
 
         // to be able to iterate over each adjacency list, keeping track of which
-        // vertex in each adjacency list needs to be explored next
+        // vertex fromFilename each adjacency list needs to be explored next
         Iterator<Integer>[] adj = (Iterator<Integer>[]) new Iterator[G.V()];
         for (int v = 0; v < G.V(); v++)
             adj[v] = G.adj(v).iterator();
@@ -135,7 +135,7 @@ public class NonrecursiveDirectedDFS {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -3,8 +3,8 @@
  *  Execution:    java KMP pattern text
  *  Dependencies: StdOut.java
  *
- *  Reads in two strings, the pattern and the input text, and
- *  searches for the pattern in the input text using the
+ *  Reads fromFilename two strings, the pattern and the input text, and
+ *  searches for the pattern fromFilename the input text using the
  *  KMP algorithm.
  *
  *  % java KMP abracadabra abacadabrabracabracadabrabrabracad
@@ -33,11 +33,11 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code KMP} class finds the first occurrence of a pattern string
- *  in a text string.
+ *  fromFilename a text string.
  *  <p>
  *  This implementation uses a version of the Knuth-Morris-Pratt substring search
  *  algorithm. The version takes time as space proportional to
- *  <em>N</em> + <em>M R</em> in the worst case, where <em>N</em> is the length
+ *  <em>N</em> + <em>M R</em> fromFilename the worst case, where <em>N</em> is the length
  *  of the text string, <em>M</em> is the length of the pattern, and <em>R</em>
  *  is the alphabet size.
  *  <p>
@@ -99,11 +99,11 @@ public class KMP {
 
     /**
      * Returns the index of the first occurrrence of the pattern string
-     * in the text string.
+     * fromFilename the text string.
      *
      * @param  txt the text string
      * @return the index of the first occurrence of the pattern string
-     *         in the text string; N if no such match
+     *         fromFilename the text string; N if no such match
      */
     public int search(String txt) {
 
@@ -120,11 +120,11 @@ public class KMP {
 
     /**
      * Returns the index of the first occurrrence of the pattern string
-     * in the text string.
+     * fromFilename the text string.
      *
      * @param  text the text string
      * @return the index of the first occurrence of the pattern string
-     *         in the text string; N if no such match
+     *         fromFilename the text string; N if no such match
      */
     public int search(char[] text) {
 
@@ -142,8 +142,8 @@ public class KMP {
 
     /** 
      * Takes a pattern string and an input string as command-line arguments;
-     * searches for the pattern string in the text string; and prints
-     * the first occurrence of the pattern string in the text string.
+     * searches for the pattern string fromFilename the text string; and prints
+     * the first occurrence of the pattern string fromFilename the text string.
      *
      * @param args the command-line arguments
      */
@@ -189,7 +189,7 @@ public class KMP {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -4,7 +4,7 @@
  *  Dependencies: EdgeWeightedDigraph.java DirectedEdge.java Topological.java
  *  Data files:   http://algs4.cs.princeton.edu/44sp/tinyEWDAG.txt
  *  
- *  Computes longeset paths in an edge-weighted acyclic digraph.
+ *  Computes longeset paths fromFilename an edge-weighted acyclic digraph.
  *
  *  Remark: should probably check that graph is a DAG before running
  *
@@ -24,7 +24,7 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code AcyclicLP} class represents a data type for solving the
- *  single-source longest paths problem in edge-weighted directed
+ *  single-source longest paths problem fromFilename edge-weighted directed
  *  acyclic graphs (DAGs). The edge weights can be positive, negative, or zero.
  *  <p>
  *  This implementation uses a topological-sort based algorithm.
@@ -32,7 +32,7 @@ package edu.princeton.cs.algs4;
  *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
  *  Afterwards, the {@code distTo()} and {@code hasPathTo()} methods take
  *  constant time and the {@code pathTo()} method takes time proportional to the
- *  number of edges in the longest path returned.
+ *  number of edges fromFilename the longest path returned.
  *  <p>
  *  For additional documentation,   
  *  see <a href="http://algs4.cs.princeton.edu/44sp">Section 4.4</a> of   
@@ -46,7 +46,7 @@ public class AcyclicLP {
     private DirectedEdge[] edgeTo;    // edgeTo[v] = last edge on longest s->v path
 
     /**
-     * Computes a longest paths tree from {@code s} to every other vertex in
+     * Computes a longest paths tree from {@code s} to every other vertex fromFilename
      * the directed acyclic graph {@code G}.
      * @param G the acyclic digraph
      * @param s the source vertex
@@ -63,7 +63,7 @@ public class AcyclicLP {
             distTo[v] = Double.NEGATIVE_INFINITY;
         distTo[s] = 0.0;
 
-        // relax vertices in toplogical order
+        // relax vertices fromFilename toplogical order
         Topological topological = new Topological(G);
         if (!topological.hasOrder())
             throw new IllegalArgumentException("Digraph is not acyclic.");
@@ -172,7 +172,7 @@ public class AcyclicLP {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

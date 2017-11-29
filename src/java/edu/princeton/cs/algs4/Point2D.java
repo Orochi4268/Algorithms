@@ -3,7 +3,7 @@
  *  Execution:    java Point2D x0 y0 n
  *  Dependencies: StdDraw.java StdRandom.java
  *
- *  Immutable point data type for points in the plane.
+ *  Immutable point data type for points fromFilename the plane.
  *
  ******************************************************************************/
 
@@ -17,7 +17,7 @@ import java.util.Comparator;
  *  The {@code Point} class is an immutable data type to encapsulate a
  *  two-dimensional point with real-value coordinates.
  *  <p>
- *  Note: in order to deal with the difference behavior of double and 
+ *  Note: fromFilename order to deal with the difference behavior of double and
  *  Double with respect to -0.0 and +0.0, the Point2D constructor converts
  *  any coordinates that are -0.0 to +0.0.
  *  <p>
@@ -86,15 +86,15 @@ public final class Point2D implements Comparable<Point2D> {
 
     /**
      * Returns the polar radius of this point.
-     * @return the polar radius of this point in polar coordiantes: sqrt(x*x + y*y)
+     * @return the polar radius of this point fromFilename polar coordiantes: sqrt(x*x + y*y)
      */
     public double r() {
         return Math.sqrt(x*x + y*y);
     }
 
     /**
-     * Returns the angle of this point in polar coordinates.
-     * @return the angle (in radians) of this point in polar coordiantes (between –&pi;/2 and &pi;/2)
+     * Returns the angle of this point fromFilename polar coordinates.
+     * @return the angle (fromFilename radians) of this point fromFilename polar coordiantes (between –&pi;/2 and &pi;/2)
      */
     public double theta() {
         return Math.atan2(y, x);
@@ -102,7 +102,7 @@ public final class Point2D implements Comparable<Point2D> {
 
     /**
      * Returns the angle between this point and that point.
-     * @return the angle in radians (between –&pi; and &pi;) between this point and that point (0 if equal)
+     * @return the angle fromFilename radians (between –&pi; and &pi;) between this point and that point (0 if equal)
      */
     private double angleTo(Point2D that) {
         double dx = that.x - this.x;
@@ -294,7 +294,7 @@ public final class Point2D implements Comparable<Point2D> {
 
     /**
      * Return a string representation of this point.
-     * @return a string representation of this point in the format (x, y)
+     * @return a string representation of this point fromFilename the format (x, y)
      */
     @Override
     public String toString() {
@@ -352,14 +352,14 @@ public final class Point2D implements Comparable<Point2D> {
             points[i].draw();
         }
 
-        // draw p = (x0, x1) in red
+        // draw p = (x0, x1) fromFilename red
         Point2D p = new Point2D(x0, y0);
         StdDraw.setPenColor(StdDraw.RED);
         StdDraw.setPenRadius(0.02);
         p.draw();
 
 
-        // draw line segments from p to each point, one at a time, in polar order
+        // draw line segments from p to each point, one at a time, fromFilename polar order
         StdDraw.setPenRadius();
         StdDraw.setPenColor(StdDraw.BLUE);
         Arrays.sort(points, p.polarOrder());
@@ -386,7 +386,7 @@ public final class Point2D implements Comparable<Point2D> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

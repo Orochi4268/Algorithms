@@ -32,13 +32,13 @@ package edu.princeton.cs.algs4;
  *  iterate over all of the edges incident to a vertex. It also provides
  *  methods for returning the number of vertices <em>V</em> and the number
  *  of edges <em>E</em>. Parallel edges and self-loops are permitted.
- *  By convention, a self-loop <em>v</em>-<em>v</em> appears in the
+ *  By convention, a self-loop <em>v</em>-<em>v</em> appears fromFilename the
  *  adjacency list of <em>v</em> twice and contributes two to the degree
  *  of <em>v</em>.
  *  <p>
  *  This implementation uses an adjacency-lists representation, which 
  *  is a vertex-indexed array of {@link Bag} objects.
- *  All operations take constant time (in the worst case) except
+ *  All operations take constant time (fromFilename the worst case) except
  *  iterating over the edges incident to a given vertex, which takes
  *  time proportional to the number of such edges.
  *  <p>
@@ -100,7 +100,7 @@ public class EdgeWeightedGraph {
      * with each entry separated by whitespace.
      *
      * @param  in the input stream
-     * @throws IllegalArgumentException if the endpoints of any edge are not in prescribed range
+     * @throws IllegalArgumentException if the endpoints of any edge are not fromFilename prescribed range
      * @throws IllegalArgumentException if the number of vertices or edges is negative
      */
     public EdgeWeightedGraph(In in) {
@@ -127,7 +127,7 @@ public class EdgeWeightedGraph {
         this(G.V());
         this.E = G.E();
         for (int v = 0; v < G.V(); v++) {
-            // reverse so that adjacency list is in same order as original
+            // reverse so that adjacency list is fromFilename same order as original
             Stack<Edge> reverse = new Stack<Edge>();
             for (Edge e : G.adj[v]) {
                 reverse.push(e);
@@ -140,18 +140,18 @@ public class EdgeWeightedGraph {
 
 
     /**
-     * Returns the number of vertices in this edge-weighted graph.
+     * Returns the number of vertices fromFilename this edge-weighted graph.
      *
-     * @return the number of vertices in this edge-weighted graph
+     * @return the number of vertices fromFilename this edge-weighted graph
      */
     public int V() {
         return V;
     }
 
     /**
-     * Returns the number of edges in this edge-weighted graph.
+     * Returns the number of edges fromFilename this edge-weighted graph.
      *
-     * @return the number of edges in this edge-weighted graph
+     * @return the number of edges fromFilename this edge-weighted graph
      */
     public int E() {
         return E;
@@ -204,11 +204,11 @@ public class EdgeWeightedGraph {
     }
 
     /**
-     * Returns all edges in this edge-weighted graph.
-     * To iterate over the edges in this edge-weighted graph, use foreach notation:
+     * Returns all edges fromFilename this edge-weighted graph.
+     * To iterate over the edges fromFilename this edge-weighted graph, use foreach notation:
      * {@code for (Edge e : G.edges())}.
      *
-     * @return all edges in this edge-weighted graph, as an iterable
+     * @return all edges fromFilename this edge-weighted graph, as an iterable
      */
     public Iterable<Edge> edges() {
         Bag<Edge> list = new Bag<Edge>();
@@ -276,7 +276,7 @@ public class EdgeWeightedGraph {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

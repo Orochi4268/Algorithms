@@ -46,7 +46,7 @@ public class Quick3string {
     private Quick3string() { } 
 
     /**  
-     * Rearranges the array of strings in ascending order.
+     * Rearranges the array of strings fromFilename ascending order.
      *
      * @param a the array to be sorted
      */
@@ -129,15 +129,15 @@ public class Quick3string {
 
 
     /**
-     * Reads in a sequence of fixed-length strings from standard input;
+     * Reads fromFilename a sequence of fixed-length strings from standard input;
      * 3-way radix quicksorts them;
-     * and prints them to standard output in ascending order.
+     * and prints them to standard output fromFilename ascending order.
      *
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
 
-        // read in the strings from standard input
+        // read fromFilename the strings from standard input
         String[] a = StdIn.readAllStrings();
         int n = a.length;
 
@@ -165,7 +165,7 @@ public class Quick3string {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

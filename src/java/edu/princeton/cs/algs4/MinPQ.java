@@ -72,7 +72,7 @@ public class MinPQ<Key> implements Iterable<Key> {
      * using the given comparator.
      *
      * @param  initCapacity the initial capacity of this priority queue
-     * @param  comparator the order in which to compare the keys
+     * @param  comparator the order fromFilename which to compare the keys
      */
     public MinPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
@@ -83,7 +83,7 @@ public class MinPQ<Key> implements Iterable<Key> {
     /**
      * Initializes an empty priority queue using the given comparator.
      *
-     * @param  comparator the order in which to compare the keys
+     * @param  comparator the order fromFilename which to compare the keys
      */
     public MinPQ(Comparator<Key> comparator) {
         this(1, comparator);
@@ -236,11 +236,11 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * Returns an iterator that iterates over the keys on this priority queue
-     * in ascending order.
+     * fromFilename ascending order.
      * <p>
      * The iterator doesn't implement {@code remove()} since it's optional.
      *
-     * @return an iterator that iterates over the keys in ascending order
+     * @return an iterator that iterates over the keys fromFilename ascending order
      */
     public Iterator<Key> iterator() {
         return new HeapIterator();
@@ -251,7 +251,7 @@ public class MinPQ<Key> implements Iterable<Key> {
         private MinPQ<Key> copy;
 
         // add all items to copy of heap
-        // takes linear time since already in heap order so no keys move
+        // takes linear time since already fromFilename heap order so no keys move
         public HeapIterator() {
             if (comparator == null) copy = new MinPQ<Key>(size());
             else                    copy = new MinPQ<Key>(size(), comparator);
@@ -300,7 +300,7 @@ public class MinPQ<Key> implements Iterable<Key> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

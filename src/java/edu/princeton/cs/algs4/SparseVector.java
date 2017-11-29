@@ -69,9 +69,9 @@ public class SparseVector {
     }
 
    /**
-     * Returns the number of nonzero entries in this vector.
+     * Returns the number of nonzero entries fromFilename this vector.
      *
-     * @return the number of nonzero entries in this vector
+     * @return the number of nonzero entries fromFilename this vector
      */
     public int nnz() {
         return st.size();
@@ -187,7 +187,7 @@ public class SparseVector {
    /**
      * Returns a string representation of this vector.
      * @return a string representation of this vector, which consists of the 
-     *         the vector entries, separates by commas, enclosed in parentheses
+     *         the vector entries, separates by commas, enclosed fromFilename parentheses
      */
     public String toString() {
         StringBuilder s = new StringBuilder();
@@ -235,7 +235,7 @@ public class SparseVector {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

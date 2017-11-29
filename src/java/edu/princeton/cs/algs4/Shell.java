@@ -9,7 +9,7 @@
  *
  *  Uses increment sequence proposed by Sedgewick and Incerpi.
  *  The nth element of the sequence is the smallest integer >= 2.5^n
- *  that is relatively prime to all previous terms in the sequence.
+ *  that is relatively prime to all previous terms fromFilename the sequence.
  *  For example, incs[4] is 41 because 2.5^4 = 39.0625 and 41 is
  *  the next integer that is relatively prime to 3, 7, and 16.
  *   
@@ -46,7 +46,7 @@ public class Shell {
     private Shell() { }
 
     /**
-     * Rearranges the array in ascending order, using the natural order.
+     * Rearranges the array fromFilename ascending order, using the natural order.
      * @param a the array to be sorted
      */
     public static void sort(Comparable[] a) {
@@ -112,8 +112,8 @@ public class Shell {
     }
 
     /**
-     * Reads in a sequence of strings from standard input; Shellsorts them; 
-     * and prints them to standard output in ascending order. 
+     * Reads fromFilename a sequence of strings from standard input; Shellsorts them;
+     * and prints them to standard output fromFilename ascending order.
      *
      * @param args the command-line arguments
      */
@@ -140,7 +140,7 @@ public class Shell {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

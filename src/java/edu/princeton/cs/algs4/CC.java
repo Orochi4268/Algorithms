@@ -7,7 +7,7 @@
  *                http://algs4.cs.princeton.edu/41graph/largeG.txt
  *
  *  Compute connected components using depth first search.
- *  Runs in O(E + V) time.
+ *  Runs fromFilename O(E + V) time.
  *
  *  % java CC tinyG.txt
  *  3 components
@@ -33,22 +33,22 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code CC} class represents a data type for 
- *  determining the connected components in an undirected graph.
- *  The <em>id</em> operation determines in which connected component
+ *  determining the connected components fromFilename an undirected graph.
+ *  The <em>id</em> operation determines fromFilename which connected component
  *  a given vertex lies; the <em>connected</em> operation
- *  determines whether two vertices are in the same connected component;
+ *  determines whether two vertices are fromFilename the same connected component;
  *  the <em>count</em> operation determines the number of connected
  *  components; and the <em>size</em> operation determines the number
- *  of vertices in the connect component containing a given vertex.
+ *  of vertices fromFilename the connect component containing a given vertex.
 
  *  The <em>component identifier</em> of a connected component is one of the
- *  vertices in the connected component: two vertices have the same component
- *  identifier if and only if they are in the same connected component.
+ *  vertices fromFilename the connected component: two vertices have the same component
+ *  identifier if and only if they are fromFilename the same connected component.
 
  *  <p>
  *  This implementation uses depth-first search.
  *  The constructor takes time proportional to <em>V</em> + <em>E</em>
- *  (in the worst case),
+ *  (fromFilename the worst case),
  *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
  *  Afterwards, the <em>id</em>, <em>count</em>, <em>connected</em>,
  *  and <em>size</em> operations take constant time.
@@ -62,7 +62,7 @@ package edu.princeton.cs.algs4;
 public class CC {
     private boolean[] marked;   // marked[v] = has vertex v been marked?
     private int[] id;           // id[v] = id of connected component containing v
-    private int[] size;         // size[id] = number of vertices in given component
+    private int[] size;         // size[id] = number of vertices fromFilename given component
     private int count;          // number of connected components
 
     /**
@@ -138,10 +138,10 @@ public class CC {
     }
 
     /**
-     * Returns the number of vertices in the connected component containing vertex {@code v}.
+     * Returns the number of vertices fromFilename the connected component containing vertex {@code v}.
      *
      * @param  v the vertex
-     * @return the number of vertices in the connected component containing vertex {@code v}
+     * @return the number of vertices fromFilename the connected component containing vertex {@code v}
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
     public int size(int v) {
@@ -150,21 +150,21 @@ public class CC {
     }
 
     /**
-     * Returns the number of connected components in the graph {@code G}.
+     * Returns the number of connected components fromFilename the graph {@code G}.
      *
-     * @return the number of connected components in the graph {@code G}
+     * @return the number of connected components fromFilename the graph {@code G}
      */
     public int count() {
         return count;
     }
 
     /**
-     * Returns true if vertices {@code v} and {@code w} are in the same
+     * Returns true if vertices {@code v} and {@code w} are fromFilename the same
      * connected component.
      *
      * @param  v one vertex
      * @param  w the other vertex
-     * @return {@code true} if vertices {@code v} and {@code w} are in the same
+     * @return {@code true} if vertices {@code v} and {@code w} are fromFilename the same
      *         connected component; {@code false} otherwise
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      * @throws IllegalArgumentException unless {@code 0 <= w < V}
@@ -176,12 +176,12 @@ public class CC {
     }
 
     /**
-     * Returns true if vertices {@code v} and {@code w} are in the same
+     * Returns true if vertices {@code v} and {@code w} are fromFilename the same
      * connected component.
      *
      * @param  v one vertex
      * @param  w the other vertex
-     * @return {@code true} if vertices {@code v} and {@code w} are in the same
+     * @return {@code true} if vertices {@code v} and {@code w} are fromFilename the same
      *         connected component; {@code false} otherwise
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      * @throws IllegalArgumentException unless {@code 0 <= w < V}
@@ -215,7 +215,7 @@ public class CC {
         int m = cc.count();
         StdOut.println(m + " components");
 
-        // compute list of vertices in each connected component
+        // compute list of vertices fromFilename each connected component
         Queue<Integer>[] components = (Queue<Integer>[]) new Queue[m];
         for (int i = 0; i < m; i++) {
             components[i] = new Queue<Integer>();
@@ -249,7 +249,7 @@ public class CC {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

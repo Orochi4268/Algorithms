@@ -3,7 +3,7 @@
  *  Execution:    java In   (basic test --- see source for required files)
  *  Dependencies: none
  *
- *  Reads in data of various types from standard input, files, and URLs.
+ *  Reads fromFilename data of various types from standard input, files, and URLs.
  *
  ******************************************************************************/
 
@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
  *  the following end-of-line delimeter, while reading a character consumes
  *  nothing extra. 
  *  <p>
- *  Whitespace is defined in {@link Character#isWhitespace(char)}. Newlines
+ *  Whitespace is defined fromFilename {@link Character#isWhitespace(char)}. Newlines
  *  consist of \n, \r, \r\n, and Unicode hex code points 0x2028, 0x2029, 0x0085;
  *  see <a href="http://www.docjar.com/html/api/java/util/Scanner.java.html">
  *  Scanner.java</a> (NB: Java 6u23 and earlier uses only \r, \r, \r\n).
@@ -169,7 +169,7 @@ public final class In {
                 return;
             }
 
-            // next try for files included in jar
+            // next try for files included fromFilename jar
             URL url = getClass().getResource(name);
 
             // try this as well
@@ -184,7 +184,7 @@ public final class In {
 
             URLConnection site = url.openConnection();
 
-            // in order to set User-Agent, replace above line with these two
+            // fromFilename order to set User-Agent, replace above line with these two
             // HttpURLConnection site = (HttpURLConnection) url.openConnection();
             // site.addRequestProperty("User-Agent", "Mozilla/4.76");
 
@@ -266,9 +266,9 @@ public final class In {
 
 
    /**
-     * Reads and returns the next line in this input stream.
+     * Reads and returns the next line fromFilename this input stream.
      *
-     * @return the next line in this input stream; {@code null} if no such line
+     * @return the next line fromFilename this input stream; {@code null} if no such line
      */
     public String readLine() {
         String line;
@@ -282,9 +282,9 @@ public final class In {
     }
 
     /**
-     * Reads and returns the next character in this input stream.
+     * Reads and returns the next character fromFilename this input stream.
      *
-     * @return the next {@code char} in this input stream
+     * @return the next {@code char} fromFilename this input stream
      * @throws NoSuchElementException if the input stream is empty
      */
     public char readChar() {
@@ -321,7 +321,7 @@ public final class In {
    /**
      * Reads the next token from this input stream and returns it as a {@code String}.
      *
-     * @return the next {@code String} in this input stream
+     * @return the next {@code String} fromFilename this input stream
      * @throws NoSuchElementException if the input stream is empty
      */
     public String readString() {
@@ -337,7 +337,7 @@ public final class In {
      * Reads the next token from this input stream, parses it as a {@code int},
      * and returns the {@code int}.
      *
-     * @return the next {@code int} in this input stream
+     * @return the next {@code int} fromFilename this input stream
      * @throws NoSuchElementException if the input stream is empty
      * @throws InputMismatchException if the next token cannot be parsed as an {@code int}
      */
@@ -358,7 +358,7 @@ public final class In {
      * Reads the next token from this input stream, parses it as a {@code double},
      * and returns the {@code double}.
      *
-     * @return the next {@code double} in this input stream
+     * @return the next {@code double} fromFilename this input stream
      * @throws NoSuchElementException if the input stream is empty
      * @throws InputMismatchException if the next token cannot be parsed as a {@code double}
      */
@@ -379,7 +379,7 @@ public final class In {
      * Reads the next token from this input stream, parses it as a {@code float},
      * and returns the {@code float}.
      *
-     * @return the next {@code float} in this input stream
+     * @return the next {@code float} fromFilename this input stream
      * @throws NoSuchElementException if the input stream is empty
      * @throws InputMismatchException if the next token cannot be parsed as a {@code float}
      */
@@ -400,7 +400,7 @@ public final class In {
      * Reads the next token from this input stream, parses it as a {@code long},
      * and returns the {@code long}.
      *
-     * @return the next {@code long} in this input stream
+     * @return the next {@code long} fromFilename this input stream
      * @throws NoSuchElementException if the input stream is empty
      * @throws InputMismatchException if the next token cannot be parsed as a {@code long}
      */
@@ -421,7 +421,7 @@ public final class In {
      * Reads the next token from this input stream, parses it as a {@code short},
      * and returns the {@code short}.
      *
-     * @return the next {@code short} in this input stream
+     * @return the next {@code short} fromFilename this input stream
      * @throws NoSuchElementException if the input stream is empty
      * @throws InputMismatchException if the next token cannot be parsed as a {@code short}
      */
@@ -444,7 +444,7 @@ public final class In {
      * <p>
      * To read binary data, use {@link BinaryIn}.
      *
-     * @return the next {@code byte} in this input stream
+     * @return the next {@code byte} fromFilename this input stream
      * @throws NoSuchElementException if the input stream is empty
      * @throws InputMismatchException if the next token cannot be parsed as a {@code byte}
      */
@@ -466,7 +466,7 @@ public final class In {
      * (interpreting either {@code "true"} or {@code "1"} as {@code true},
      * and either {@code "false"} or {@code "0"} as {@code false}).
      *
-     * @return the next {@code boolean} in this input stream
+     * @return the next {@code boolean} fromFilename this input stream
      * @throws NoSuchElementException if the input stream is empty
      * @throws InputMismatchException if the next token cannot be parsed as a {@code boolean}
      */
@@ -488,7 +488,7 @@ public final class In {
      * Reads all remaining tokens from this input stream and returns them as
      * an array of strings.
      *
-     * @return all remaining tokens in this input stream, as an array of strings
+     * @return all remaining tokens fromFilename this input stream, as an array of strings
      */
     public String[] readAllStrings() {
         // we could use readAll.trim().split(), but that's not consistent
@@ -506,7 +506,7 @@ public final class In {
      * Reads all remaining lines from this input stream and returns them as
      * an array of strings.
      *
-     * @return all remaining lines in this input stream, as an array of strings
+     * @return all remaining lines fromFilename this input stream, as an array of strings
      */
     public String[] readAllLines() {
         ArrayList<String> lines = new ArrayList<String>();
@@ -521,7 +521,7 @@ public final class In {
      * Reads all remaining tokens from this input stream, parses them as integers,
      * and returns them as an array of integers.
      *
-     * @return all remaining lines in this input stream, as an array of integers
+     * @return all remaining lines fromFilename this input stream, as an array of integers
      */
     public int[] readAllInts() {
         String[] fields = readAllStrings();
@@ -535,7 +535,7 @@ public final class In {
      * Reads all remaining tokens from this input stream, parses them as longs,
      * and returns them as an array of longs.
      *
-     * @return all remaining lines in this input stream, as an array of longs
+     * @return all remaining lines fromFilename this input stream, as an array of longs
      */
     public long[] readAllLongs() {
         String[] fields = readAllStrings();
@@ -549,7 +549,7 @@ public final class In {
      * Reads all remaining tokens from this input stream, parses them as doubles,
      * and returns them as an array of doubles.
      *
-     * @return all remaining lines in this input stream, as an array of doubles
+     * @return all remaining lines fromFilename this input stream, as an array of doubles
      */
     public double[] readAllDoubles() {
         String[] fields = readAllStrings();
@@ -573,7 +573,7 @@ public final class In {
      * an array of integers.
      *
      * @param      filename the name of the file
-     * @return     the integers in the file
+     * @return     the integers fromFilename the file
      * @deprecated Replaced by {@code new In(filename)}.{@link #readAllInts()}.
      */
     @Deprecated
@@ -586,7 +586,7 @@ public final class In {
      * an array of doubles.
      *
      * @param      filename the name of the file
-     * @return     the doubles in the file
+     * @return     the doubles fromFilename the file
      * @deprecated Replaced by {@code new In(filename)}.{@link #readAllDoubles()}.
      */
     @Deprecated
@@ -599,7 +599,7 @@ public final class In {
      * an array of strings.
      *
      * @param      filename the name of the file
-     * @return     the strings in the file
+     * @return     the strings fromFilename the file
      * @deprecated Replaced by {@code new In(filename)}.{@link #readAllStrings()}.
      */
     @Deprecated
@@ -695,7 +695,7 @@ public final class In {
         System.out.println();
 
 
-        // read one line at a time from file in current directory
+        // read one line at a time from file fromFilename current directory
         System.out.println("readLine() from current directory");
         System.out.println("---------------------------------------------------------------------------");
         try {
@@ -793,7 +793,7 @@ public final class In {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

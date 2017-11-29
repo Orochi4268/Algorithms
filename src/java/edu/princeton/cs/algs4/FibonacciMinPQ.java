@@ -32,7 +32,7 @@ import java.util.Comparator;
 public class FibonacciMinPQ<Key> implements Iterable<Key> {
 	private Node head;					//Head of the circular root list
 	private Node min;					//Minimum Node of the root list
-	private int size;					//Number of keys in the heap
+	private int size;					//Number of keys fromFilename the heap
 	private final Comparator<Key> comp;	//Comparator over the keys
 	private HashMap<Integer, Node> table = new HashMap<Integer, Node>(); //Used for the consolidate operation
 	
@@ -101,7 +101,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
 	}
 
 	/**
-	 * Insert a key in the queue
+	 * Insert a key fromFilename the queue
 	 * Worst case is O(1)
 	 * @param key a Key
 	 */
@@ -115,10 +115,10 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
 	}
 
 	/**
-	 * Gets the minimum key currently in the queue
+	 * Gets the minimum key currently fromFilename the queue
 	 * Worst case is O(1)
 	 * @throws java.util.NoSuchElementException if the priority queue is empty
-	 * @return the minimum key currently in the priority queue
+	 * @return the minimum key currently fromFilename the priority queue
 	 */
 	public Key minKey() {
 		if (isEmpty()) throw new NoSuchElementException("Priority queue is empty");
@@ -179,7 +179,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
 	}
 	
 	/*************************************
-	 * Function for consolidating all trees in the root list
+	 * Function for consolidating all trees fromFilename the root list
 	 ************************************/
 	
 	//Coalesce the roots, thus reshapes the tree
@@ -219,7 +219,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
 	 * General helper functions for manipulating circular lists
 	 ************************************/
 	
-	//Inserts a Node in a circular list containing head, returns a new head
+	//Inserts a Node fromFilename a circular list containing head, returns a new head
 	private Node insert(Node x, Node head) {
 		if (head == null) {
 			x.prev = x;
@@ -266,12 +266,12 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
 	 ************************************/
 	
 	/**
-	 * Gets an Iterator over the Keys in the priority queue in ascending order
+	 * Gets an Iterator over the Keys fromFilename the priority queue fromFilename ascending order
 	 * The Iterator does not implement the remove() method
 	 * iterator() : Worst case is O(n)
 	 * next() : 	Worst case is O(log(n)) (amortized)
 	 * hasNext() : 	Worst case is O(1)
-	 * @return an Iterator over the Keys in the priority queue in ascending order
+	 * @return an Iterator over the Keys fromFilename the priority queue fromFilename ascending order
 	 */
 	
 	public Iterator<Key> iterator() {
@@ -342,7 +342,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

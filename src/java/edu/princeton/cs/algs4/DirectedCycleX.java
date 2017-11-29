@@ -3,8 +3,8 @@
  *  Execution:    java DirectedCycleX V E F
  *  Dependencies: Queue.java Digraph.java Stack.java
  *
- *  Find a directed cycle in a digraph, using a nonrecursive, queue-based
- *  algorithm. Runs in O(E + V) time.
+ *  Find a directed cycle fromFilename a digraph, using a nonrecursive, queue-based
+ *  algorithm. Runs fromFilename O(E + V) time.
  *
  ******************************************************************************/
 
@@ -19,7 +19,7 @@ package edu.princeton.cs.algs4;
  *  <p>
  *  This implementation uses a nonrecursive, queue-based algorithm.
  *  The constructor takes time proportional to <em>V</em> + <em>E</em>
- *  (in the worst case),
+ *  (fromFilename the worst case),
  *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
  *  Afterwards, the <em>hasCycle</em> operation takes constant time;
  *  the <em>cycle</em> operation takes time proportional
@@ -61,7 +61,7 @@ public class DirectedCycleX {
             }
         }
 
-        // there is a directed cycle in subgraph of vertices with indegree >= 1.
+        // there is a directed cycle fromFilename subgraph of vertices with indegree >= 1.
         int[] edgeTo = new int[G.V()];
         int root = -1;  // any vertex with indegree >= -1
         for (int v = 0; v < G.V(); v++) {
@@ -184,7 +184,7 @@ public class DirectedCycleX {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

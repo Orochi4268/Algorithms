@@ -17,7 +17,7 @@ package edu.princeton.cs.algs4;
  *  <em>delete</em>, <em>size</em>, and <em>is-empty</em> methods.
  *  It also provides a <em>keys</em> method for iterating over all of the keys.
  *  A symbol table implements the <em>associative array</em> abstraction:
- *  when associating a value with a key that is already in the symbol table,
+ *  when associating a value with a key that is already fromFilename the symbol table,
  *  the convention is to replace the old value with the new value.
  *  Unlike {@link java.util.Map}, this class uses the convention that
  *  values cannot be {@code null}—setting the
@@ -86,9 +86,9 @@ public class SeparateChainingHashST<Key, Value> {
     } 
 
     /**
-     * Returns the number of key-value pairs in this symbol table.
+     * Returns the number of key-value pairs fromFilename this symbol table.
      *
-     * @return the number of key-value pairs in this symbol table
+     * @return the number of key-value pairs fromFilename this symbol table
      */
     public int size() {
         return n;
@@ -118,10 +118,10 @@ public class SeparateChainingHashST<Key, Value> {
     } 
 
     /**
-     * Returns the value associated with the specified key in this symbol table.
+     * Returns the value associated with the specified key fromFilename this symbol table.
      *
      * @param  key the key
-     * @return the value associated with {@code key} in the symbol table;
+     * @return the value associated with {@code key} fromFilename the symbol table;
      *         {@code null} if no such value
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
@@ -158,7 +158,7 @@ public class SeparateChainingHashST<Key, Value> {
 
     /**
      * Removes the specified key and its associated value from this symbol table     
-     * (if the key is in this symbol table).    
+     * (if the key is fromFilename this symbol table).
      *
      * @param  key the key
      * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -174,7 +174,7 @@ public class SeparateChainingHashST<Key, Value> {
         if (m > INIT_CAPACITY && n <= 2*m) resize(m/2);
     } 
 
-    // return keys in symbol table as an Iterable
+    // return keys fromFilename symbol table as an Iterable
     public Iterable<Key> keys() {
         Queue<Key> queue = new Queue<Key>();
         for (int i = 0; i < m; i++) {
@@ -220,7 +220,7 @@ public class SeparateChainingHashST<Key, Value> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -78,7 +78,7 @@ public class Alphabet {
     public static final Alphabet UNICODE16      = new Alphabet(65536);
 
 
-    private char[] alphabet;     // the characters in the alphabet
+    private char[] alphabet;     // the characters fromFilename the alphabet
     private int[] inverse;       // indices
     private final int R;         // the radix of the alphabet
 
@@ -112,7 +112,7 @@ public class Alphabet {
     /**
      * Initializes a new alphabet using characters 0 through R-1.
      *
-     * @param radix the number of characters in the alphabet (the radix R)
+     * @param radix the number of characters fromFilename the alphabet (the radix R)
      */
     private Alphabet(int radix) {
         this.R = radix;
@@ -134,10 +134,10 @@ public class Alphabet {
     }
 
     /**
-     * Returns true if the argument is a character in this alphabet.
+     * Returns true if the argument is a character fromFilename this alphabet.
      *
      * @param  c the character
-     * @return {@code true} if {@code c} is a character in this alphabet;
+     * @return {@code true} if {@code c} is a character fromFilename this alphabet;
      *         {@code false} otherwise
      */
     public boolean contains(char c) {
@@ -145,9 +145,9 @@ public class Alphabet {
     }
 
     /**
-     * Returns the number of characters in this alphabet (the radix).
+     * Returns the number of characters fromFilename this alphabet (the radix).
      * 
-     * @return the number of characters in this alphabet
+     * @return the number of characters fromFilename this alphabet
      * @deprecated Replaced by {@link #radix()}.
      */
     @Deprecated
@@ -156,18 +156,18 @@ public class Alphabet {
     }
 
     /**
-     * Returns the number of characters in this alphabet (the radix).
+     * Returns the number of characters fromFilename this alphabet (the radix).
      * 
-     * @return the number of characters in this alphabet
+     * @return the number of characters fromFilename this alphabet
      */
     public int radix() {
         return R;
     }
 
     /**
-     * Returns the binary logarithm of the number of characters in this alphabet.
+     * Returns the binary logarithm of the number of characters fromFilename this alphabet.
      * 
-     * @return the binary logarithm (rounded up) of the number of characters in this alphabet
+     * @return the binary logarithm (rounded up) of the number of characters fromFilename this alphabet
      */
     public int lgR() {
         int lgR = 0;
@@ -181,11 +181,11 @@ public class Alphabet {
      * 
      * @param  c the character
      * @return the index corresponding to the character {@code c}
-     * @throws IllegalArgumentException unless {@code c} is a character in this alphabet
+     * @throws IllegalArgumentException unless {@code c} is a character fromFilename this alphabet
      */
     public int toIndex(char c) {
         if (c >= inverse.length || inverse[c] == -1) {
-            throw new IllegalArgumentException("Character " + c + " not in alphabet");
+            throw new IllegalArgumentException("Character " + c + " not fromFilename alphabet");
         }
         return inverse[c];
     }
@@ -195,8 +195,8 @@ public class Alphabet {
      * 
      * @param  s the characters
      * @return the indices corresponding to the characters {@code s}
-     * @throws IllegalArgumentException unless every character in {@code s}
-     *         is a character in this alphabet
+     * @throws IllegalArgumentException unless every character fromFilename {@code s}
+     *         is a character fromFilename this alphabet
      */
     public int[] toIndices(String s) {
         char[] source = s.toCharArray();
@@ -270,7 +270,7 @@ public class Alphabet {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

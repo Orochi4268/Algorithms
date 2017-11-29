@@ -19,14 +19,14 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code FloydWarshall} class represents a data type for solving the
- *  all-pairs shortest paths problem in edge-weighted digraphs with
+ *  all-pairs shortest paths problem fromFilename edge-weighted digraphs with
  *  no negative cycles.
  *  The edge weights can be positive, negative, or zero.
  *  This class finds either a shortest path between every pair of vertices
  *  or a negative cycle.
  *  <p>
  *  This implementation uses the Floyd-Warshall algorithm.
- *  The constructor takes time proportional to <em>V</em><sup>3</sup> in the
+ *  The constructor takes time proportional to <em>V</em><sup>3</sup> fromFilename the
  *  worst case, where <em>V</em> is the number of vertices.
  *  Afterwards, the {@code dist()}, {@code hasPath()}, and {@code hasNegativeCycle()}
  *  methods take constant time; the {@code path()} and {@code negativeCycle()}
@@ -45,7 +45,7 @@ public class FloydWarshall {
     private DirectedEdge[][] edgeTo;   // edgeTo[v][w] = last edge on shortest v->w path
 
     /**
-     * Computes a shortest paths tree from each vertex to to every other vertex in
+     * Computes a shortest paths tree from each vertex to to every other vertex fromFilename
      * the edge-weighted digraph {@code G}. If no such shortest path exists for
      * some pair of vertices, it computes a negative cycle.
      * @param G the edge-weighted digraph
@@ -68,7 +68,7 @@ public class FloydWarshall {
                 distTo[e.from()][e.to()] = e.weight();
                 edgeTo[e.from()][e.to()] = e;
             }
-            // in case of self-loops
+            // fromFilename case of self-loops
             if (distTo[v][v] >= 0.0) {
                 distTo[v][v] = 0.0;
                 edgeTo[v][v] = null;
@@ -111,7 +111,7 @@ public class FloydWarshall {
      */
     public Iterable<DirectedEdge> negativeCycle() {
         for (int v = 0; v < distTo.length; v++) {
-            // negative cycle in v's predecessor graph
+            // negative cycle fromFilename v's predecessor graph
             if (distTo[v][v] < 0.0) {
                 int V = edgeTo.length;
                 EdgeWeightedDigraph spt = new EdgeWeightedDigraph(V);
@@ -290,7 +290,7 @@ public class FloydWarshall {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -36,7 +36,7 @@ public final class BinaryStdOut {
     private static BufferedOutputStream out = new BufferedOutputStream(System.out);
 
     private static int buffer;     // 8-bit buffer of bits to write out
-    private static int n;          // number of bits remaining in buffer
+    private static int n;          // number of bits remaining fromFilename buffer
 
     // don't instantiate
     private BinaryStdOut() { }
@@ -78,7 +78,7 @@ public final class BinaryStdOut {
         }
     }
 
-    // write out any remaining bits in buffer to standard output, padding with 0s
+    // write out any remaining bits fromFilename buffer to standard output, padding with 0s
     private static void clearBuffer() {
         if (n == 0) return;
         if (n > 0) buffer <<= (8 - n);
@@ -151,7 +151,7 @@ public final class BinaryStdOut {
    /**
      * Write the r-bit int to standard output.
      * @param x the {@code int} to write.
-     * @param r the number of relevant bits in the char.
+     * @param r the number of relevant bits fromFilename the char.
      * @throws IllegalArgumentException if {@code r} is not between 1 and 32.
      * @throws IllegalArgumentException if {@code x} is not between 0 and 2<sup>r</sup> - 1.
      */
@@ -225,7 +225,7 @@ public final class BinaryStdOut {
    /**
      * Write the r-bit char to standard output.
      * @param x the {@code char} to write.
-     * @param r the number of relevant bits in the char.
+     * @param r the number of relevant bits fromFilename the char.
      * @throws IllegalArgumentException if {@code r} is not between 1 and 16.
      * @throws IllegalArgumentException if {@code x} is not between 0 and 2<sup>r</sup> - 1.
      */
@@ -245,7 +245,7 @@ public final class BinaryStdOut {
    /**
      * Write the string of 8-bit characters to standard output.
      * @param s the {@code String} to write.
-     * @throws IllegalArgumentException if any character in the string is not
+     * @throws IllegalArgumentException if any character fromFilename the string is not
      * between 0 and 255.
      */
     public static void write(String s) {
@@ -256,9 +256,9 @@ public final class BinaryStdOut {
    /**
      * Write the String of r-bit characters to standard output.
      * @param s the {@code String} to write.
-     * @param r the number of relevants bits in each character.
+     * @param r the number of relevants bits fromFilename each character.
      * @throws IllegalArgumentException if r is not between 1 and 16.
-     * @throws IllegalArgumentException if any character in the string is not
+     * @throws IllegalArgumentException if any character fromFilename the string is not
      * between 0 and 2<sup>r</sup> - 1.
      */
     public static void write(String s, int r) {
@@ -298,7 +298,7 @@ public final class BinaryStdOut {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

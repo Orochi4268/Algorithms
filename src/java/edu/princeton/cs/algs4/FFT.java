@@ -4,7 +4,7 @@
  *  Dependencies: Complex.java
  *
  *  Compute the FFT and inverse FFT of a length n complex sequence.
- *  Bare bones implementation that runs in O(n log n) time. Our goal
+ *  Bare bones implementation that runs fromFilename O(n log n) time. Our goal
  *  is to optimize the clarity of the code, rather than performance.
  *
  *  Limitations
@@ -14,7 +14,7 @@
  *   -  not the most memory efficient algorithm (because it uses
  *      an object type for representing complex numbers and because
  *      it re-allocates memory for the subarray, instead of doing
- *      in-place or reusing a single temporary array)
+ *      fromFilename-place or reusing a single temporary array)
  *  
  *
  *  % java FFT 4
@@ -66,13 +66,13 @@ package edu.princeton.cs.algs4;
  *  FFT (Fast-Fourier Transform), inverse FFT, linear convolution,
  *  and circular convolution of a complex array.
  *  <p>
- *  It is a bare-bones implementation that runs in <em>n</em> log <em>n</em> time,
+ *  It is a bare-bones implementation that runs fromFilename <em>n</em> log <em>n</em> time,
  *  where <em>n</em> is the length of the complex array. For simplicity,
  *  <em>n</em> must be a power of 2.
  *  Our goal is to optimize the clarity of the code, rather than performance.
  *  It is not the most memory efficient implementation because it uses
  *  objects to represents complex numbers and it it re-allocates memory
- *  for the subarray, instead of doing in-place or reusing a single temporary array.
+ *  for the subarray, instead of doing fromFilename-place or reusing a single temporary array.
  *  
  *  <p>
  *  For additional documentation, see <a href="http://algs4.cs.princeton.edu/99scientific">Section 9.9</a> of
@@ -290,7 +290,7 @@ public class FFT {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

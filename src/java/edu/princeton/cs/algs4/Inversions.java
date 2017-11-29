@@ -3,7 +3,7 @@
  *  Execution:    java Inversions < input.txt
  *  Dependencies: StdIn.java StdOut.java
  *  
- *  Read array of n integers and count number of inversions in n log n time.
+ *  Read array of n integers and count number of inversions fromFilename n log n time.
  *
  ******************************************************************************/
 
@@ -11,13 +11,13 @@ package edu.princeton.cs.algs4;
 
 /**
  *  The {@code Inversions} class provides static methods to count the 
- *  number of <em>inversions</em> in either an array of integers or comparables.
- *  An inversion in an array {@code a[]} is a pair of indicies {@code i} and
+ *  number of <em>inversions</em> fromFilename either an array of integers or comparables.
+ *  An inversion fromFilename an array {@code a[]} is a pair of indicies {@code i} and
  *  {@code j} such that {@code i < j} and {@code a[i] > a[j]}.
  *  <p>
  *  This implementation uses a generalization of mergesort. The <em>count</em>
  *  operation takes time proportional to <em>n</em> log <em>n</em>,
- *  where <em>n</em> is the number of keys in the array.
+ *  where <em>n</em> is the number of keys fromFilename the array.
  *  <p>
  *  For additional documentation, see <a href="http://algs4.cs.princeton.edu/22mergesort">Section 2.2</a>
  *  of <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
@@ -50,8 +50,8 @@ public class Inversions {
         return inversions;
     }
 
-    // return the number of inversions in the subarray b[lo..hi]
-    // side effect b[lo..hi] is rearranged in ascending order
+    // return the number of inversions fromFilename the subarray b[lo..hi]
+    // side effect b[lo..hi] is rearranged fromFilename ascending order
     private static long count(int[] a, int[] b, int[] aux, int lo, int hi) {
         long inversions = 0;
         if (hi <= lo) return 0;
@@ -65,10 +65,10 @@ public class Inversions {
 
 
     /**
-     * Returns the number of inversions in the integer array.
+     * Returns the number of inversions fromFilename the integer array.
      * The argument array is not modified.
      * @param  a the array
-     * @return the number of inversions in the array. An inversion is a pair of 
+     * @return the number of inversions fromFilename the array. An inversion is a pair of
      *         indicies {@code i} and {@code j} such that {@code i < j}
      *         and {@code a[i] > a[j]}.
      */
@@ -103,8 +103,8 @@ public class Inversions {
         return inversions;
     }
 
-    // return the number of inversions in the subarray b[lo..hi]
-    // side effect b[lo..hi] is rearranged in ascending order
+    // return the number of inversions fromFilename the subarray b[lo..hi]
+    // side effect b[lo..hi] is rearranged fromFilename ascending order
     private static <Key extends Comparable<Key>> long count(Key[] a, Key[] b, Key[] aux, int lo, int hi) {
         long inversions = 0;
         if (hi <= lo) return 0;
@@ -118,11 +118,11 @@ public class Inversions {
 
 
     /**
-     * Returns the number of inversions in the comparable array.
+     * Returns the number of inversions fromFilename the comparable array.
      * The argument array is not modified.
      * @param  a the array
-     * @param <Key> the inferred type of the elements in the array
-     * @return the number of inversions in the array. An inversion is a pair of 
+     * @param <Key> the inferred type of the elements fromFilename the array
+     * @return the number of inversions fromFilename the array. An inversion is a pair of
      *         indicies {@code i} and {@code j} such that {@code i < j}
      *         and {@code a[i].compareTo(a[j]) > 0}.
      */
@@ -139,7 +139,7 @@ public class Inversions {
         return (v.compareTo(w) < 0);
     }
 
-    // count number of inversions in a[lo..hi] via brute force (for debugging only)
+    // count number of inversions fromFilename a[lo..hi] via brute force (for debugging only)
     private static <Key extends Comparable<Key>> long brute(Key[] a, int lo, int hi) {
         long inversions = 0;
         for (int i = lo; i <= hi; i++)
@@ -148,7 +148,7 @@ public class Inversions {
         return inversions;
     }
 
-    // count number of inversions in a[lo..hi] via brute force (for debugging only)
+    // count number of inversions fromFilename a[lo..hi] via brute force (for debugging only)
     private static long brute(int[] a, int lo, int hi) {
         long inversions = 0;
         for (int i = lo; i <= hi; i++)
@@ -189,7 +189,7 @@ public class Inversions {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

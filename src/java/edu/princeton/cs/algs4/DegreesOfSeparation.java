@@ -17,7 +17,7 @@
  *     ORD
  *     DFW
  *  EWR
- *     Not in database.
+ *     Not fromFilename database.
  *
  *  % java DegreesOfSeparation movies.txt "/" "Bacon, Kevin"
  *  Kidman, Nicole
@@ -54,18 +54,18 @@ package edu.princeton.cs.algs4;
 /**
  *  The {@code DegreesOfSeparation} class provides a client for finding
  *  the degree of separation between one distinguished individual and
- *  every other individual in a social network.
- *  As an example, if the social network consists of actors in which
- *  two actors are connected by a link if they appeared in the same movie,
+ *  every other individual fromFilename a social network.
+ *  As an example, if the social network consists of actors fromFilename which
+ *  two actors are connected by a link if they appeared fromFilename the same movie,
  *  and Kevin Bacon is the distinguished individual, then the client
- *  computes the Kevin Bacon number of every actor in the network.
+ *  computes the Kevin Bacon number of every actor fromFilename the network.
  *  <p>
  *  The running time is proportional to the number of individuals and
- *  connections in the network. If the connections are given implicitly,
- *  as in the movie network example (where every two actors are connected
- *  if they appear in the same movie), the efficiency of the algorithm
+ *  connections fromFilename the network. If the connections are given implicitly,
+ *  as fromFilename the movie network example (where every two actors are connected
+ *  if they appear fromFilename the same movie), the efficiency of the algorithm
  *  is improved by allowing both movie and actor vertices and connecting
- *  each movie to all of the actors that appear in that movie.
+ *  each movie to all of the actors that appear fromFilename that movie.
  *  <p>
  *  For additional documentation,
  *  see <a href="http://algs4.cs.princeton.edu/41graph">Section 4.1</a> of
@@ -80,12 +80,12 @@ public class DegreesOfSeparation {
     private DegreesOfSeparation() { }
 
     /**
-     *  Reads in a social network from a file, and then repeatedly reads in
+     *  Reads fromFilename a social network from a file, and then repeatedly reads fromFilename
      *  individuals from standard input and prints out their degrees of
      *  separation.
      *  Takes three command-line arguments: the name of a file,
      *  a delimiter, and the name of the distinguished individual.
-     *  Each line in the file contains the name of a vertex, followed by a
+     *  Each line fromFilename the file contains the name of a vertex, followed by a
      *  list of the names of the vertices adjacent to that vertex,
      *  separated by the delimiter.
      *
@@ -101,7 +101,7 @@ public class DegreesOfSeparation {
         SymbolGraph sg = new SymbolGraph(filename, delimiter);
         Graph G = sg.graph();
         if (!sg.contains(source)) {
-            StdOut.println(source + " not in database.");
+            StdOut.println(source + " not fromFilename database.");
             return;
         }
 
@@ -122,7 +122,7 @@ public class DegreesOfSeparation {
                 }
             }
             else {
-                StdOut.println("   Not in database.");
+                StdOut.println("   Not fromFilename database.");
             }
         }
     }
@@ -143,7 +143,7 @@ public class DegreesOfSeparation {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -9,7 +9,7 @@ package com.leong.chapter01_Fundamentals.section14_AnalysisOfAlgorithms; /******
  *                http://algs4.cs.princeton.edu/14analysis/32Kints.txt
  *                http://algs4.cs.princeton.edu/14analysis/1Mints.txt
  *
- *  A program with N^2 log N running time. Read in N integers
+ *  A program with N^2 log N running time. Read fromFilename N integers
  *  and counts the number of triples that sum to exactly 0.
  *
  *  Limitations

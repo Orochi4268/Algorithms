@@ -393,7 +393,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> extends BaseCompara
 
     private boolean check(){
         if (!isBST()){
-            StdOut.println("Not in symmetric order");
+            StdOut.println("Not fromFilename symmetric order");
             return false;
         }
         if (!isSizeConsistent()){

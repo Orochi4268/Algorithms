@@ -24,7 +24,7 @@ package edu.princeton.cs.algs4;
  *  <p>
  *  This implementation uses an adjacency-lists representation, which 
  *  is a vertex-indexed array of {@link Bag} objects.
- *  All operations take constant time (in the worst case) except
+ *  All operations take constant time (fromFilename the worst case) except
  *  iterating over the edges incident from a given vertex, which takes
  *  time proportional to the number of such edges.
  *  <p>
@@ -38,8 +38,8 @@ package edu.princeton.cs.algs4;
 public class EdgeWeightedDigraph {
     private static final String NEWLINE = System.getProperty("line.separator");
 
-    private final int V;                // number of vertices in this digraph
-    private int E;                      // number of edges in this digraph
+    private final int V;                // number of vertices fromFilename this digraph
+    private int E;                      // number of edges fromFilename this digraph
     private Bag<DirectedEdge>[] adj;    // adj[v] = adjacency list for vertex v
     private int[] indegree;             // indegree[v] = indegree of vertex v
     
@@ -50,7 +50,7 @@ public class EdgeWeightedDigraph {
      * @throws IllegalArgumentException if {@code V < 0}
      */
     public EdgeWeightedDigraph(int V) {
-        if (V < 0) throw new IllegalArgumentException("Number of vertices in a Digraph must be nonnegative");
+        if (V < 0) throw new IllegalArgumentException("Number of vertices fromFilename a Digraph must be nonnegative");
         this.V = V;
         this.E = 0;
         this.indegree = new int[V];
@@ -69,7 +69,7 @@ public class EdgeWeightedDigraph {
      */
     public EdgeWeightedDigraph(int V, int E) {
         this(V);
-        if (E < 0) throw new IllegalArgumentException("Number of edges in a Digraph must be nonnegative");
+        if (E < 0) throw new IllegalArgumentException("Number of edges fromFilename a Digraph must be nonnegative");
         for (int i = 0; i < E; i++) {
             int v = StdRandom.uniform(V);
             int w = StdRandom.uniform(V);
@@ -87,7 +87,7 @@ public class EdgeWeightedDigraph {
      * with each entry separated by whitespace.
      *
      * @param  in the input stream
-     * @throws IllegalArgumentException if the endpoints of any edge are not in prescribed range
+     * @throws IllegalArgumentException if the endpoints of any edge are not fromFilename prescribed range
      * @throws IllegalArgumentException if the number of vertices or edges is negative
      */
     public EdgeWeightedDigraph(In in) {
@@ -115,7 +115,7 @@ public class EdgeWeightedDigraph {
         for (int v = 0; v < G.V(); v++)
             this.indegree[v] = G.indegree(v);
         for (int v = 0; v < G.V(); v++) {
-            // reverse so that adjacency list is in same order as original
+            // reverse so that adjacency list is fromFilename same order as original
             Stack<DirectedEdge> reverse = new Stack<DirectedEdge>();
             for (DirectedEdge e : G.adj[v]) {
                 reverse.push(e);
@@ -127,18 +127,18 @@ public class EdgeWeightedDigraph {
     }
 
     /**
-     * Returns the number of vertices in this edge-weighted digraph.
+     * Returns the number of vertices fromFilename this edge-weighted digraph.
      *
-     * @return the number of vertices in this edge-weighted digraph
+     * @return the number of vertices fromFilename this edge-weighted digraph
      */
     public int V() {
         return V;
     }
 
     /**
-     * Returns the number of edges in this edge-weighted digraph.
+     * Returns the number of edges fromFilename this edge-weighted digraph.
      *
-     * @return the number of edges in this edge-weighted digraph
+     * @return the number of edges fromFilename this edge-weighted digraph
      */
     public int E() {
         return E;
@@ -207,11 +207,11 @@ public class EdgeWeightedDigraph {
     }
 
     /**
-     * Returns all directed edges in this edge-weighted digraph.
-     * To iterate over the edges in this edge-weighted digraph, use foreach notation:
+     * Returns all directed edges fromFilename this edge-weighted digraph.
+     * To iterate over the edges fromFilename this edge-weighted digraph, use foreach notation:
      * {@code for (DirectedEdge e : G.edges())}.
      *
-     * @return all edges in this edge-weighted digraph, as an iterable
+     * @return all edges fromFilename this edge-weighted digraph, as an iterable
      */
     public Iterable<DirectedEdge> edges() {
         Bag<DirectedEdge> list = new Bag<DirectedEdge>();
@@ -270,7 +270,7 @@ public class EdgeWeightedDigraph {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

@@ -8,7 +8,7 @@
  *  Assumes that b >= 0 so that x = 0 is a basic feasible solution.
  *
  *  Creates an (m+1)-by-(n+m+1) simplex tableaux with the 
- *  RHS in column m+n, the objective function in row m, and
+ *  RHS fromFilename column m+n, the objective function fromFilename row m, and
  *  slack variables in columns m through m+n-1.
  *
  ******************************************************************************/

@@ -34,7 +34,7 @@ import java.util.Arrays;
  *  convex hull of a set of <em>n</em> points in the plane.
  *  <p>
  *  The implementation uses the Graham-Scan convex hull algorithm.
- *  It runs in O(<em>n</em> log <em>n</em>) time in the worst case
+ *  It runs fromFilename O(<em>n</em> log <em>n</em>) time fromFilename the worst case
  *  and uses O(<em>n</em>) extra memory.
  *  <p>
  *  For additional documentation, see <a href="http://algs4.cs.princeton.edu/99scientific">Section 9.9</a> of

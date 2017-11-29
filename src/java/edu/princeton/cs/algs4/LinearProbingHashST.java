@@ -17,7 +17,7 @@ package edu.princeton.cs.algs4;
  *  <em>delete</em>, <em>size</em>, and <em>is-empty</em> methods.
  *  It also provides a <em>keys</em> method for iterating over all of the keys.
  *  A symbol table implements the <em>associative array</em> abstraction:
- *  when associating a value with a key that is already in the symbol table,
+ *  when associating a value with a key that is already fromFilename the symbol table,
  *  the convention is to replace the old value with the new value.
  *  Unlike {@link java.util.Map}, this class uses the convention that
  *  values cannot be {@code null}—setting the
@@ -43,7 +43,7 @@ package edu.princeton.cs.algs4;
 public class LinearProbingHashST<Key, Value> {
     private static final int INIT_CAPACITY = 4;
 
-    private int n;           // number of key-value pairs in the symbol table
+    private int n;           // number of key-value pairs fromFilename the symbol table
     private int m;           // size of linear probing table
     private Key[] keys;      // the keys
     private Value[] vals;    // the values
@@ -69,9 +69,9 @@ public class LinearProbingHashST<Key, Value> {
     }
 
     /**
-     * Returns the number of key-value pairs in this symbol table.
+     * Returns the number of key-value pairs fromFilename this symbol table.
      *
-     * @return the number of key-value pairs in this symbol table
+     * @return the number of key-value pairs fromFilename this symbol table
      */
     public int size() {
         return n;
@@ -168,7 +168,7 @@ public class LinearProbingHashST<Key, Value> {
 
     /**
      * Removes the specified key and its associated value from this symbol table     
-     * (if the key is in this symbol table).    
+     * (if the key is fromFilename this symbol table).
      *
      * @param  key the key
      * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -187,7 +187,7 @@ public class LinearProbingHashST<Key, Value> {
         keys[i] = null;
         vals[i] = null;
 
-        // rehash all keys in same cluster
+        // rehash all keys fromFilename same cluster
         i = (i + 1) % m;
         while (keys[i] != null) {
             // delete keys[i] an vals[i] and reinsert
@@ -209,11 +209,11 @@ public class LinearProbingHashST<Key, Value> {
     }
 
     /**
-     * Returns all keys in this symbol table as an {@code Iterable}.
-     * To iterate over all of the keys in the symbol table named {@code st},
+     * Returns all keys fromFilename this symbol table as an {@code Iterable}.
+     * To iterate over all of the keys fromFilename the symbol table named {@code st},
      * use the foreach notation: {@code for (Key key : st.keys())}.
      *
-     * @return all keys in this symbol table
+     * @return all keys fromFilename this symbol table
      */
     public Iterable<Key> keys() {
         Queue<Key> queue = new Queue<Key>();
@@ -232,7 +232,7 @@ public class LinearProbingHashST<Key, Value> {
             return false;
         }
 
-        // check that each key in table can be found by get()
+        // check that each key fromFilename table can be found by get()
         for (int i = 0; i < m; i++) {
             if (keys[i] == null) continue;
             else if (get(keys[i]) != vals[i]) {
@@ -277,7 +277,7 @@ public class LinearProbingHashST<Key, Value> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

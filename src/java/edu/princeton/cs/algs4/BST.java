@@ -36,7 +36,7 @@ import java.util.NoSuchElementException;
  *  <em>maximum</em>, <em>floor</em>, <em>select</em>, <em>ceiling</em>.
  *  It also provides a <em>keys</em> method for iterating over all of the keys.
  *  A symbol table implements the <em>associative array</em> abstraction:
- *  when associating a value with a key that is already in the symbol table,
+ *  when associating a value with a key that is already fromFilename the symbol table,
  *  the convention is to replace the old value with the new value.
  *  Unlike {@link java.util.Map}, this class uses the convention that
  *  values cannot be {@code null}—setting the
@@ -50,7 +50,7 @@ import java.util.NoSuchElementException;
  *  The <em>put</em>, <em>contains</em>, <em>remove</em>, <em>minimum</em>,
  *  <em>maximum</em>, <em>ceiling</em>, <em>floor</em>, <em>select</em>, and
  *  <em>rank</em>  operations each take
- *  linear time in the worst case, if the tree becomes unbalanced.
+ *  linear time fromFilename the worst case, if the tree becomes unbalanced.
  *  The <em>size</em>, and <em>is-empty</em> operations take constant time.
  *  Construction takes constant time.
  *  <p>
@@ -70,7 +70,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         private Key key;           // sorted by key
         private Value val;         // associated data
         private Node left, right;  // left and right subtrees
-        private int size;          // number of nodes in subtree
+        private int size;          // number of nodes fromFilename subtree
 
         public Node(Key key, Value val, int size) {
             this.key = key;
@@ -94,14 +94,14 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Returns the number of key-value pairs in this symbol table.
-     * @return the number of key-value pairs in this symbol table
+     * Returns the number of key-value pairs fromFilename this symbol table.
+     * @return the number of key-value pairs fromFilename this symbol table
      */
     public int size() {
         return size(root);
     }
 
-    // return number of key-value pairs in BST rooted at x
+    // return number of key-value pairs fromFilename BST rooted at x
     private int size(Node x) {
         if (x == null) return 0;
         else return x.size;
@@ -124,8 +124,8 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Returns the value associated with the given key.
      *
      * @param  key the key
-     * @return the value associated with the given key if the key is in the symbol table
-     *         and {@code null} if the key is not in the symbol table
+     * @return the value associated with the given key if the key is fromFilename the symbol table
+     *         and {@code null} if the key is not fromFilename the symbol table
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public Value get(Key key) {
@@ -210,7 +210,7 @@ public class BST<Key extends Comparable<Key>, Value> {
 
     /**
      * Removes the specified key and its associated value from this symbol table     
-     * (if the key is in this symbol table).    
+     * (if the key is fromFilename this symbol table).
      *
      * @param  key the key
      * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -241,9 +241,9 @@ public class BST<Key extends Comparable<Key>, Value> {
 
 
     /**
-     * Returns the smallest key in the symbol table.
+     * Returns the smallest key fromFilename the symbol table.
      *
-     * @return the smallest key in the symbol table
+     * @return the smallest key fromFilename the symbol table
      * @throws NoSuchElementException if the symbol table is empty
      */
     public Key min() {
@@ -257,9 +257,9 @@ public class BST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Returns the largest key in the symbol table.
+     * Returns the largest key fromFilename the symbol table.
      *
-     * @return the largest key in the symbol table
+     * @return the largest key fromFilename the symbol table
      * @throws NoSuchElementException if the symbol table is empty
      */
     public Key max() {
@@ -273,10 +273,10 @@ public class BST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Returns the largest key in the symbol table less than or equal to {@code key}.
+     * Returns the largest key fromFilename the symbol table less than or equal to {@code key}.
      *
      * @param  key the key
-     * @return the largest key in the symbol table less than or equal to {@code key}
+     * @return the largest key fromFilename the symbol table less than or equal to {@code key}
      * @throws NoSuchElementException if there is no such key
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
@@ -299,10 +299,10 @@ public class BST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Returns the smallest key in the symbol table greater than or equal to {@code key}.
+     * Returns the smallest key fromFilename the symbol table greater than or equal to {@code key}.
      *
      * @param  key the key
-     * @return the smallest key in the symbol table greater than or equal to {@code key}
+     * @return the smallest key fromFilename the symbol table greater than or equal to {@code key}
      * @throws NoSuchElementException if there is no such key
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
@@ -327,10 +327,10 @@ public class BST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Return the kth smallest key in the symbol table.
+     * Return the kth smallest key fromFilename the symbol table.
      *
      * @param  k the order statistic
-     * @return the {@code k}th smallest key in the symbol table
+     * @return the {@code k}th smallest key fromFilename the symbol table
      * @throws IllegalArgumentException unless {@code k} is between 0 and
      *        <em>n</em>–1
      */
@@ -352,10 +352,10 @@ public class BST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Return the number of keys in the symbol table strictly less than {@code key}.
+     * Return the number of keys fromFilename the symbol table strictly less than {@code key}.
      *
      * @param  key the key
-     * @return the number of keys in the symbol table strictly less than {@code key}
+     * @return the number of keys fromFilename the symbol table strictly less than {@code key}
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public int rank(Key key) {
@@ -363,7 +363,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         return rank(key, root);
     } 
 
-    // Number of keys in the subtree less than key.
+    // Number of keys fromFilename the subtree less than key.
     private int rank(Key key, Node x) {
         if (x == null) return 0; 
         int cmp = key.compareTo(x.key); 
@@ -373,23 +373,23 @@ public class BST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Returns all keys in the symbol table as an {@code Iterable}.
-     * To iterate over all of the keys in the symbol table named {@code st},
+     * Returns all keys fromFilename the symbol table as an {@code Iterable}.
+     * To iterate over all of the keys fromFilename the symbol table named {@code st},
      * use the foreach notation: {@code for (Key key : st.keys())}.
      *
-     * @return all keys in the symbol table
+     * @return all keys fromFilename the symbol table
      */
     public Iterable<Key> keys() {
         return keys(min(), max());
     }
 
     /**
-     * Returns all keys in the symbol table in the given range,
+     * Returns all keys fromFilename the symbol table fromFilename the given range,
      * as an {@code Iterable}.
      *
      * @param  lo minimum endpoint
      * @param  hi maximum endpoint
-     * @return all keys in the symbol table between {@code lo} 
+     * @return all keys fromFilename the symbol table between {@code lo}
      *         (inclusive) and {@code hi} (inclusive)
      * @throws IllegalArgumentException if either {@code lo} or {@code hi}
      *         is {@code null}
@@ -413,11 +413,11 @@ public class BST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Returns the number of keys in the symbol table in the given range.
+     * Returns the number of keys fromFilename the symbol table fromFilename the given range.
      *
      * @param  lo minimum endpoint
      * @param  hi maximum endpoint
-     * @return the number of keys in the symbol table between {@code lo} 
+     * @return the number of keys fromFilename the symbol table between {@code lo}
      *         (inclusive) and {@code hi} (inclusive)
      * @throws IllegalArgumentException if either {@code lo} or {@code hi}
      *         is {@code null}
@@ -445,9 +445,9 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Returns the keys in the BST in level order (for debugging).
+     * Returns the keys fromFilename the BST fromFilename level order (for debugging).
      *
-     * @return the keys in the BST in level order traversal
+     * @return the keys fromFilename the BST fromFilename level order traversal
      */
     public Iterable<Key> levelOrder() {
         Queue<Key> keys = new Queue<Key>();
@@ -467,7 +467,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     *  Check integrity of BST data structure.
     ***************************************************************************/
     private boolean check() {
-        if (!isBST())            StdOut.println("Not in symmetric order");
+        if (!isBST())            StdOut.println("Not fromFilename symmetric order");
         if (!isSizeConsistent()) StdOut.println("Subtree counts not consistent");
         if (!isRankConsistent()) StdOut.println("Ranks not consistent");
         return isBST() && isSizeConsistent() && isRankConsistent();
@@ -544,7 +544,7 @@ public class BST<Key extends Comparable<Key>, Value> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

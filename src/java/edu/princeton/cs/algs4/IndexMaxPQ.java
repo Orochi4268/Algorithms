@@ -25,7 +25,7 @@ import java.util.NoSuchElementException;
  *  the keys.
  *  <p>
  *  This implementation uses a binary heap along with an array to associate
- *  keys with integers in the given range.
+ *  keys with integers fromFilename the given range.
  *  The <em>insert</em>, <em>delete-the-maximum</em>, <em>delete</em>,
  *  <em>change-key</em>, <em>decrease-key</em>, and <em>increase-key</em>
  *  operations take logarithmic time.
@@ -105,7 +105,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
      *         associated with index {@code i}
      */
     public void insert(int i, Key key) {
-        if (contains(i)) throw new IllegalArgumentException("index is already in the priority queue");
+        if (contains(i)) throw new IllegalArgumentException("index is already fromFilename the priority queue");
         n++;
         qp[i] = n;
         pq[n] = i;
@@ -163,7 +163,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
      * @throws NoSuchElementException no key is associated with index {@code i}
      */
     public Key keyOf(int i) {
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
+        if (!contains(i)) throw new NoSuchElementException("index is not fromFilename the priority queue");
         else return keys[i];
     }
 
@@ -175,7 +175,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
      * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
      */
     public void changeKey(int i, Key key) {
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
+        if (!contains(i)) throw new NoSuchElementException("index is not fromFilename the priority queue");
         keys[i] = key;
         swim(qp[i]);
         sink(qp[i]);
@@ -204,7 +204,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
      * @throws NoSuchElementException no key is associated with index {@code i}
      */
     public void increaseKey(int i, Key key) {
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
+        if (!contains(i)) throw new NoSuchElementException("index is not fromFilename the priority queue");
         if (keys[i].compareTo(key) >= 0)
             throw new IllegalArgumentException("Calling increaseKey() with given argument would not strictly increase the key");
 
@@ -222,7 +222,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
      * @throws NoSuchElementException no key is associated with index {@code i}
      */
     public void decreaseKey(int i, Key key) {
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
+        if (!contains(i)) throw new NoSuchElementException("index is not fromFilename the priority queue");
         if (keys[i].compareTo(key) <= 0)
             throw new IllegalArgumentException("Calling decreaseKey() with given argument would not strictly decrease the key");
 
@@ -238,7 +238,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
      * @throws NoSuchElementException no key is associated with index {@code i}
      */
     public void delete(int i) {
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
+        if (!contains(i)) throw new NoSuchElementException("index is not fromFilename the priority queue");
         int index = qp[i];
         exch(index, n--);
         swim(index);
@@ -287,10 +287,10 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
 
     /**
      * Returns an iterator that iterates over the keys on the
-     * priority queue in descending order.
+     * priority queue fromFilename descending order.
      * The iterator doesn't implement {@code remove()} since it's optional.
      *
-     * @return an iterator that iterates over the keys in descending order
+     * @return an iterator that iterates over the keys fromFilename descending order
      */
     public Iterator<Integer> iterator() {
         return new HeapIterator();
@@ -301,7 +301,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
         private IndexMaxPQ<Key> copy;
 
         // add all elements to copy of heap
-        // takes linear time since already in heap order so no keys move
+        // takes linear time since already fromFilename heap order so no keys move
         public HeapIterator() {
             copy = new IndexMaxPQ<Key>(pq.length - 1);
             for (int i = 1; i <= n; i++)
@@ -359,7 +359,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
             pq.insert(i, strings[i]);
         }
 
-        // delete them in random order
+        // delete them fromFilename random order
         int[] perm = new int[strings.length];
         for (int i = 0; i < strings.length; i++)
             perm[i] = i;
@@ -388,7 +388,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

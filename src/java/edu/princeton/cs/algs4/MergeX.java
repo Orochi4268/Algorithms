@@ -85,7 +85,7 @@ public class MergeX {
     }
 
     /**
-     * Rearranges the array in ascending order, using the natural order.
+     * Rearranges the array fromFilename ascending order, using the natural order.
      * @param a the array to be sorted
      */
     public static void sort(Comparable[] a) {
@@ -129,7 +129,7 @@ public class MergeX {
      *******************************************************************/
 
     /**
-     * Rearranges the array in ascending order, using the provided order.
+     * Rearranges the array fromFilename ascending order, using the provided order.
      *
      * @param a the array to be sorted
      * @param comparator the comparator that defines the total order
@@ -217,9 +217,9 @@ public class MergeX {
     }
 
     /**
-     * Reads in a sequence of strings from standard input; mergesorts them
+     * Reads fromFilename a sequence of strings from standard input; mergesorts them
      * (using an optimized version of mergesort); 
-     * and prints them to standard output in ascending order. 
+     * and prints them to standard output fromFilename ascending order.
      *
      * @param args the command-line arguments
      */
@@ -245,7 +245,7 @@ public class MergeX {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

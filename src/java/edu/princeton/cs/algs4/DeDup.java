@@ -4,7 +4,7 @@
  *  Dependencies: SET StdIn.java StdOut.java
  *  Data files:   http://algs4.cs.princeton.edu/35applications/tinyTale.txt
  *
- *  Read in a list of words from standard input and print out
+ *  Read fromFilename a list of words from standard input and print out
  *  each word, removing any duplicates.
  *
  *  % more tinyTale.txt 
@@ -33,7 +33,7 @@
 package edu.princeton.cs.algs4;
 
 /**
- *  The {@code DeDup} class provides a client for reading in a sequence of
+ *  The {@code DeDup} class provides a client for reading fromFilename a sequence of
  *  words from standard input and printing each word, removing any duplicates.
  *  It is useful as a test client for various symbol table implementations.
  *  <p>
@@ -51,7 +51,7 @@ public class DeDup {
     public static void main(String[] args) {
         SET<String> set = new SET<String>();
 
-        // read in strings and add to set
+        // read fromFilename strings and add to set
         while (!StdIn.isEmpty()) {
             String key = StdIn.readString();
             if (!set.contains(key)) {
@@ -77,7 +77,7 @@ public class DeDup {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

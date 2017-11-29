@@ -20,7 +20,7 @@
  *  The following features are not supported:
  *    - The + operator
  *    - Multiway or
- *    - Metacharacters in the text
+ *    - Metacharacters fromFilename the text
  *    - Character classes.
  *
  ******************************************************************************/
@@ -35,17 +35,17 @@ package edu.princeton.cs.algs4;
  *  It supports the following operations: <em>concatenation</em>,
  *  <em>closure</em>, <em>binary or</em>, and <em>parentheses</em>.
  *  It does not support <em>mutiway or</em>, <em>character classes</em>,
- *  <em>metacharacters</em> (either in the text or pattern),
+ *  <em>metacharacters</em> (either fromFilename the text or pattern),
  *  <em>capturing capabilities</em>, <em>greedy</em> or <em>relucantant</em>
- *  modifiers, and other features in industrial-strength implementations
+ *  modifiers, and other features fromFilename industrial-strength implementations
  *  such as {@link java.util.regex.Pattern} and {@link java.util.regex.Matcher}.
  *  <p>
  *  This implementation builds the NFA using a digraph and a stack
  *  and simulates the NFA using digraph search (see the textbook for details).
  *  The constructor takes time proportional to <em>m</em>, where <em>m</em>
- *  is the number of characters in the regular expression.
+ *  is the number of characters fromFilename the regular expression.
  *  The <em>recognizes</em> method takes time proportional to <em>m n</em>,
- *  where <em>n</em> is the number of characters in the text.
+ *  where <em>n</em> is the number of characters fromFilename the text.
  *  <p>
  *  For additional documentation,
  *  see <a href="http://algs4.cs.princeton.edu/54regexp">Section 5.4</a> of
@@ -58,7 +58,7 @@ public class NFA {
 
     private Digraph graph;     // digraph of epsilon transitions
     private String regexp;     // regular expression
-    private final int m;       // number of characters in regular expression
+    private final int m;       // number of characters fromFilename regular expression
 
     /**
      * Initializes the NFA from the specified regular expression.
@@ -168,7 +168,7 @@ public class NFA {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

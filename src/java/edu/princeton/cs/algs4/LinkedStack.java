@@ -22,16 +22,16 @@ import java.util.NoSuchElementException;
 
 
 /**
- *  The {@code LinkedStack} class represents a last-in-first-out (LIFO) stack of
+ *  The {@code LinkedStack} class represents a last-fromFilename-first-out (LIFO) stack of
  *  generic items.
  *  It supports the usual <em>push</em> and <em>pop</em> operations, along with methods
  *  for peeking at the top item, testing if the stack is empty, and iterating through
- *  the items in LIFO order.
+ *  the items fromFilename LIFO order.
  *  <p>
  *  This implementation uses a singly-linked list with a non-static nested class for 
  *  linked-list nodes. See {@link Stack} for a version that uses a static nested class.
  *  The <em>push</em>, <em>pop</em>, <em>peek</em>, <em>size</em>, and <em>is-empty</em>
- *  operations all take constant time in the worst case.
+ *  operations all take constant time fromFilename the worst case.
  *  <p>
  *  For additional documentation,
  *  see <a href="http://algs4.cs.princeton.edu/13stacks">Section 1.3</a> of
@@ -68,8 +68,8 @@ public class LinkedStack<Item> implements Iterable<Item> {
     }
 
     /**
-     * Returns the number of items in the stack.
-     * @return the number of items in the stack
+     * Returns the number of items fromFilename the stack.
+     * @return the number of items fromFilename the stack
      */
     public int size() {
         return n;
@@ -115,7 +115,7 @@ public class LinkedStack<Item> implements Iterable<Item> {
 
     /**
      * Returns a string representation of this stack.
-     * @return the sequence of items in the stack in LIFO order, separated by spaces
+     * @return the sequence of items fromFilename the stack fromFilename LIFO order, separated by spaces
      */
     public String toString() {
         StringBuilder s = new StringBuilder();
@@ -125,8 +125,8 @@ public class LinkedStack<Item> implements Iterable<Item> {
     }
        
     /**
-     * Returns an iterator to this stack that iterates through the items in LIFO order.
-     * @return an iterator to this stack that iterates through the items in LIFO order.
+     * Returns an iterator to this stack that iterates through the items fromFilename LIFO order.
+     * @return an iterator to this stack that iterates through the items fromFilename LIFO order.
      */
     public Iterator<Item> iterator() {
         return new ListIterator();
@@ -210,7 +210,7 @@ public class LinkedStack<Item> implements Iterable<Item> {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

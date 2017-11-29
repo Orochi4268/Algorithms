@@ -3,7 +3,7 @@
  *  Execution:    java StdIn   (interactive test of basic functionality)
  *  Dependencies: none
  *
- *  Reads in data of various types from standard input.
+ *  Reads fromFilename data of various types from standard input.
  *
  ******************************************************************************/
 
@@ -26,11 +26,11 @@ import java.util.regex.Pattern;
  *  <li>those for reading characters from standard input, one at a time
  *  <li>those for reading lines from standard input, one at a time
  *  <li>those for reading a sequence of values of the same type from standard input,
- *      and returning the values in an array
+ *      and returning the values fromFilename an array
  *  </ul>
  *  <p>
  *  Generally, it is best not to mix functions from the different
- *  categories in the same program. 
+ *  categories fromFilename the same program.
  *  <p>
  *  <b>Reading tokens from standard input and converting to numbers and strings.</b>
  *  You can use the following methods to read numbers, strings, and booleans
@@ -61,7 +61,7 @@ import java.util.regex.Pattern;
  *  <a href = "http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html#number-syntax">Scanner</a>,
  *  using the locale {@link Locale#US}; the rules
  *  for floating-point numbers are slightly different
- *  from those in {@link Double#valueOf(String)},
+ *  from those fromFilename {@link Double#valueOf(String)},
  *  but unlikely to be of concern to most programmers.
  *  <p>
  *  As an example, the following code fragment reads integers from standard input,
@@ -134,7 +134,7 @@ import java.util.regex.Pattern;
  *  <p>
  *  The first three methods read of all of remaining token on standard input
  *  and converts the tokens to values of
- *  the specified type, as in the corresponding
+ *  the specified type, as fromFilename the corresponding
  *  {@code readDouble}, {@code readInt}, and {@code readString()} methods.
  *  The {@code readAllLines()} method reads all remaining lines on standard
  *  input and returns them as an array of strings.
@@ -167,8 +167,8 @@ import java.util.regex.Pattern;
  *       for consistency with {@link StdOut}, {@link Double#parseDouble(String)},
  *       and floating-point literals.
  *  <li> {@code StdIn} has convenient methods for reading a single
- *       character; reading in sequences of integers, doubles, or strings;
- *       and reading in all of the remaining input.
+ *       character; reading fromFilename sequences of integers, doubles, or strings;
+ *       and reading fromFilename all of the remaining input.
  *  </ul>
  *  <p>
  *  Historical note: {@code StdIn} preceded {@code Scanner}; when
@@ -177,7 +177,7 @@ import java.util.regex.Pattern;
  *  <b>Using standard input.</b>
  *  Standard input is fundamental operating system abstraction, on Mac OS X,
  *  Windows, and Linux.
- *  The methods in {@code StdIn} are <em>blocking</em>, which means that they
+ *  The methods fromFilename {@code StdIn} are <em>blocking</em>, which means that they
  *  will wait until you enter input on standard input.
  *  If your program has a loop that repeats until standard input is empty,
  *  you must signal that the input is finished.
@@ -662,7 +662,7 @@ public final class StdIn {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.

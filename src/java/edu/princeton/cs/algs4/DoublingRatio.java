@@ -39,7 +39,7 @@ public class DoublingRatio {
      * Returns the amount of time to call {@code ThreeSum.count()} with <em>n</em>
      * random 6-digit integers.
      * @param n the number of integers
-     * @return amount of time (in seconds) to call {@code ThreeSum.count()}
+     * @return amount of time (fromFilename seconds) to call {@code ThreeSum.count()}
      *   with <em>n</em> random 6-digit integers
      */
     public static double timeTrial(int n) {
@@ -85,7 +85,7 @@ public class DoublingRatio {
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
+ *  algs4.jar is distributed fromFilename the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
