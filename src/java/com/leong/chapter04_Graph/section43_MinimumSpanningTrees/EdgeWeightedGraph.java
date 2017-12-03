@@ -9,11 +9,14 @@ import edu.princeton.cs.algs4.StdOut;
  * 加权无向图.
  * @author leongfeng created on 2017/11/29.
  */
-public class EdgeWeightGraph {
+public class EdgeWeightedGraph {
     private final int V;
     private int E;
+    /**
+     * 加权边.
+     */
     private Bag<Edge>[] adj;
-    public EdgeWeightGraph(int V){
+    public EdgeWeightedGraph(int V){
         this.V = V;
         this.E = 0;
         adj = (Bag<Edge>[]) new Bag[V];
@@ -22,7 +25,7 @@ public class EdgeWeightGraph {
         }
     }
 
-    public EdgeWeightGraph(In in){
+    public EdgeWeightedGraph(In in){
         this(in.readInt());
         int E = in.readInt();
         for (int i = 0; i < E; i++){
@@ -41,6 +44,7 @@ public class EdgeWeightGraph {
     public int E(){
         return E;
     }
+
     public void addEdge(Edge e){
         int v = e.either();
         int w = e.other(v);
@@ -48,6 +52,12 @@ public class EdgeWeightGraph {
         adj[w].add(e);
         E ++;
     }
+
+    /**
+     * 返回点 v 的加权边.
+     * @param v
+     * @return
+     */
     public Iterable<Edge> adj(int v){
         return adj[v];
     }
@@ -91,7 +101,7 @@ public class EdgeWeightGraph {
     }
 
     public static void main(String[] args) {
-        EdgeWeightGraph G = new EdgeWeightGraph(TinyData.fromFilename("tinyEWG.txt"));
+        EdgeWeightedGraph G = new EdgeWeightedGraph(TinyData.fromFilename("tinyEWG.txt"));
         StdOut.println(G);
     }
 }

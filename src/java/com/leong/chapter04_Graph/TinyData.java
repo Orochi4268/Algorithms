@@ -15,6 +15,8 @@ public class TinyData {
     public static final String ROUTES_TXT = BASE_PATH + "routes.txt";
     public static final String MOVIES_TXT = BASE_PATH + "movies.txt";
     public static final String FILENAME_TINYDG = "tinyDG.txt";
+    public static final String FILENAME_TINYEWG = "tinyEWG.txt";
+    public static final String FILENAME_TINYEWD = "tinyEWD.txt";
 
     public static In tinyG(){
         return new In(new File(TINY_G_TXT));

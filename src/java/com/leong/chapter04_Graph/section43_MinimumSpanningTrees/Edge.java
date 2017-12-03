@@ -1,10 +1,17 @@
 package com.leong.chapter04_Graph.section43_MinimumSpanningTrees;
 
+import java.util.Iterator;
+
 /**
  * 加权边.
+ * <ul>
+ *     <li>{@linkplain #v} 点v</li>
+ *     <li>{@linkplain #w} 点w</li>
+ *     <li>{@linkplain #weight} 边的权重</li>
+ * </ul>
  * @author leongfeng created on 2017/11/29.
  */
-public class Edge {
+public class Edge implements Comparable<Edge> {
     private final int v;
     private final int w;
     /**
@@ -23,12 +30,16 @@ public class Edge {
         this.weight = weight;
     }
 
+    /**
+     * 边的权重.
+     * @return 权重
+     */
     public double weight(){
         return weight;
     }
 
     /**
-     * 边两端的顶点之一.
+     * 边两端的顶点之一，此处返回{@linkplain #v}.
      * @return 点v
      */
     public int either(){
@@ -54,6 +65,7 @@ public class Edge {
      * @param that 另一条边
      * @return 比较结果
      */
+    @Override
     public int compareTo(Edge that){
         if (this.weight() < that.weight()){
             return -1;
@@ -68,4 +80,5 @@ public class Edge {
     public String toString(){
         return String.format("%d-%d %.2f", v, w, weight);
     }
+
 }
