@@ -1,6 +1,8 @@
 package com.leong.chapter04_Graph.section42_DirectedGraphs;
 
 import com.leong.chapter04_Graph.TinyData;
+import com.leong.chapter04_Graph.section44_ShortestPaths.EdgeWeightedDigraph;
+import com.leong.chapter04_Graph.section44_ShortestPaths.EdgeWeightedDirectedCycle;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
@@ -23,6 +25,14 @@ public class Topological {
      */
     public Topological(Digraph G){
         DirectedCycle cycleFinder = new DirectedCycle(G);
+        if (!cycleFinder.hasCycle()){
+            DepthFirstOrder dfs = new DepthFirstOrder(G);
+            order = dfs.reversePost();
+        }
+    }
+
+    public Topological(EdgeWeightedDigraph G){
+        EdgeWeightedDirectedCycle cycleFinder = new EdgeWeightedDirectedCycle(G);
         if (!cycleFinder.hasCycle()){
             DepthFirstOrder dfs = new DepthFirstOrder(G);
             order = dfs.reversePost();

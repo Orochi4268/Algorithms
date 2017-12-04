@@ -8,7 +8,8 @@ import static edu.princeton.cs.algs4.StdOut.*;
 
 /**
  * Dijkstra 算法找出最短路径（Shortest Paths）。
- * <p>
+ * 算法和 Prim 算法类似：构造最小生成树的每一步都向这这棵树添加一条新的边。
+ * 实现的图。
  * 0: 0->2 0.26 | 0->4 0.38 |
  * 1: 1->3 0.29 |
  * 2: 2->7 0.34 |
@@ -36,6 +37,11 @@ public class DijkstraSP {
      */
     private IndexMinPQ<Double> pq;
 
+    /**
+     * 查找最短路径。
+     * @param G 加权有向图
+     * @param s 起点
+     */
     public DijkstraSP(EdgeWeightedDigraph G, int s) {
         edgeTo = new DirectedEdge[G.V()];
         distTo = new double[G.V()];
@@ -43,27 +49,15 @@ public class DijkstraSP {
         for (int i = 0; i < G.V(); i++) {
             distTo[i] = Double.POSITIVE_INFINITY;
         }
-        // 起点设置为 0，其它的点为无穷大
+        // 起点 s 设置为 0，其它的点为无穷大
         distTo[s] = 0;
         pq.insert(s, 0.0);
+        // 从起点开始 relax
         while (!pq.isEmpty()) {
             relax(G, pq.delMin());
         }
     }
 
-    /**
-     * 边的松弛。
-     *
-     * @param e 边
-     */
-    private void relax(DirectedEdge e) {
-        int v = e.from();
-        int w = e.to();
-        if (distTo[v] + e.weight() < distTo[w]) {
-            distTo[w] = distTo[v] = e.weight();
-            edgeTo[w] = e;
-        }
-    }
 
     /**
      * 顶点的松弛。
@@ -83,6 +77,20 @@ public class DijkstraSP {
                     pq.insert(w, distTo[w]);
                 }
             }
+        }
+    }
+
+    /**
+     * 边的松弛。
+     *
+     * @param e 边
+     */
+    private void relax(DirectedEdge e) {
+        int v = e.from();
+        int w = e.to();
+        if (distTo[v] + e.weight() < distTo[w]) {
+            distTo[w] = distTo[v] = e.weight();
+            edgeTo[w] = e;
         }
     }
 
@@ -119,6 +127,7 @@ public class DijkstraSP {
 
     public static void main(String[] args) {
         EdgeWeightedDigraph G = new EdgeWeightedDigraph(TinyData.fromFilename(TinyData.FILENAME_TINYEWD));
+        println(G);
         int s = 0;
         DijkstraSP sp = new DijkstraSP(G, s);
         for (int v = 0; v < G.V(); v++) {
