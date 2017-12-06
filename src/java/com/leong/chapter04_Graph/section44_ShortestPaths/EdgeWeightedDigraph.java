@@ -1,7 +1,6 @@
 package com.leong.chapter04_Graph.section44_ShortestPaths;
 
 import com.leong.chapter04_Graph.TinyData;
-import com.leong.chapter04_Graph.section43_MinimumSpanningTrees.Edge;
 import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.In;
 
@@ -66,7 +65,7 @@ public class EdgeWeightedDigraph {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         String NEWLINE = System.getProperty("line.separator");
-        sb.append(V).append(" edges ").append(E).append(" vertexes").append(NEWLINE);
+        sb.append(E).append(" edges ").append(V).append(" vertexes").append(NEWLINE);
         for (int v = 0; v < V; v++){
             sb.append(v).append(": ");
             for (DirectedEdge e : adj(v)){
