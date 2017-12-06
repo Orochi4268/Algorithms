@@ -378,6 +378,20 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
     }
 
     /**
+     * lo 和 hi 之间有多少个元素.
+     * @param lo
+     * @param hi
+     * @return
+     */
+    public int sie(Key lo, Key hi){
+        if (contains(hi)){
+            return rank(hi) - rank(lo) + 1;
+        } else {
+            return rank(hi) - rank(lo);
+        }
+    }
+
+    /**
      * 使用 Queue 来收集所有的 key， 并返回.
      * @return key queue
      */

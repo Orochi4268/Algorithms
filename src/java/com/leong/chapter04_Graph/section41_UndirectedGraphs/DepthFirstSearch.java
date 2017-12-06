@@ -29,6 +29,7 @@ public class DepthFirstSearch extends BaseSearch {
      * @param v 点v
      */
     private void dfs(Graph g, int v) {
+        StdOut.print(v + "->");
         marked[v] = true;
         count++;
         for (int w : g.adj(v)) {
@@ -60,9 +61,12 @@ public class DepthFirstSearch extends BaseSearch {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph(new In(new File(BaseSearch.class.getResource("").getPath() + File.separator + "tinyGG.txt")));
+        Graph graph = new Graph(new In(new File(BaseSearch.class.getResource("").getPath()
+                + File.separator + "dfs-bfs.txt")));
         StdOut.println(graph);
-        DepthFirstSearch dfs = new DepthFirstSearch(graph, 0);
+        StdOut.println("---path------");
+        DepthFirstSearch dfs = new DepthFirstSearch(graph, 1);
+        StdOut.println();
         for (int v = 0; v < graph.V(); v++) {
             if (dfs.marked(v)) {
                 StdOut.print(v + " ");

@@ -15,19 +15,20 @@ import java.io.File;
  * @author leongfeng created on 2017/11/26.
  */
 public class BreadthFirstPaths extends BasePaths {
-
+    Queue<Integer> queue;
     public BreadthFirstPaths(Graph graph, int s) {
         super(graph, s);
+        queue = new Queue<>();
         bfs(graph, s);
     }
 
     private void bfs(Graph graph, int s) {
         marked[s] = true;
-        Queue<Integer> queue = new Queue<>();
         queue.enqueue(s);
         while (!queue.isEmpty()) {
             // 删除顶点
             int v = queue.dequeue();
+            StdOut.print(v + "->");
             for (int w : graph.adj(v)){
                 // 没有被标记过的相邻顶点
                 if (!marked[w]){
@@ -40,15 +41,18 @@ public class BreadthFirstPaths extends BasePaths {
                 }
             }
         }
+        StdOut.println();
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph(new In(new File(BaseSearch.class.getResource("").getPath() + File.separator + "tinyGG.txt")));
+        Graph graph = new Graph(new In(new File(BaseSearch.class.getResource("").getPath()
+                + File.separator + "dfs-bfs.txt")));
         StdOut.println("-----------graph---------------");
         StdOut.println(graph);
         StdOut.println("-----------path---------------");
-        int s = 0;
+        int s = 1;
         BasePaths bfs = new BreadthFirstPaths(graph, s);
+
         for (int v = 0; v < graph.V(); v ++){
             if (bfs.hasPathTo(v)){
                 StdOut.printf("%d to %d: ", s, v);

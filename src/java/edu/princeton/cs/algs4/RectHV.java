@@ -9,6 +9,11 @@
 
 package edu.princeton.cs.algs4;
 
+import java.util.*;
+import java.util.stream.Stream;
+
+import static edu.princeton.cs.algs4.StdOut.println;
+
 /**
  *  The {@code RectHV} class is an immutable data type to encapsulate a
  *  two-dimensional axis-aligned rectagle with real-value coordinates.
@@ -215,7 +220,28 @@ public final class RectHV {
         StdDraw.line(xmin, ymax, xmin, ymin);
     }
 
+    public static void main(String[] args) {
+        RectHV rect = new RectHV(0, 0, 5, 5);
+        Point2D p0 = new Point2D(0,0);
+        Point2D p1 = new Point2D(3,3);
+        Point2D p2 = new Point2D(4, 6);
+        Point2D p3 = new Point2D(1, 1);
 
+        List<Point2D> list = new ArrayList<>();
+//        list.add(p0);
+        list.add(p1);
+        list.add(p2);
+        list.add(p3);
+        list.stream().forEach(StdOut::println);
+        list.stream().filter(p -> rect.contains(p)).forEach( p -> {
+            println(p + "in (0, 0) -> (5, 5): " + rect.contains(p));
+        });
+        Optional<Point2D> min = list.stream().min(Comparator.comparing(p -> p.distanceTo(p0)));
+        if (min.isPresent()){
+            println(p0 + " nearest point: " + min.get());
+        }
+
+    }
 }
 
 /******************************************************************************
