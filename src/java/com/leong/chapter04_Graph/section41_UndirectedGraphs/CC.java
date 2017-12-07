@@ -11,29 +11,51 @@ import java.io.File;
 /**
  * 连通分量（Connected Components）.
  * 使用DFS找出图中的所有连通分量.
+ *
  * @author leongfeng created on 2017/11/26.
  */
 public class CC {
+    /**
+     * 标记已经访问过的顶点.
+     */
     private boolean[] marked;
+    /**
+     * 连通分量 id.
+     */
     private int[] id;
+    /**
+     * 连通分量总数.
+     */
     private int count;
 
-    public CC(Graph graph){
+    /**
+     * 查找连通分量.
+     *
+     * @param graph 图
+     */
+    public CC(final Graph graph) {
         marked = new boolean[graph.V()];
         id = new int[graph.V()];
-        for (int s = 0; s < graph.V(); s++){
-            if (!marked[s]){
+        for (int s = 0; s < graph.V(); s++) {
+            if (!marked[s]) {
                 dfs(graph, s);
-                count ++;
+                // 只有一个连通分量（环）递归完毕count才会加1
+                count++;
             }
         }
     }
 
-    private void dfs(Graph graph, int v) {
+    /**
+     * 递归一个连通分量（环）.
+     *
+     * @param graph 图
+     * @param v     点
+     */
+    private void dfs(final Graph graph, final int v) {
         marked[v] = true;
         id[v] = count;
-        for (int w : graph.adj(v)){
-            if (!marked[w]){
+        for (int w : graph.adj(v)) {
+            if (!marked[w]) {
                 dfs(graph, w);
             }
         }
@@ -41,28 +63,31 @@ public class CC {
 
     /**
      * v 和 w 是否连通?
+     *
      * @param v 点
      * @param w 点
      * @return boolean
      */
-    public boolean connected(int v, int w){
+    public boolean connected(final int v, final int w) {
         return id[v] == id[w];
     }
 
     /**
      * 连通分量数.
+     *
      * @return int
      */
-    public int count(){
+    public int count() {
         return count;
     }
 
     /**
      * v 所在的连通分量的标识符（0~ count() -1）.
+     *
      * @param v 点
      * @return int
      */
-    public int id(int v){
+    public int id(final int v) {
         return id[v];
     }
 
@@ -73,16 +98,16 @@ public class CC {
         StdOut.println(M + " components");
 
         Bag<Integer>[] components = (Bag<Integer>[]) new Bag[M];
-        for (int i = 0; i < M; i++ ){
+        for (int i = 0; i < M; i++) {
             components[i] = new Bag<>();
         }
 
-        for (int v = 0; v < graph.V(); v++){
+        for (int v = 0; v < graph.V(); v++) {
             components[cc.id(v)].add(v);
         }
 
-        for (int i = 0; i < M; i++){
-            for (int v : components[i]){
+        for (int i = 0; i < M; i++) {
+            for (int v : components[i]) {
                 StdOut.print(v + " ");
             }
             StdOut.println();
