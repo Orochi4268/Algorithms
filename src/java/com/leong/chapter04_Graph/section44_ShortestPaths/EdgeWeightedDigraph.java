@@ -77,7 +77,8 @@ public class EdgeWeightedDigraph {
     }
 
     public static void main(String[] args) {
-        EdgeWeightedDigraph G = new EdgeWeightedDigraph(TinyData.fromFilename(TinyData.FILENAME_TINYEWD));
+//        EdgeWeightedDigraph G = new EdgeWeightedDigraph(TinyData.fromFilename(TinyData.FILENAME_TINYEWD));
+        EdgeWeightedDigraph G = new EdgeWeightedDigraph(TinyData.fromFilename("tinyEWDn.txt"));
         println(G);
     }
 }

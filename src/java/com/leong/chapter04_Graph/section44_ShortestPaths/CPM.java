@@ -21,13 +21,14 @@ import static edu.princeton.cs.algs4.StdOut.println;
  *
  * 每个任务对应着三条边：从起点到起始顶点、从结束顶点到终点的权重为 0 的边，以一条从起始顶点到结束顶点的边
  * s ->(权重为 0)-> v -> w ->(权重为 0)-> t
+ * TODO 实例不能运行
  * @author leongfeng created on 2017/12/6.
  */
 public class CPM {
 
     public static void main(String[] args) {
         In in = TinyData.fromFilename("jobsPC.txt");
-        int N = 5;
+        int N = 10;
         in.readInt();
         in.readLine();
         EdgeWeightedDigraph G = new EdgeWeightedDigraph(2 * N + 2);
