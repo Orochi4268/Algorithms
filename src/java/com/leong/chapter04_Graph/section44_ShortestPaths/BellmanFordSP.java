@@ -88,7 +88,15 @@ public class BellmanFordSP {
      * 是否存在负权重环.
      */
     private void findNegativeCycle() {
-
+        int V = edgeTo.length;
+        EdgeWeightedDigraph spt = new EdgeWeightedDigraph(V);
+        for (int v = 0; v < V; v++){
+            if (edgeTo[v] != null){
+                spt.addEdge(edgeTo[v]);
+            }
+        }
+        EdgeWeightedDirectedCycle cf = new EdgeWeightedDirectedCycle(spt);
+        cycle = cf.cycle();
     }
 
     /**
@@ -96,11 +104,17 @@ public class BellmanFordSP {
      * @return boolean
      */
     private boolean hasNegativeCycle() {
-
         return cycle == null;
     }
 
-    public static void main(String[] args) {
+    /**
+     * 返回环.
+     * @return 环
+     */
+    private Iterable<DirectedEdge> negativeCycle(){
+        return cycle;
+    }
+    public static void main(final String[] args) {
 
     }
 }

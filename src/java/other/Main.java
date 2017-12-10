@@ -1,7 +1,11 @@
 package other;
 
 
+import org.junit.Test;
+
 import java.util.*;
+
+import static edu.princeton.cs.algs4.StdOut.println;
 
 /**
  * @author leongfeng created on 2017-11-10.
@@ -19,5 +23,17 @@ public class Main {
             int sum = solveMeFirst(a, b);
             System.out.println(sum);
         }
+    }
+
+    @Test
+    public void testArray(){
+        char numChar = '0';
+        int intNum = (int) numChar;
+        println(intNum);
+        char ch = (char)30007;
+        println(ch);
+        char[] chars = {numChar};
+        intNum = Integer.parseInt(new String(chars));
+        println(intNum);
     }
 }
