@@ -3,9 +3,8 @@ package com.leong.chapter05_Strings.section52_Tries;
 import com.leong.chapter05_Strings.StringData;
 import edu.princeton.cs.algs4.Queue;
 
-import java.util.HashMap;
-
 import static edu.princeton.cs.algs4.StdOut.print;
+import static edu.princeton.cs.algs4.StdOut.printf;
 import static edu.princeton.cs.algs4.StdOut.println;
 
 /**
@@ -47,7 +46,15 @@ public class StringST<Value> {
         root = put(root, key, val, 0);
     }
 
-    private Node put(Node x, String key, Value val, int d) {
+    /**
+     * 插入单词.
+     * @param x 节点
+     * @param key 键
+     * @param val 值
+     * @param d 第 d 个字符
+     * @return
+     */
+    private Node put(Node x, final String key, final Value val, final int d) {
         if (x == null) {
             x = new Node();
         }
@@ -104,7 +111,37 @@ public class StringST<Value> {
      * @param key key
      */
     public void delete(final String key) {
+        root = delete(root, key, 0);
+    }
 
+    /**
+     * 递归删除某个结点x之后，如果该结点的值和所有的链接均为空，则返回null.
+     * @param x 结点
+     * @param key key
+     * @param d dth char
+     * @return x
+     */
+    private Node delete(Node x, String key, int d) {
+        if (x == null){
+            return null;
+        }
+        if (d == key.length()){
+            x.val = null;
+        } else {
+            char c = key.charAt(d);
+            x.next[c] = delete(x.next[c], key, d + 1);
+        }
+        if (x.val != null){
+            return x;
+        }
+
+        // 递归到根节点时返回
+        for (char c = 0; c < R; c++){
+            if (x.next[c] != null){
+                return x;
+            }
+        }
+        return null;
     }
 
     /**
@@ -130,16 +167,40 @@ public class StringST<Value> {
      * s 的前缀中最长的键.<br/>
      * 对于 she sells seashells by the sea shore,
      * 如果 longestPrefixOf("shell") 的结果是 she, longestPrefixOf("shellsort") 结果是 shells.
-     *
+     * 找出最长的 key 的 length.
      * @param s 字符串
-     * @return key
+     * @return 最长的 key
      */
     public String longestPrefixOf(final String s) {
-        return "";
+        int length = search(root, s, 0, 0);
+        return s.substring(0, length);
     }
 
     /**
-     * 所有以 s 为前缀的键.<br/>
+     * 找出最长键的长度.
+     * 查找会在被查找的字符串结束或者遇到空链接时终止.
+     * @param x 结点
+     * @param s 需要查找的字符串
+     * @param d 第d个字符
+     * @param length 最长长度
+     * @return 最长长度
+     */
+    private int search(final Node x, final String s, final int d, int length) {
+        if (x == null) {
+            return length;
+        }
+        if (x.val != null){
+            length = d;
+        }
+        if (d == s.length()){
+            return length;
+        }
+        char c = s.charAt(d);
+        return search(x.next[c], s, d + 1, length);
+    }
+
+    /**
+     * 所有以 s 为前缀的键；如果为空字符串""，则返回全部键.<br/>
      * keysWithPrefix("she") is she and shells, and keysWithPrefix("se") is sells and sea.
      *
      * @param pre 前缀
@@ -158,7 +219,7 @@ public class StringST<Value> {
      * @param pre 键前缀
      * @param queue 存储队列
      */
-    private void collect(Node x, String pre, Queue<String> queue) {
+    private void collect(final Node x, final String pre, final Queue<String> queue) {
         if (x == null){
             return;
         }
@@ -173,10 +234,10 @@ public class StringST<Value> {
     }
 
     /**
-     * 所有和 s 匹配的键（其中“.”匹配任意字符）.<br/>
+     * 所有和 pat 匹配的键（其中“.”匹配任意一个字符）.<br/>
      * keysThatMatch(".he") returns she and the, and keysThatMatch("s..") returns she and sea
      *
-     * @param s 表达式
+     * @param pat 表达式
      * @return s 匹配的键
      * @see #keysWithPrefix(String)
      */
@@ -186,7 +247,10 @@ public class StringST<Value> {
         return queue;
     }
 
-    private void collect(Node x, String pre, String pat, Queue<String> queue) {
+    /**
+     * @see #keysThatMatch(String)
+     */
+    private void collect(final Node x, final String pre, final String pat, final Queue<String> queue) {
         if (x == null){
             return;
         }
@@ -197,6 +261,7 @@ public class StringST<Value> {
         if (d == pat.length()){
             return;
         }
+
         char next = pat.charAt(d);
         for (char c = 0; c < R; c++){
             if (next == '.' || next == c){
@@ -207,17 +272,8 @@ public class StringST<Value> {
 
 
     /**
-     * size of ST.
-     *
-     * @return int
-     */
-    public int size() {
-        return 0;
-    }
-
-    /**
-     * 所有的键.
-     *
+     * 返回所有的键.
+     * @see #keysWithPrefix(String)
      * @return all keys
      */
     public Iterable<String> keys() {
@@ -231,13 +287,18 @@ public class StringST<Value> {
         for (int i = 0; i < a.length; i++){
             st.put(a[i], i);
         }
-        println(st.get(a[0]));
-        for (String s : st.keysWithPrefix("")){
+        for (String s : st.keys()){
+            printf("%s %d\n", s, st.get(s));
+        }
+        println("------prefix------------");
+        for (String s : st.keysWithPrefix("she")){
             println(s);
         }
         println("-----------------------------match-----------------");
-        for (String s : st.keysThatMatch("she")){
+        for (String s : st.keysThatMatch("sh.")){
             println(s);
         }
+
+        st.delete("shells");
     }
 }
