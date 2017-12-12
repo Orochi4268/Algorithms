@@ -48,7 +48,8 @@ public abstract class BaseComparableBaseST<Key extends Comparable<Key>, Value> e
     public abstract int size(Key lo, Key hi);
 
     /**
-     * [lo...hi] 之间的所有键，已排序
+     * [lo...hi] 之间的所有键，已排序.
+     * 此处使用中序遍历.
      * @param lo
      * @param hi
      * @return

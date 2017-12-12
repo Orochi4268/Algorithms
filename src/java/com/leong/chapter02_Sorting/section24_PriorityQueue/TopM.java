@@ -4,6 +4,9 @@ import edu.princeton.cs.algs4.MinPQ;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.Transaction;
 
+import java.util.PriorityQueue;
+import java.util.concurrent.PriorityBlockingQueue;
+
 /**
  * @author leongfeng created on 2017/11/5.
  */
@@ -17,6 +20,5 @@ public class TopM {
                 pq.delMin();
             }
         }
-
     }
 }

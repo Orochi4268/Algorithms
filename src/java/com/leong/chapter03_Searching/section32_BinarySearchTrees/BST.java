@@ -301,6 +301,16 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
         return 0;
     }
 
+    /**
+     * 使用 Queue 来收集所有的 key， 并返回.
+     * {@inheritDoc}
+     * @return key queue
+     */
+    @Override
+    public Iterable<Key> keys() {
+        return keys(min(), max());
+    }
+
     @Override
     public Iterable<Key> keys(Key lo, Key hi) {
         Queue<Key> queue = new Queue<>();
@@ -325,6 +335,10 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
         }
     }
 
+    /**
+     * @param key
+     * @param value
+     */
     @Override
     public void put(Key key, Value value) {
         root = put(root, key, value);
@@ -389,15 +403,6 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
         } else {
             return rank(hi) - rank(lo);
         }
-    }
-
-    /**
-     * 使用 Queue 来收集所有的 key， 并返回.
-     * @return key queue
-     */
-    @Override
-    public Iterable<Key> keys() {
-        return keys(min(), max());
     }
 
 

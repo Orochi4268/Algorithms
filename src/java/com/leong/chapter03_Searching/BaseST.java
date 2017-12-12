@@ -6,6 +6,11 @@ package com.leong.chapter03_Searching;
  */
 public abstract class BaseST<Key, Value> {
 
+    /**
+     * 向表中插入键值对，如果值为 null，则删除 key.
+     * @param key key - key with which the specified value is to be associated
+     * @param value value - value to be associated with the specified key
+     */
     public abstract void put(Key key, Value value);
 
     public abstract Value get(Key key);
