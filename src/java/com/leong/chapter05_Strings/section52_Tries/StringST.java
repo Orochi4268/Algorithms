@@ -9,7 +9,10 @@ import static edu.princeton.cs.algs4.StdOut.println;
 
 /**
  * 单词查找树（Trie）.
- *
+ * 查找和插入操作时间：在Trie中查找或插入一个键时，访问数组的次数最多为键的长度加1；<br/>
+ * 时间：字母表为大小 R，在一棵由 N 个随机键构造的单词查找树中，未命中查找平均所需检查的结点数量为 ~log(下标R)N，
+ *      查找未命中的成本与键的长度无关；<br/>
+ * 空间：一棵Trie中链接总数在 RN 和 RNw 之间，其中 w 为键的平均长度，缩小 R 可以节省大量空间。
  * @author leongfeng created on 2017/12/11.
  */
 public class StringST<Value> {
@@ -48,10 +51,11 @@ public class StringST<Value> {
 
     /**
      * 插入单词.
-     * @param x 节点
+     *
+     * @param x   节点
      * @param key 键
      * @param val 值
-     * @param d 第 d 个字符
+     * @param d   第 d 个字符
      * @return
      */
     private Node put(Node x, final String key, final Value val, final int d) {
@@ -75,7 +79,7 @@ public class StringST<Value> {
      * @return value
      */
     public Value get(final String key) {
-        if (isEmpty()){
+        if (isEmpty()) {
             return null;
         }
         final Node x = get(root, key, 0);
@@ -116,31 +120,37 @@ public class StringST<Value> {
 
     /**
      * 递归删除某个结点x之后，如果该结点的值和所有的链接均为空，则返回null.
-     * @param x 结点
+     *
+     * @param x   结点
      * @param key key
-     * @param d dth char
+     * @param d   dth char
      * @return x
      */
     private Node delete(Node x, String key, int d) {
-        if (x == null){
+        if (x == null) {
             return null;
         }
-        if (d == key.length()){
+        // 键的末尾
+        if (d == key.length()) {
             x.val = null;
         } else {
             char c = key.charAt(d);
             x.next[c] = delete(x.next[c], key, d + 1);
         }
-        if (x.val != null){
+        // 非空值， she(0) 中的 e(d:3) -> x.value = 0
+        if (x.val != null) {
             return x;
         }
 
-        // 递归到根节点时返回
-        for (char c = 0; c < R; c++){
-            if (x.next[c] != null){
+        /**
+         * 非空链接递归到根节点时返回: she -> h(d:2) -> s(d:0 还有sea)
+         */
+        for (char c = 0; c < R; c++) {
+            if (x.next[c] != null) {
                 return x;
             }
         }
+        //递归返回值，值和链接均为空：shells -> s(d:6-1) -> l(d:5-1) -> l(d:4-1)
         return null;
     }
 
@@ -148,7 +158,7 @@ public class StringST<Value> {
      * 量少保存着key的值.
      *
      * @param key key
-     * @return trure if key in this ST
+     * @return true if key in this ST
      */
     public boolean contains(final String key) {
         return get(key) != null;
@@ -168,6 +178,7 @@ public class StringST<Value> {
      * 对于 she sells seashells by the sea shore,
      * 如果 longestPrefixOf("shell") 的结果是 she, longestPrefixOf("shellsort") 结果是 shells.
      * 找出最长的 key 的 length.
+     *
      * @param s 字符串
      * @return 最长的 key
      */
@@ -179,9 +190,10 @@ public class StringST<Value> {
     /**
      * 找出最长键的长度.
      * 查找会在被查找的字符串结束或者遇到空链接时终止.
-     * @param x 结点
-     * @param s 需要查找的字符串
-     * @param d 第d个字符
+     *
+     * @param x      结点
+     * @param s      需要查找的字符串
+     * @param d      第d个字符
      * @param length 最长长度
      * @return 最长长度
      */
@@ -189,10 +201,10 @@ public class StringST<Value> {
         if (x == null) {
             return length;
         }
-        if (x.val != null){
+        if (x.val != null) {
             length = d;
         }
-        if (d == s.length()){
+        if (d == s.length()) {
             return length;
         }
         char c = s.charAt(d);
@@ -215,20 +227,21 @@ public class StringST<Value> {
 
     /**
      * 递归遍历所有key. 在每次调用之前，都将链接对应的字符附加到当前键的末尾作为调用的参数键 pre.
-     * @param x 结点
-     * @param pre 键前缀
+     *
+     * @param x     结点
+     * @param pre   键前缀
      * @param queue 存储队列
      */
     private void collect(final Node x, final String pre, final Queue<String> queue) {
-        if (x == null){
+        if (x == null) {
             return;
         }
         // 到达一个单词末尾，放入队列中
-        if (x.val != null){
+        if (x.val != null) {
             queue.enqueue(pre);
         }
         // 遍历所有结点
-        for (char c = 0; c < R; c++){
+        for (char c = 0; c < R; c++) {
             collect(x.next[c], pre + c, queue);
         }
     }
@@ -251,20 +264,20 @@ public class StringST<Value> {
      * @see #keysThatMatch(String)
      */
     private void collect(final Node x, final String pre, final String pat, final Queue<String> queue) {
-        if (x == null){
+        if (x == null) {
             return;
         }
         int d = pre.length();
-        if (d == pat.length() && x.val != null){
+        if (d == pat.length() && x.val != null) {
             queue.enqueue(pre);
         }
-        if (d == pat.length()){
+        if (d == pat.length()) {
             return;
         }
 
         char next = pat.charAt(d);
-        for (char c = 0; c < R; c++){
-            if (next == '.' || next == c){
+        for (char c = 0; c < R; c++) {
+            if (next == '.' || next == c) {
                 collect(x.next[c], pre + c, pat, queue);
             }
         }
@@ -273,8 +286,9 @@ public class StringST<Value> {
 
     /**
      * 返回所有的键.
-     * @see #keysWithPrefix(String)
+     *
      * @return all keys
+     * @see #keysWithPrefix(String)
      */
     public Iterable<String> keys() {
         return keysWithPrefix("");
@@ -283,22 +297,21 @@ public class StringST<Value> {
 
     public static void main(final String[] args) {
         StringST<Integer> st = new StringST<>();
-        String[]  a = StringData.fromFilename("shells.txt").readAllStrings();
-        for (int i = 0; i < a.length; i++){
+        String[] a = StringData.fromFilename("shells.txt").readAllStrings();
+        for (int i = 0; i < a.length; i++) {
             st.put(a[i], i);
         }
-        for (String s : st.keys()){
+        for (String s : st.keys()) {
             printf("%s %d\n", s, st.get(s));
         }
         println("------prefix------------");
-        for (String s : st.keysWithPrefix("she")){
+        for (String s : st.keysWithPrefix("she")) {
             println(s);
         }
         println("-----------------------------match-----------------");
-        for (String s : st.keysThatMatch("sh.")){
+        for (String s : st.keysThatMatch("sh.")) {
             println(s);
         }
-
         st.delete("shells");
     }
 }
