@@ -1,7 +1,6 @@
 package com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.stream.IntStream;
 
 import static edu.princeton.cs.algs4.StdOut.print;
@@ -135,6 +134,65 @@ public class CustomLinkedList<Item> implements Iterable<Item> {
         N++;
     }
 
+    /**
+     * 反转遍历节点.
+     *
+     * @return Iterable
+     */
+    public Iterable<Item> reverse() {
+        final Stack<Item> stack = new Stack<>();
+        reverse(first, stack);
+        return stack;
+    }
+
+    private void reverse(Node<Item> x, Stack<Item> stack) {
+        Iterator<Item> iterator = iterator();
+        while (iterator.hasNext()) {
+            stack.push(iterator.next());
+        }
+    }
+
+    public void reverseNode() {
+        first = reverse(first);
+    }
+
+    private Node reverse(Node<Item> first) {
+        Node<Item> prev = null;
+        while (first != null) {
+            Node<Item> next = first.next;
+            first.next = prev;
+            prev = first;
+            first = next;
+        }
+        return prev;
+    }
+
+    public void recursiveReverseNode() {
+        first = recursiveReverse(first);
+    }
+
+    private Node recursiveReverse(Node<Item> x) {
+        if (x == null || x.next == null) {
+            return x;
+        }
+        Node<Item> next = x.next;
+        Node<Item> newNode = recursiveReverse(next);
+        next.next = x;
+        x.next = null;
+        return newNode;
+    }
+
+    private Node reverseDNode(Node<Item> first) {
+        Node<Item> curr = null;
+        while (first != null) {
+            curr = first;
+            first = curr.next;
+            curr.next = curr.prev;
+            curr.prev = first;
+        }
+        return curr;
+    }
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
@@ -170,15 +228,31 @@ public class CustomLinkedList<Item> implements Iterable<Item> {
 
     public static void main(String[] args) {
         java.util.LinkedList linkedList = new java.util.LinkedList();
-        CustomLinkedList<Integer> list = new CustomLinkedList<>();
-        IntStream.range(0, 10).forEach(i -> {
-            list.append(i);
+        Collections.reverse(linkedList);
+        CustomLinkedList<Integer> cst = new CustomLinkedList<>();
+        IntStream.range(1, 4).forEach(i -> {
+            cst.append(i);
         });
-        println(list);
-        list.append(10);
-        println(list);
-        list.prepend(-1);
-        println(list);
+        println(cst);
+//        cst.append(10);
+//        println(cst);
+//        cst.prepend(-1);
+        println(cst);
+        for (int i : cst.reverse()) {
+            print(i + " ");
+        }
+        println();
+        println("--------iterative----------");
+//        cst.reverseNode();
+        for (int i : cst) {
+            print(i + " ");
+        }
+        println("\n--------recursive--------");
+        cst.recursiveReverseNode();
+        for (int i : cst) {
+            print(i + " ");
+        }
+
     }
 }
 

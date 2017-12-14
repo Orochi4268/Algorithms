@@ -1,6 +1,9 @@
 package com.leong.chapter02_Sorting.section24_PriorityQueue;
 
+import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdOut;
+
+import java.util.PriorityQueue;
 
 /**
  * 二叉堆表示优先队列。
@@ -102,5 +105,7 @@ public class MaxPQ<Key extends Comparable<Key>> extends BasePriorityQueue<Key> {
         maxPQ.insert("E");
         maxPQ.delMax();
         maxPQ.display();
+        java.util.Queue<String> queue = new PriorityQueue<>(10);
+        queue.add("A");
     }
 }
