@@ -36,4 +36,15 @@ public class Main {
         intNum = Integer.parseInt(new String(chars));
         println(intNum);
     }
+
+    @Test
+    public void testSet(){
+        Set<String> set = new HashSet<>(10);
+        set.add(null);
+        for (String s : set) {
+            println(s);
+        }
+        Set<String> set2 = new TreeSet<>();
+
+    }
 }
