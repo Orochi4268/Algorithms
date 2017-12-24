@@ -31,6 +31,12 @@ public class TST<Value> {
         Node right;
     }
 
+    /**
+     * 查找（O(lnN)）。
+     *
+     * @param key key
+     * @return Value
+     */
     public Value get(String key) {
         if (isEmpty()){
             return null;
