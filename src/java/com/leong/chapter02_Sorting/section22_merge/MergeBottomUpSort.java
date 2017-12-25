@@ -5,6 +5,8 @@ import edu.princeton.cs.algs4.In;
 
 import java.io.File;
 
+import static edu.princeton.cs.algs4.StdOut.println;
+
 /**
  * 自底向上归并排序：最多访问数组 6NlgN 次
  * 实现思想是先归并那些微型数组，然后再万对归并得到的子数组，一起递归到将整个数组归并在一起。
@@ -13,16 +15,24 @@ import java.io.File;
  */
 public class MergeBottomUpSort extends BaseSort {
 
-    Comparable[] aux;
+    /**
+     * 辅助数组.
+     */
+    private Comparable[] aux;
 
     public static void main(String[] args) {
-        String[] a = new In(new File(BaseSort.class.getResource("").getPath() + File.separator + "words3.txt")).readAllStrings();
-        BaseSort buSort = new MergeBottomUpSort();
-        buSort.sort(a).show(a);
+        BaseSort sort = new MergeBottomUpSort();
+        Integer[] arr = new Integer[]{90, 42, 25, 74, 53};
+        println("排序前：");
+        sort.show(arr);
+        println("排序：");
+        sort.sort(arr);
+        println("排序后：");
+        sort.show(arr);
     }
 
     @Override
-    public BaseSort sort(Comparable[] arr) {
+    public BaseSort sort(final Comparable[] arr) {
         int N = arr.length;
         aux = new Comparable[N];
         // sz 子数组大小
@@ -30,12 +40,19 @@ public class MergeBottomUpSort extends BaseSort {
             // lo 子数组索引
             for (int lo = 0; lo < N - sz; lo += sz + sz) {
                 merge(arr, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, N - 1));
+                show(arr);
             }
         }
         return this;
     }
 
-    private void merge(Comparable[] a, int lo, int m, int hi) {
+    /**
+     * @param a
+     * @param lo
+     * @param m
+     * @param hi
+     */
+    private void merge(final Comparable[] a, final int lo, final int m, final int hi) {
 
         // copy to aux[]
         for (int k = lo; k <= hi; k++) {

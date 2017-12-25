@@ -37,7 +37,7 @@ public class ShellSort extends BaseSort {
     }
 
     @Override
-    public BaseSort sort(Comparable[] arr) {
+    public BaseSort sort(final Comparable[] arr) {
         int N = arr.length;
         int h = 1;
         // 1. 查询最大的 h

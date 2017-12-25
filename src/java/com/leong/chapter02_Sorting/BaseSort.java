@@ -24,7 +24,7 @@ public abstract class BaseSort {
 
     /**
      * 实现排序的算法。
-     * @param arr
+     * @param arr sorted array
      * @return
      */
     public abstract BaseSort sort(Comparable[] arr);
@@ -36,7 +36,7 @@ public abstract class BaseSort {
      * @param w
      * @return
      */
-    public static boolean less(Comparator c, Object v, Object w) {
+    public static boolean less(final Comparator c, final Object v, final Object w) {
         return (c.compare(v, w) < 0);
     }
     /**
@@ -46,7 +46,7 @@ public abstract class BaseSort {
      * @param w
      * @return
      */
-    public boolean less(Comparable v, Comparable w) {
+    public boolean less(final Comparable v, final Comparable w) {
         return v.compareTo(w) < 0;
     }
 
@@ -57,7 +57,7 @@ public abstract class BaseSort {
      * @param i
      * @param j
      */
-    public void exchange(Comparable[] arr, int i, int j) {
+    public void exchange(final Comparable[] arr, final int i, final int j) {
         Comparable t = arr[i];
         arr[i] = arr[j];
         arr[j] = t;
@@ -68,7 +68,7 @@ public abstract class BaseSort {
      *
      * @param arr
      */
-    public void show(Comparable[] arr) {
+    public void show(final Comparable[] arr) {
         for (int i = 0; i < arr.length; i++) {
             StdOut.print(arr[i] + " ");
         }
@@ -81,7 +81,7 @@ public abstract class BaseSort {
      * @param arr
      * @return
      */
-    public boolean isSorted(Comparable[] arr) {
+    public boolean isSorted(final Comparable[] arr) {
         for (int i = 1; i < arr.length; i++) {
             if (less(arr[i], arr[i - 1])) {
                 return false;
@@ -98,7 +98,7 @@ public abstract class BaseSort {
      * @param hi
      * @return
      */
-    public boolean isSorted(Comparable[] arr, int lo, int hi) {
+    public boolean isSorted(final Comparable[] arr, final int lo, final int hi) {
         for (int i = lo + 1; i <= hi; i++) {
             if (less(arr[i], arr[i - 1])) {
                 return false;

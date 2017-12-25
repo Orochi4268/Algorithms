@@ -16,7 +16,7 @@ import static edu.princeton.cs.algs4.StdOut.println;
 public class BubbleSort extends BaseSort {
 
     @Override
-    public BaseSort sort(Comparable[] arr) {
+    public BaseSort sort(final Comparable[] arr) {
         int len = arr.length;
         for (int i = 0; i < len; i++) {
             // j 指针随着 i 的移动而减小

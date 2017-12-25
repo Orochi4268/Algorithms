@@ -18,7 +18,7 @@ import static edu.princeton.cs.algs4.StdOut.println;
  */
 public class InsertionSort extends BaseSort {
     @Override
-    public BaseSort sort(Comparable[] arr) {
+    public BaseSort sort(final Comparable[] arr) {
         int N = arr.length;
         for (int i = 1; i < N; i++){
             // 如果 j < j - 1，那么交换这两值
