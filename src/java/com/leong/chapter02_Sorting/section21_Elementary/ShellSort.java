@@ -5,6 +5,8 @@ import edu.princeton.cs.algs4.In;
 
 import java.io.File;
 
+import static edu.princeton.cs.algs4.StdOut.println;
+
 /**
  * 希尔排序：基于插入排序的快速排序算法
  * 希尔排序的思想是使数组中任意间隔为 h 的元素都是有序的（h有序数组）。一个 h有序数组 就是 h 个互相独立的有序数组纺织在一起 组成的一个数组。
@@ -17,13 +19,6 @@ import java.io.File;
  * @author leongfeng created on 2017/4/8
  */
 public class ShellSort extends BaseSort {
-    private static final int INCREASEMENT = 3;
-
-    public static void main(String[] args) {
-        BaseSort shellSort = new ShellSort();
-        String[] a = new In(new File(BaseSort.class.getResource("").getPath() + File.separator + "words3.txt")).readAllStrings();
-        shellSort.sort(a).show(a);
-    }
 
     /**
      * 是否已经按照间隔 h 排序
@@ -46,20 +41,34 @@ public class ShellSort extends BaseSort {
         int N = arr.length;
         int h = 1;
         // 1. 查询最大的 h
-        while (h < N / INCREASEMENT) {
-            h = INCREASEMENT * h + 1;
+        while (h < N / 3) {
+            h = 3 * h + 1;
         }
+        println("max h: " + h);
         while (h >= 1) {
             // 插入排序
             for (int i = 1; i < N; i++) {
                 for (int j = i; j >= h && less(arr[j], arr[j - h]); j -= h) {
                     exchange(arr, j, j - h);
                 }
+                show(arr);
             }
             assert isHsorted(arr, h);
-            h = h / INCREASEMENT;
+            h = h / 3;
         }
         assert isSorted(arr);
         return this;
     }
+
+    public static void main(String[] args) {
+        BaseSort sort = new ShellSort();
+        Integer[] arr = new Integer[] {42,74,90,25,53,60,1};
+        println("排序前：");
+        sort.show(arr);
+        println("排序：");
+        sort.sort(arr);
+        println("排序后：");
+        sort.show(arr);
+    }
+
 }

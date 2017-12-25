@@ -6,6 +6,8 @@ import edu.princeton.cs.algs4.StdOut;
 import java.io.File;
 import java.util.stream.Stream;
 
+import static edu.princeton.cs.algs4.StdOut.println;
+
 /**
  * 选择排序（O(n^2)）
  * 思路：
@@ -21,13 +23,16 @@ public class SelectionSort extends BaseSort {
         for (int i = 0; i < N; i++){
             int min = i;
             // 找出从 j 到 N 中最小值
-            for (int j = i; j < N; j ++){
+            for (int j = i + 1; j < N; j ++){
                 if (less(arr[j], arr[min])){
                     min = j;
                 }
             }
-            // 如果没有比自己更小的值，那么自己跟自己交换
-            exchange(arr, i, min);
+            // i 不是自身时才需要交换元素
+            if (i != min) {
+                exchange(arr, i, min);
+            }
+            show(arr);
             assert isSorted(arr, 0, i);
         }
         assert isSorted(arr);
@@ -35,12 +40,13 @@ public class SelectionSort extends BaseSort {
     }
 
     public static void main(String[] args) {
-        BaseSort selectionSortSort = new SelectionSort();
-        String[] arr = new In(new File(BaseSort.class.getResource("").getPath() + File.separator + "words3.txt")).readAllStrings();
-        StdOut.println("before sorting:");
-        Stream.of(arr).forEach( a -> StdOut.print(a + " "));
-        StdOut.println();
-        StdOut.println("after sorting:");
-        selectionSortSort.sort(arr).show(arr);
+        BaseSort sort = new SelectionSort();
+        Integer[] arr = new Integer[] {42,74,90,25,53};
+        println("排序前：");
+        sort.show(arr);
+        println("排序：");
+        sort.sort(arr);
+        println("排序后：");
+        sort.show(arr);
     }
 }
