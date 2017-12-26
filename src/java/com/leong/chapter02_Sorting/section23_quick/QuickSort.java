@@ -5,11 +5,15 @@ import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
+
+import static edu.princeton.cs.algs4.StdOut.print;
+import static edu.princeton.cs.algs4.StdOut.println;
 
 /**
  * 快速排序（O(N lg N)）
- * 快速排序是一种分治的排序算法，它将一个数组分成两个子数组，将两部分独立的排序，与归并排序不同的是，快速排序是当月两个
- * 子数组都有序时整个数组也就自然有序了。
+ * 快速排序是一种分治的排序算法，它将一个数组分成两个子数组，将两部分独立的排序，与归并排序不同的是，
+ * 快速排序是当两个子数组都有序时整个数组也就自然有序了。
  * <p>
  * 快速排序递归将a[lo...hi]排序，关键在于切分：
  * 1. 对于 j, a[j] 位置已经排定不变；
@@ -19,31 +23,32 @@ import java.util.Arrays;
  * <p>
  * 切分策略：
  * 1. 随意取a[lo]作为切分元素，此元素将会被排定；
- * 2. 从左端开始向右端扫描（指针为i=lo），直到a[++i]>=a[lo]时break；
- * 3. 然后从右端向左端扫描（指针为j=hi+1），直到a[--j]<=a[lo]时break；
- * 4. 显然a[i]和a[j]两个元素位置还没有排定，因此我们需要交换这两个元素；如此继续，保证左边元素<=切分元素，右边>=切分元素；
- * 5. 当 i 和 j 指针相遇时(i>=j)时，我们只需将a[lo]和左子数组的最右侧元素a[j]交换，然后返回j即可。
+ * 2. 从左端开始向右端扫描（指针为left=lo），直到a[++left]>=a[lo]时break；
+ * 3. 然后从右端向左端扫描（指针为right=hi+1），直到a[--right]<=a[lo]时break；
+ * 4. 显然a[left]和a[right]两个元素位置还没有排定，因此我们需要交换这两个元素；如此继续，保证左边元素<=切分元素，右边>=切分元素；
+ * 5. 当 left 和 right 指针相遇时(left>=right)时，我们只需将a[lo]和左子数组的最右侧元素a[right]交换，然后返回right即可。
  *
  * @author leongfeng created on 2017/4/13
  */
 public class QuickSort extends BaseSort {
 
     public static void main(String[] args) {
-        QuickSort quickSort = new QuickSort();
-        Integer[] a = new Integer[]{9, 2, 6, 4, 3, 5, 1};
-        Arrays.asList(a).forEach(StdOut::print);
-        StdOut.println();
-        quickSort.sort(a);
-        Arrays.asList(a).forEach(StdOut::print);
-        StdOut.println();
-        StdOut.println(quickSort.median3(a, 0, (a.length -1) / 2, a.length - 1));
+        QuickSort sort = new QuickSort();
+        Integer[] arr = new Integer[] {43,24,23,14,18,31,37,22,26,32};
+        println("排序前：");
+        sort.show(arr);
+        println("排序：");
+        sort.sort(arr);
+        println("排序后：");
+        sort.show(arr);
+//        StdOut.println(sort.median3(arr, 0, (arr.length -1) / 2, arr.length - 1));
 
     }
 
     @Override
     public BaseSort sort(Comparable[] a) {
         // 2.3.1.3 保持数组的随机性
-        StdRandom.shuffle(a);
+//        StdRandom.shuffle(a);
         sort(a, 0, a.length - 1);
         assert isSorted(a);
         return this;
@@ -76,6 +81,8 @@ public class QuickSort extends BaseSort {
 
         // 切分元素下标
         int j = partition(a, lo, hi);
+        print("切分元素：" + a[j] + "; 数组：");
+        show(a);
         // sorting left
         sort(a, lo, j - 1);
         // right
@@ -108,8 +115,7 @@ public class QuickSort extends BaseSort {
     private int partition(Comparable[] a, int lo, int hi) {
         // 取每1个元素作为切分元素
         Comparable v = a[lo];
-        int left = lo;
-        int right = hi + 1;
+        int left = lo, right = hi + 1;
         while (true) {
             // 比较左半部分元素，如果元素小于v，不需要作交换，指针向右移动(++left)，直到移动到hi
             while (less(a[++left], v)) {

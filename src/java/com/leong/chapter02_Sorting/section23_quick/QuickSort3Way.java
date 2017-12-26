@@ -2,6 +2,9 @@ package com.leong.chapter02_Sorting.section23_quick;
 
 import com.leong.chapter02_Sorting.BaseSort;
 
+import static edu.princeton.cs.algs4.StdOut.print;
+import static edu.princeton.cs.algs4.StdOut.println;
+
 /**
  * 三向切分快速查找。
  * a[lo...lt-1] 的元素都 <v， a[gt+1...hi]中的元素都 >v，a[i...gt]元素都 =v：
@@ -19,11 +22,36 @@ public class QuickSort3Way extends BaseSort{
     }
 
     private void sort(Comparable[] a, int lo, int hi) {
-
+        if (lo >= hi) {
+            return;
+        }
+        int lt = lo, i = lo + 1, gt = hi;
+        Comparable v = a[lo];
+        while (i <= gt) {
+            int cmp = a[i].compareTo(v);
+            if (cmp < 0) {
+                exchange(a, lt++, i++);
+            } else if (cmp > 0) {
+                exchange(a, i, gt--);
+            } else {
+                i ++;
+            }
+        }
+        print("lt：" + lt + "；数组：");
+        show(a);
+        sort(a, lo, lt - 1);
+        sort(a, gt + 1, hi);
     }
 
 
     public static void main(String[] args) {
-
+        BaseSort sort = new QuickSort3Way();
+        Integer[] arr = new Integer[] {43,24,24,14,18,31,37,24,26,32};
+        println("排序前：");
+        sort.show(arr);
+        println("排序：");
+        sort.sort(arr);
+        println("排序后：");
+        sort.show(arr);
     }
 }
