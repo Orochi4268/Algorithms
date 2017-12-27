@@ -3,6 +3,8 @@ package com.leong.chapter02_Sorting.section24_PriorityQueue;
 import edu.princeton.cs.algs4.Heap;
 import edu.princeton.cs.algs4.StdOut;
 
+import static edu.princeton.cs.algs4.StdOut.println;
+
 /**
  * 堆排序：
  * 1. 在堆的构造阶段中，将原数组重新组织安排进一个堆中；
@@ -22,7 +24,7 @@ public class HeapSort {
             sink(pq, k, N);
         }
 
-        // 2.
+        // 2. 堆的下沉阶段
         while (N > 1) {
             exch(pq, 1, N--);
             sink(pq, 1, N);
@@ -44,10 +46,11 @@ public class HeapSort {
         }
     }
 
-    private static void display(Comparable[] a) {
-        for (int i = 0; i < a.length; i++) {
-            StdOut.println(a[i]);
+    private static void display(Comparable[] pq) {
+        for (int i = 0; i < pq.length; i++) {
+            StdOut.print(pq[i]+ " ");
         }
+        println();
     }
 
     private static boolean less(Comparable[] pq, int i, int j) {
@@ -62,7 +65,10 @@ public class HeapSort {
 
     public static void main(String[] args) {
         String[] a = new String[]{"S", "O", "R", "T", "E", "X", "A", "M", "P", "L", "E"};
+        println("排序前：");
+        display(a);
         HeapSort.sort(a);
+        println("排序后：");
         display(a);
     }
 }

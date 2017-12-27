@@ -32,7 +32,7 @@ public class BubbleSort extends BaseSort {
 
     public static void main(String[] args) {
         BaseSort sort = new BubbleSort();
-        Integer[] arr = new Integer[] {42,74,90,25,53};
+        Integer[] arr = new Integer[] {3,44,38,5,47,15};
         println("排序前：");
         sort.show(arr);
         println("排序：");

@@ -46,7 +46,8 @@ public class QuickSort3Way extends BaseSort{
 
     public static void main(String[] args) {
         BaseSort sort = new QuickSort3Way();
-        Integer[] arr = new Integer[] {43,24,24,14,18,31,37,24,26,32};
+//        Integer[] arr = new Integer[] {43,24,24,14,18,31,37,24,26,32};
+        String[] arr = new String[] {"R","W","W","U","X"};
         println("排序前：");
         sort.show(arr);
         println("排序：");

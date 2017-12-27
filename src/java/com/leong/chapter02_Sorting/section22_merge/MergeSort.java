@@ -21,7 +21,7 @@ public class MergeSort extends BaseSort {
 
     public static void main(String[] args) {
         BaseSort sort = new MergeSort();
-        Integer[] arr = new Integer[]{90, 42, 25, 74, 53};
+        Integer[] arr = new Integer[]{3,44,38,5,47,15};
         println("排序前：");
         sort.show(arr);
         println("排序：");
