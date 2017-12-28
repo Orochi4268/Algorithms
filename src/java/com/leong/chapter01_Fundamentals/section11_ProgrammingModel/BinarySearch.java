@@ -4,8 +4,13 @@ package com.leong.chapter01_Fundamentals.section11_ProgrammingModel;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
+
+import static edu.princeton.cs.algs4.StdOut.print;
+import static edu.princeton.cs.algs4.StdOut.println;
 
 /**
  * 二分查找
@@ -13,15 +18,30 @@ import java.util.Arrays;
  */
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] whiteList = new In("D:\\workspace\\algs4-data\\largeW.txt").readAllInts();
+        /*int[] whiteList = new In("D:\\workspace\\algs4-data\\largeW.txt").readAllInts();
         Arrays.sort(whiteList);
         while (!StdIn.isEmpty()) {
             int key = StdIn.readInt();
             if (rank(key, whiteList) < 0) {
                 StdOut.println("一般：" + key);
             }
+        }*/
+        final int[] arr = new int[10];
+        IntStream.range(0, 10).forEach(i -> {
+            arr[i] = StdRandom.uniform(1000);
+        });
+        int searched = arr[4];
+        println("search value:" + searched);
+        for (int a : arr) {
+            print(a + " ");
         }
-
+        println();
+        Arrays.sort(arr);
+        for (int a : arr) {
+            print(a + " ");
+        }
+        println();
+        println(searched + " index: " + rank(searched, arr));
     }
 
     /**
@@ -34,11 +54,14 @@ public class BinarySearch {
     public static int rank(int key, int[] arr) {
         int lo = 0;
         int hi = arr.length - 1;
-        while (lo <= hi) { //被查找的数要么不存在，要么就在 a[lo...hi] 中
+        //被查找的数要么不存在，要么就在 a[lo...hi] 中
+        while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
-            if (key < arr[mid]) { // key 小于中间值，只需在左边查找
+            // key 小于中间值，只需在左边查找
+            if (key < arr[mid]) {
                 hi = mid - 1;
-            } else if (key > arr[mid]) { // key 小于中间值，只需在右边查找
+            } else if (key > arr[mid]) {
+                // key 小于中间值，只需在右边查找
                 lo = mid + 1;
             } else {
                 return mid;

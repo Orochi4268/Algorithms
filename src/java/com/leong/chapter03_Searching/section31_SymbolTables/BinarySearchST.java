@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdOut;
 
 /**
- * 有序数组中的十分查找.
+ * 有序数组中的二分查找.
  * 在 N 个键的有序数组中进行二分查找最多需要 lgN+1 次比较；插入新元素的最坏情况需要访问数组 ~2N 次，所以向一个空符号表中插入 N 个
  * 元素的最坏情况下需要访问 ~N^2 次数组。
  *
