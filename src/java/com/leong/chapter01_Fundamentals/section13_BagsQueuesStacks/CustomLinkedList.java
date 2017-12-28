@@ -193,6 +193,37 @@ public class CustomLinkedList<Item> implements Iterable<Item> {
         return curr;
     }
 
+    public void remove(Item item) {
+        first = remove(first, item);
+    }
+
+    /**
+     * 单链表删除某个值的结点
+     * @param first fist node
+     * @param item 被删除的结点
+     * @return
+     */
+    private Node<Item> remove(Node<Item> first, Item item) {
+        if (first == null) {
+            return first;
+        }
+
+        Node<Item> prev = first, next = first.next;
+        while (next != null) {
+            if (item.equals(next.item)) {
+                prev.next = next.next;
+            } else {
+                prev = next;
+            }
+            next = next.next;
+        }
+
+        if (item.equals(first.item)) {
+            first = first.next;
+        }
+        return first;
+    }
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
@@ -230,28 +261,15 @@ public class CustomLinkedList<Item> implements Iterable<Item> {
         java.util.LinkedList linkedList = new java.util.LinkedList();
         Collections.reverse(linkedList);
         CustomLinkedList<Integer> cst = new CustomLinkedList<>();
+        cst.append(3);
+        cst.append(3);
         IntStream.range(1, 4).forEach(i -> {
             cst.append(i);
         });
-        println(cst);
-//        cst.append(10);
-//        println(cst);
-//        cst.prepend(-1);
-        println(cst);
-        for (int i : cst.reverse()) {
-            print(i + " ");
-        }
-        println();
-        println("--------iterative----------");
-//        cst.reverseNode();
-        for (int i : cst) {
-            print(i + " ");
-        }
-        println("\n--------recursive--------");
-        cst.recursiveReverseNode();
-        for (int i : cst) {
-            print(i + " ");
-        }
+        println("List: " + cst);
+        cst.append(3);
+        cst.remove(3);
+        println("List: " + cst);
 
     }
 }
